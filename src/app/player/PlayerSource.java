@@ -139,6 +139,7 @@ public class PlayerSource {
         return isPaused;
     }
 
+
     /**
      * Sets prev audio file.
      *
@@ -147,12 +148,9 @@ public class PlayerSource {
     public void setPrevAudioFile(final boolean shuffle) {
         if (type == Enums.PlayerSourceType.LIBRARY) {
             remainedDuration = audioFile.getDuration();
-
         } else {
             if (remainedDuration != audioFile.getDuration()) {
-
                 remainedDuration = audioFile.getDuration();
-
             } else {
                 if (shuffle) {
                     if (indexShuffled > 0) {
@@ -166,13 +164,10 @@ public class PlayerSource {
                         index--;
                     }
                     updateAudioFile();
-
                     remainedDuration = audioFile.getDuration();
                 }
             }
         }
-
-
     }
 
     /**

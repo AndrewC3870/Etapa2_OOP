@@ -16,12 +16,20 @@ import fileio.input.EpisodeInput;
 import fileio.input.SongInput;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
 
 public class UtilMethods {
     static ObjectMapper objectMapper = new ObjectMapper();
 
+    /**
+     * method to create output node
+     *
+     * @param commandInput command
+     * @param message message
+     * @return created node
+     */
     public static ObjectNode createMessageOutput(CommandInput commandInput, String message) {
         ObjectNode objectNode = objectMapper.createObjectNode();
 
@@ -32,23 +40,37 @@ public class UtilMethods {
         return  objectNode;
     }
 
+    public static ObjectNode createOutputForArtisHost(CommandInput commandInput, String message) {
+        ObjectNode objectNode = objectMapper.createObjectNode();
+        objectNode.put("command", commandInput.getCommand());
+        objectNode.put("user", commandInput.getUsername());
+        objectNode.put("timestamp", commandInput.getTimestamp());
+        objectNode.put("message", message);
+        return objectNode;
+    }
+
+    /**
+     * method to convert from SongInput to Song
+     *
+     * @param song SongInput
+     * @return Song
+     */
     public static Song convertToSong(SongInput song) {
         return new Song(song.getName(), song.getDuration(), song.getAlbum(), song.getTags(),
                 song.getLyrics(), song.getGenre(), song.getReleaseYear(), song.getArtist());
     }
 
+    /**
+     * verifies if artist can be deleted by verifying if someone is listening for his album
+     *
+     * @param artist the artist
+     * @return boolean
+     */
     public static boolean ifDeletingForArtist(UserArtist artist) {
         for (User user: Admin.getUsers()) {
-//            if (user.getPlayer().getSource() != null && user.getPlayer().getSource().getAudioCollection() != null) {
-//                for (Album album: artist.getAlbum()) {
-//                    if (user.getPlayer().getSource().getAudioCollection().equals(album)) {
-//                        return true;
-//                    }
-//                }
-//            }
             if (user.getPlayer().getCurrentAudioFile() != null) {
                 for (Album album: artist.getAlbum()) {
-                    for (SongInput songInput: album.getSongs()) {
+                    for (Song songInput: album.getSongs()) {
                         if (Objects.equals(user.getPlayer().getCurrentAudioFile().getName(), songInput.getName())) {
                             return true;
                         }
@@ -59,15 +81,14 @@ public class UtilMethods {
         return false;
     }
 
+    /**
+     * verifies if host can be deleted by verifying if someone is listening for his podcast
+     *
+     * @param host host
+     * @return boolean
+     */
     public static boolean ifDeletingForHost(UserHost host) {
         for (User user: Admin.getUsers()) {
-//            if (user.getPlayer().getSource() != null && user.getPlayer().getSource().getAudioCollection() != null) {
-//                for (Podcasts podcast: host.getPodcasts()) {
-//                    if (user.getPlayer().getSource().getAudioCollection().equals(podcast)) {
-//                        return true;
-//                    }
-//                }
-//            }
             if (user.getPlayer().getCurrentAudioFile() != null) {
                 for (Podcasts podcast: host.getPodcasts()) {
                     for (EpisodeInput episode: podcast.getEpisodes()) {
@@ -82,6 +103,12 @@ public class UtilMethods {
         return false;
     }
 
+    /**
+     * verifies if user is on the Host's page
+     *
+     * @param host host
+     * @return boolean
+     */
     public static boolean ifOnTheHostPage(UserHost host) {
         for (User user: Admin.getUsers()) {
             if (user.getPage().equals(host.getHostPage())) {
@@ -91,6 +118,12 @@ public class UtilMethods {
         return false;
     }
 
+    /**
+     * verifies if user is on the Artist's page
+     *
+     * @param artist artist
+     * @return boolean
+     */
     public static boolean ifOnTheArtistPage(UserArtist artist) {
         for (User user: Admin.getUsers()) {
             if (user.getPage().equals(artist.getArtistPage())) {
@@ -100,14 +133,20 @@ public class UtilMethods {
         return false;
     }
 
+    /**
+     * verifies if the albums songs are in one of user's playlist
+     *
+     * @param album album
+     * @return boolean
+     */
     public static boolean ifIsInPlaylist(ArrayList<Album> album) {
         for (User user: Admin.getUsers()) {
             for (Playlist playlist: user.getPlaylists()) {
                 for (Song song: playlist.getSongs()) {
                     for (Album album1: album) {
-                        for (SongInput songInput: album1.getSongs()) {
-                            if (song.getName().equals(songInput.getName()));
-                            return true;
+                        for (Song songInput: album1.getSongs()) {
+                            if (song.getName().equals(songInput.getName()))
+                                return true;
                         }
                     }
                 }
@@ -115,6 +154,5 @@ public class UtilMethods {
         }
         return false;
     }
-
 
 }

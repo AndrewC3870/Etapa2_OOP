@@ -9,14 +9,24 @@ import lombok.Getter;
 import java.util.ArrayList;
 @Getter
 
-public final class HostPage extends Pages {
+public final class HostPage implements Pages {
     private ArrayList<Podcasts> podcasts;
     private ArrayList<Announcement> announcements;
+
+    /**
+     * Constructor for HostPage
+     * @param podcasts
+     * @param announcements
+     */
     public HostPage(ArrayList<Podcasts> podcasts, ArrayList<Announcement> announcements) {
         this.announcements = announcements;
         this.podcasts = podcasts;
     }
 
+    /**
+     * Get all podcast from host
+     * @return
+     */
     public ArrayList<String> getPodcasts() {
         ArrayList<String> results = new ArrayList<>();
         ArrayList<String> episodes = new ArrayList<>();
@@ -32,6 +42,10 @@ public final class HostPage extends Pages {
         return results;
     }
 
+    /**
+     * get all announcements from a host
+     * @return
+     */
     public ArrayList<String> getAnnouncements() {
         ArrayList<String> results = new ArrayList<>();
         for (Announcement announcement: announcements) {
@@ -40,9 +54,12 @@ public final class HostPage extends Pages {
         return results;
     }
 
-
+    /**
+     * creating output
+     * @return
+     */
     @Override
-    public String toString() {
+    public String printCurrentPage() {
         return "Podcasts:\n\t" + getPodcasts() + "\n\nAnnouncements:\n\t" + getAnnouncements();
     }
 }

@@ -12,6 +12,12 @@ public class ArtistMerch {
     private String description;
     private int price;
 
+    /**
+     * Constructor for Artist Merch
+     * @param name
+     * @param description
+     * @param price
+     */
     public ArtistMerch(String name, String description, int price) {
         this.name = name;
         this.description = description;

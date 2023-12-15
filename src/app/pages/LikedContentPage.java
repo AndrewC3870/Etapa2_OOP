@@ -6,18 +6,26 @@ import app.user.User;
 
 import java.util.ArrayList;
 
-public class LikedContentPage extends Pages{
+public class LikedContentPage implements Pages{
 
     private ArrayList<Playlist> playlists;
     private ArrayList<Song> likedSongs;
     private ArrayList<Playlist> followedPlaylists;
 
+    /**
+     * Constructor for likedContentPage
+     * @param user
+     */
     public LikedContentPage(User user) {
         this.playlists = user.getPlaylists();
         this.followedPlaylists = user.getFollowedPlaylists();
         this.likedSongs = user.getLikedSongs();
     }
 
+    /**
+     * Creating a list with all liked fongs
+     * @return
+     */
     public ArrayList <String> allLikedSongs() {
         ArrayList<String> result = new ArrayList<>();
         for (Song song: likedSongs) {
@@ -27,6 +35,11 @@ public class LikedContentPage extends Pages{
         return result;
     }
 
+    /**
+     * Creating a list with all followed playlists
+     * @return
+     */
+
     public ArrayList <String> allFollowedPlaylists() {
         ArrayList<String> result = new ArrayList<>();
         for (Playlist playlist: followedPlaylists) {
@@ -35,8 +48,13 @@ public class LikedContentPage extends Pages{
         }
         return result;
     }
+
+    /**
+     * Creating the output
+     * @return
+     */
     @Override
-    public String toString() {
+    public String printCurrentPage() {
         return "Liked songs:\n\t" + allLikedSongs() + "\n\nFollowed playlists:\n\t" + allFollowedPlaylists();
     }
 }

@@ -18,6 +18,13 @@ public class UserHost extends User{
     private ArrayList<Announcement> announcements;
     private HostPage hostPage;
 
+    /**
+     * Constructor for UserHost
+     *
+     * @param username username
+     * @param age age
+     * @param city city
+     */
     public UserHost(String username, int age, String city) {
         super(username, age, city, "host");
         this.player = false;
@@ -26,15 +33,12 @@ public class UserHost extends User{
         this.hostPage = new HostPage(this.podcasts,this.announcements);
     }
 
-    public Podcasts containsHost(String name) {
-        for (Podcasts podcast: podcasts) {
-            if (name.equals(podcast.getName())) {
-                return podcast;
-            }
-        }
-        return null;
-    }
-
+    /**
+     * find announcement by name
+     *
+     * @param name announcement name
+     * @return anouncement
+     */
     public Announcement containsAnnouncement(String name) {
         for (Announcement announcement: announcements) {
             if (announcement.getName().equals(name)) {
@@ -44,6 +48,12 @@ public class UserHost extends User{
         return null;
     }
 
+    /**
+     * find the podcast by name
+     *
+     * @param name podcast name
+     * @return podcast
+     */
     public Podcasts getPodcastByName(String name) {
         for (Podcasts auxPodcasts: podcasts) {
             if (auxPodcasts.getName().equals(name)) {
@@ -53,8 +63,4 @@ public class UserHost extends User{
         return null;
     }
 
-
-    public void updatePage(){
-        this.hostPage = new HostPage(this.podcasts, this.announcements);
-    }
 }

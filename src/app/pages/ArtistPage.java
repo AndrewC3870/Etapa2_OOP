@@ -9,18 +9,28 @@ import lombok.Setter;
 import java.util.ArrayList;
 @Getter
 @Setter
-public class ArtistPage extends Pages{
+public class ArtistPage implements Pages{
 
     private ArrayList<Album> albums;
     private ArrayList<ArtistMerch> merch;
     private ArrayList<ArtistEvent> events;
 
+    /**
+     * Constructor for Artist Page
+     * @param album
+     * @param merch
+     * @param event
+     */
     public ArtistPage(ArrayList<Album> album, ArrayList<ArtistMerch> merch, ArrayList<ArtistEvent> event) {
         this.albums = album;
         this.merch = merch;
         this.events = event;
     }
 
+    /**
+     * method that returns a list with al albums names
+     * @return
+     */
     public ArrayList<String> getAlbumsList() {
         ArrayList<String> albums = new ArrayList<>();
         for (Album iter: this.albums) {
@@ -29,6 +39,10 @@ public class ArtistPage extends Pages{
         return albums;
     }
 
+    /**
+     * method that returns a list with all marches with price
+     * @return
+     */
     public ArrayList<String> getMerchList() {
         ArrayList<String> merches = new ArrayList<>();
         String merch;
@@ -39,6 +53,10 @@ public class ArtistPage extends Pages{
         return merches;
     }
 
+    /**
+     * method that returns a list with all events, date for that event and the description
+     * @return
+     */
     public ArrayList<String> getEventList() {
         ArrayList<String> events = new ArrayList<>();
         String event;
@@ -49,8 +67,12 @@ public class ArtistPage extends Pages{
         return events;
     }
 
+    /**
+     * print method that creates the output
+     * @return
+     */
     @Override
-    public String toString() {
+    public String printCurrentPage() {
         return "Albums:\n\t" + getAlbumsList() + "\n\nMerch:\n\t" + getMerchList() + "\n\nEvents:\n\t" + getEventList();
     }
 }

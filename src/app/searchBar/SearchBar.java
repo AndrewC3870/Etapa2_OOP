@@ -16,7 +16,6 @@ import static app.searchBar.FilterUtils.filterByFollowers;
 
 public class SearchBar {
     private List<LibraryEntry> results;
-//    ce adaug eu
     @Getter
     @Setter
     private ArrayList<String> searchUserResult = new ArrayList<>();
@@ -28,16 +27,34 @@ public class SearchBar {
     @Getter
     private LibraryEntry lastSelected;
 
-    public SearchBar(String user) {
+    /**
+     * Instantiates a new Search bar.
+     *
+     * @param user the user
+     */
+    public SearchBar(final String user) {
         this.results = new ArrayList<>();
         this.user = user;
     }
 
+
+    /**
+     * Clear selection.
+     */
     public void clearSelection() {
         lastSelected = null;
         lastSearchType = null;
     }
-    public List<LibraryEntry> search(Filters filters, String type) {
+
+
+    /**
+     * Search list.
+     *
+     * @param filters the filters
+     * @param type    the type
+     * @return the list
+     */
+    public List<LibraryEntry> search(final Filters filters, final String type) {
         List<LibraryEntry> entries;
 
         switch (type) {
@@ -101,7 +118,6 @@ public class SearchBar {
                 if (filters.getOwner() != null) {
                     entries = filterByOwner(entries, filters.getOwner());
                 }
-                // trebuie sa adaug filtru pt description
                 break;
 
 
@@ -134,7 +150,13 @@ public class SearchBar {
         return this.results;
     }
 
-    public LibraryEntry select(Integer itemNumber) {
+    /**
+     * Select library entry.
+     *
+     * @param itemNumber the item number
+     * @return the library entry
+     */
+    public LibraryEntry select(final Integer itemNumber) {
         if (this.results.size() < itemNumber) {
             results.clear();
 
@@ -147,6 +169,11 @@ public class SearchBar {
         }
     }
 
+    /**
+     * added new method to manage the selection of user
+     * @param itemNumber
+     * @return
+     */
     public LibraryEntry selectUser(Integer itemNumber) {
         if (this.searchUserResult.size() < itemNumber) {
             searchUserResult.clear();

@@ -363,7 +363,7 @@ public class UserCommandRunner {
         String message = "";
         if (user != null) {
             if (user.isConectionStatus()) {
-                message = user.getPage().toString();
+                message = user.getPage().printCurrentPage();
             } else {
                 message = user.getUsername() + " is offline.";
             }

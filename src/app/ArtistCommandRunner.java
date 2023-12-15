@@ -19,11 +19,15 @@ import static app.events.ArtistEvent.dateCorrectness;
 import static app.utils.UtilMethods.*;
 
 public class ArtistCommandRunner{
-    static ObjectMapper objectMapper = new ObjectMapper();
-
+    /**
+     * add album to artists list of albums
+     *
+     * @param commandInput command
+     * @return output
+     */
     public static ObjectNode addAlbum(CommandInput commandInput) {
         User user = Admin.getUser(commandInput.getUsername());
-        String message = "";
+        String message;
 
         if (user == null) {
             message = "The username " + commandInput.getUsername() + " doesn't exist.";
@@ -32,12 +36,14 @@ public class ArtistCommandRunner{
         } else {
             UserArtist artist = (UserArtist)user;
             if (artist.containsAlbum(commandInput.getName())) {
-                message = commandInput.getUsername() + " has another album with the same name.";
+                message = commandInput.getUsername() +
+                        " has another album with the same name.";
             } else if (sameSongs(commandInput) > 1) {
-                message = commandInput.getUsername() + " has the same song at least twice in this album.";
+                message = commandInput.getUsername() +
+                        " has the same song at least twice in this album.";
             } else {
-
-                Album album = new Album(commandInput.getName(),commandInput.getUsername(), commandInput.getReleaseYear(),
+                Album album = new Album(commandInput.getName(),commandInput.getUsername(),
+                        commandInput.getReleaseYear(),
                         commandInput.getDescription(), commandInput.getSongs());
                 album.setName(commandInput.getName());
 
@@ -49,16 +55,15 @@ public class ArtistCommandRunner{
                 message = commandInput.getUsername() + " has added new album successfully.";
             }
         }
-
-        ObjectNode objectNode = objectMapper.createObjectNode();
-        objectNode.put("command", commandInput.getCommand());
-        objectNode.put("user", commandInput.getUsername());
-        objectNode.put("timestamp", commandInput.getTimestamp());
-        objectNode.put("message", message);
-
-        return objectNode;
+        return createOutputForArtisHost(commandInput, message);
     }
 
+    /**
+     * remove album if users is not listening it
+     *
+     * @param commandInput command
+     * @return output
+     */
     public static ObjectNode removeAlbum(CommandInput commandInput) {
         User user = Admin.getUser(commandInput.getUsername());
         String message;
@@ -70,31 +75,36 @@ public class ArtistCommandRunner{
         } else {
             UserArtist artist = (UserArtist)user;
             if (!artist.containsAlbum(commandInput.getName())) {
-                message = commandInput.getUsername() + " doesn't have an album with the given name.";
+                message = commandInput.getUsername() +
+                        " doesn't have an album with the given name.";
             } else if (ifDeletingForArtist(artist) || ifIsInPlaylist(artist.getAlbum())) {
                 message = commandInput.getUsername() + " can't delete this album.";
             } else {
                 Album album = artist.getAlbumByName(commandInput.getName());
-                List<Song> songs = new ArrayList<>();
-                for (SongInput songInput: album.getSongs()) {
-                    Admin.removeSong(convertToSong(songInput));
+                for (Song songInput: album.getSongs()) {
+                    Admin.removeSong(songInput);
+                }
+                for (Song songInput: album.getSongs()) {
+                    for (User user1: Admin.getUsers()) {
+                        if (user1.getType().equals("user")) {
+                            user1.getLikedSongs().remove(songInput);
+                        }
+                    }
                 }
                 artist.removeAlbum(commandInput.getName());
                 message = commandInput.getUsername() + " deleted the album successfully.";
             }
         }
-
-        ObjectNode objectNode = objectMapper.createObjectNode();
-        objectNode.put("command", commandInput.getCommand());
-        objectNode.put("user", commandInput.getUsername());
-        objectNode.put("timestamp", commandInput.getTimestamp());
-        objectNode.put("message", message);
-
-        return objectNode;
+        return createOutputForArtisHost(commandInput, message);
     }
 
 
-
+    /**
+     * method to verify if artist wants to add album that contains two or more songs in album
+     *
+     * @param commandInput command
+     * @return number of same songs
+     */
     private static int sameSongs(CommandInput commandInput) {
         int count = 0;
         for (SongInput songs: commandInput.getSongs()) {
@@ -111,9 +121,12 @@ public class ArtistCommandRunner{
         return count;
     }
 
-
-
-
+    /**
+     * add event for Artis if he/she doesn't have same event
+     *
+     * @param commandInput command
+     * @return output
+     */
     public static ObjectNode addEvent(CommandInput commandInput) {
         String message;
         User user = Admin.getUser(commandInput.getUsername());
@@ -123,7 +136,7 @@ public class ArtistCommandRunner{
             message = user.getUsername() + " is not an artist.";
         } else {
             UserArtist artist = (UserArtist) user;
-            if (artist.verifyEvents(commandInput)) {
+            if (artist.verifyEvents(commandInput.getName())) {
                 message = artist.getUsername() + " has another event with the same name.";
             } else if (!dateCorrectness(commandInput.getDate())) {
                 message = "Event for " + artist.getUsername() + " does not have a valid date.";
@@ -139,15 +152,15 @@ public class ArtistCommandRunner{
             }
         }
 
-
-        ObjectNode objectNode = objectMapper.createObjectNode();
-        objectNode.put("command", commandInput.getCommand());
-        objectNode.put("user", commandInput.getUsername());
-        objectNode.put("timestamp", commandInput.getTimestamp());
-        objectNode.put("message", message);
-        return objectNode;
+        return createOutputForArtisHost(commandInput, message);
     }
 
+    /**
+     * remove event if exists
+     *
+     * @param commandInput command
+     * @return output
+     */
     public static ObjectNode removeEvent(CommandInput commandInput) {
         String message;
         User user = Admin.getUser(commandInput.getUsername());
@@ -157,7 +170,7 @@ public class ArtistCommandRunner{
             message = user.getUsername() + " is not an artist.";
         } else {
             UserArtist artist = (UserArtist) user;
-            if (!artist.verifyEvents(commandInput)) {
+            if (!artist.verifyEvents(commandInput.getName())) {
                 message = artist.getUsername() + " doesn't have an event with the given name.";
             } else {
                 artist.removeEvent(commandInput.getName());
@@ -165,14 +178,15 @@ public class ArtistCommandRunner{
             }
         }
 
-        ObjectNode objectNode = objectMapper.createObjectNode();
-        objectNode.put("command", commandInput.getCommand());
-        objectNode.put("user", commandInput.getUsername());
-        objectNode.put("timestamp", commandInput.getTimestamp());
-        objectNode.put("message", message);
-        return objectNode;
+        return createOutputForArtisHost(commandInput, message);
     }
 
+    /**
+     * add merch if not existing yet
+     *
+     * @param commandInput command
+     * @return output
+     */
     public static ObjectNode addMerch(CommandInput commandInput) {
         String message;
         User user = Admin.getUser(commandInput.getUsername());
@@ -187,18 +201,14 @@ public class ArtistCommandRunner{
             } else if (commandInput.getPrice() < 0) {
                 message = "Price for merchandise can not be negative.";
             } else {
-                ArtistMerch merch = new ArtistMerch(commandInput.getName(), commandInput.getDescription(), commandInput.getPrice());
+                ArtistMerch merch = new ArtistMerch(commandInput.getName(),
+                        commandInput.getDescription(), commandInput.getPrice());
                 artist.getMerches().add(merch);
                 artist.updatePage();
                 message = artist.getUsername() + " has added new merchandise successfully.";
             }
         }
 
-        ObjectNode objectNode = objectMapper.createObjectNode();
-        objectNode.put("command", commandInput.getCommand());
-        objectNode.put("user", commandInput.getUsername());
-        objectNode.put("timestamp", commandInput.getTimestamp());
-        objectNode.put("message", message);
-        return objectNode;
+        return createOutputForArtisHost(commandInput, message);
     }
 }

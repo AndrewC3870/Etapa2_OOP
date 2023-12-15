@@ -12,35 +12,52 @@ import java.util.List;
 import static app.Admin.getPlaylists;
 
 
-public class HomePage extends Pages {
+public class HomePage implements Pages {
 
     private ArrayList<Playlist> playlists;
     private ArrayList<Song> likedSongs;
     private ArrayList<Playlist> followedPlaylists;
 
+    /**
+     * Constructor for Homepage
+     * @param user
+     */
     public HomePage(User user) {
         this.playlists = user.getPlaylists();
         this.followedPlaylists = user.getFollowedPlaylists();
         this.likedSongs = user.getLikedSongs();
     }
 
-
+    /**
+     * getting all the liked songs from all users sorted and if the current user
+     * have that song in LikedSongs, then add it to resulted list
+     * @return
+     */
     public List<String> getTopFiveLikedSongs() {
         List<Song> sortedSongs = new ArrayList<>(Admin.getSongs());
         sortedSongs.sort(Comparator.comparingInt(Song::getLikes).reversed());
+        List<Song> list = likedSongs;
+//        list.sort(Comparator.comparingInt(Song::getLikes).reversed());
+
         List<String> topSongs = new ArrayList<>();
         int count = 0;
-        for (Song song : sortedSongs) {
+        for (Song auxSong: list) {
             if (count >= 5) break;
-            for (Song auxSong: likedSongs) {
+            for (Song song: sortedSongs) {
                 if (auxSong.getName().equals(song.getName())) {
-                    topSongs.add(song.getName());
+                    topSongs.add(auxSong.getName());
                 }
             }
             count++;
         }
         return topSongs;
     }
+
+    /**
+     * getting all playlist sorted number of followers and if user have that playlist in followed,
+     * add it to result list
+     * @return
+     */
     public List<String> firstFiveFollowed() {
         List<Playlist> sortedPlaylists = new ArrayList<>(getPlaylists());
         sortedPlaylists.sort(Comparator.comparingInt(Playlist::getFollowers)
@@ -60,10 +77,14 @@ public class HomePage extends Pages {
         return topPlaylists;
     }
 
-
+    /**
+     * Creating the output for print current page
+     * @return
+     */
     @Override
-    public String toString() {
-        return "Liked songs:\n\t" + getTopFiveLikedSongs() + "\n\nFollowed playlists:\n\t" + firstFiveFollowed();
+    public String printCurrentPage() {
+        return "Liked songs:\n\t" + getTopFiveLikedSongs() + "\n\nFollowed playlists:\n\t" +
+                firstFiveFollowed();
     }
 
 

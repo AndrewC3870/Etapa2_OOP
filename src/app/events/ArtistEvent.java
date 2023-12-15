@@ -11,6 +11,11 @@ public class ArtistEvent {
     private String date;
     private String description;
 
+    /**
+     * Method that verifies if the input date is correct
+     * @param date
+     * @return
+     */
     public static boolean dateCorrectness(String date) {
         int dd = Integer.parseInt(date.substring(0, 2));
         int mm = Integer.parseInt(date.substring(3, 5));

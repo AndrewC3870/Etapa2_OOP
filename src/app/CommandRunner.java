@@ -3,6 +3,7 @@ package app;
 import app.audio.Collections.Album;
 import app.audio.Collections.Playlist;
 import app.audio.Collections.Podcasts;
+import app.audio.Files.Song;
 import app.user.User;
 import app.user.UserArtist;
 import app.user.UserHost;
@@ -18,10 +19,18 @@ import java.util.List;
 import java.util.Objects;
 
 import static app.Admin.cantDeleteSimpleUser;
+import static app.Admin.prepareForDelete;
 import static app.utils.UtilMethods.*;
 
 public class CommandRunner {
     static ObjectMapper objectMapper = new ObjectMapper();
+
+    /**
+     * add user/artist/host if is not existing yet
+     *
+     * @param commandInput command
+     * @return output
+     */
     public static ObjectNode addUsers(CommandInput commandInput) {
         User user = Admin.getUser(commandInput.getUsername());
         String message = "";
@@ -29,32 +38,44 @@ public class CommandRunner {
             message = "The username " + commandInput.getUsername() + " is already taken.";
         } else
             if (Objects.equals(commandInput.getType(), "user")){
-            User newUser = new User(commandInput.getUsername(), commandInput.getAge(), commandInput.getCity(), "user");
+            User newUser = new User(commandInput.getUsername(), commandInput.getAge(),
+                    commandInput.getCity(), "user");
             newUser.setType(commandInput.getType());
             newUser.setConectionStatus(true);
             Admin.addUser(newUser);
-            message = "The username " + commandInput.getUsername() + " has been added successfully.";
+            message = "The username " + commandInput.getUsername() +
+                    " has been added successfully.";
         } else if (Objects.equals(commandInput.getType(), "artist")) {
             if (!findSameUser(commandInput.getUsername())) {
-                UserArtist artist = new UserArtist(commandInput.getUsername(), commandInput.getAge(), commandInput.getCity());
+                UserArtist artist = new UserArtist(commandInput.getUsername(),
+                        commandInput.getAge(), commandInput.getCity());
                 artist.setConectionStatus(true);
                 artist.setType("artist");
                 Admin.addArtist(artist);
-                message = "The username " + commandInput.getUsername() + " has been added successfully.";
+                message = "The username " + commandInput.getUsername() +
+                        " has been added successfully.";
             } else {
                 message = "The username " + commandInput.getUsername() + " is already taken.";
             }
 
         } else if (Objects.equals(commandInput.getType(), "host")) {
-            UserHost host = new UserHost(commandInput.getUsername(), commandInput.getAge(), commandInput.getCity());
+            UserHost host = new UserHost(commandInput.getUsername(),
+                    commandInput.getAge(), commandInput.getCity());
             host.setType("host");
             host.setConectionStatus(true);
             Admin.addHost(host);
-            message = "The username " + commandInput.getUsername() + " has been added successfully.";
+            message = "The username " + commandInput.getUsername() +
+                    " has been added successfully.";
         }
         return UtilMethods.createMessageOutput(commandInput, message);
     }
 
+    /**
+     * method to find same users by name
+     *
+     * @param name name
+     * @return boolean
+     */
     public static boolean findSameUser(String name) {
         for (User user: Admin.getUsers()) {
             if (user.getUsername().equals(name)) {
@@ -64,6 +85,12 @@ public class CommandRunner {
         return false;
     }
 
+    /**
+     * remove user/artist/host if existing and verify all cases for all type of user
+     *
+     * @param commandInput command
+     * @return output
+     */
     public static ObjectNode removeUser(CommandInput commandInput) {
         ObjectNode objectNode = objectMapper.createObjectNode();
         User user = Admin.getUser(commandInput.getUsername());
@@ -71,9 +98,10 @@ public class CommandRunner {
 
         if (user != null) {
             if (Objects.equals(user.getType(), "user")) {
-                if (cantDeleteSimpleUser(user)){ /////////////
+                if (cantDeleteSimpleUser(user)){
                     message = user.getUsername() + " can't be deleted.";
                 } else {
+                    prepareForDelete(user);
                     message = user.getUsername() + " was successfully deleted.";
                     for (Playlist followed: user.getFollowedPlaylists()) {
                         User auxUser = Admin.getUser(followed.getOwner());
@@ -94,10 +122,21 @@ public class CommandRunner {
                     message = artist.getUsername() + " can't be deleted.";
                 } else {
                     for (Album album: artist.getAlbum()) {
-                        for (SongInput songInput: album.getSongs()) {
-                            Admin.removeSong(convertToSong(songInput));
+                        for (Song songInput: album.getSongs()) {
+                            Admin.removeSong(songInput);
                         }
                     }
+                    for (Album album: artist.getAlbum()) {
+                        for (Song songInput: album.getSongs()) {
+                            for (User user1: Admin.getUsers()) {
+                                if (user1.getType().equals("user")) {
+                                    System.out.println("here");
+                                    user1.getLikedSongs().remove(songInput);
+                                }
+                            }
+                        }
+                    }
+
                     message = artist.getUsername() + " was successfully deleted.";
                     Admin.removeUser(user);
                     Admin.removeUserArtist(artist);
@@ -116,14 +155,15 @@ public class CommandRunner {
         } else {
             message = "The username " + commandInput.getUsername() + " doesn't exist.";
         }
-
-        objectNode.put("command", commandInput.getCommand());
-        objectNode.put("user", commandInput.getUsername());
-        objectNode.put("timestamp", commandInput.getTimestamp());
-        objectNode.put("message", message);
-        return objectNode;
+        return createOutputForArtisHost(commandInput, message);
     }
 
+    /**
+     * get all existing users
+     *
+     * @param commandInput command
+     * @return output
+     */
     public static ObjectNode getAllUsers(CommandInput commandInput) {
         List<User> users = Admin.getUsers();
         ArrayList<String> result = new ArrayList<>();
@@ -149,6 +189,12 @@ public class CommandRunner {
         return  objectNode;
     }
 
+    /**
+     * show podcast of specific host if exists
+     *
+     * @param commandInput command
+     * @return
+     */
     public static ObjectNode showPodacst(CommandInput commandInput) {
         UserHost host = (UserHost) Admin.getUser(commandInput.getUsername());
         ArrayNode result = objectMapper.createArrayNode();
@@ -183,7 +229,7 @@ public class CommandRunner {
                 List<String> songs = new ArrayList<>();
                 ObjectNode node = objectMapper.createObjectNode();
                 node.put("name", albums.getName());
-                for (SongInput song: albums.getSongs()) {
+                for (Song song: albums.getSongs()) {
                     songs.add(song.getName());
                 }
                 node.putPOJO("songs", songs);

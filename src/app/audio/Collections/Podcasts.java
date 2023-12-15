@@ -12,17 +12,15 @@ public class Podcasts {
     private String name;
     private ArrayList<EpisodeInput> episodes;
 
+    /**
+     * Constructor for Podcasts
+     *
+     * @param name name
+     * @param episodes episodes
+     */
     public Podcasts(String name, ArrayList<EpisodeInput> episodes) {
         this.name = name;
         this.episodes = episodes;
-    }
-
-    public boolean containsEpisode(String name) {
-        for (EpisodeInput episode: episodes) {
-            if (name.equals(episode.getName()));
-                return true;
-        }
-        return false;
     }
 
 }
