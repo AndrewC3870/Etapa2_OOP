@@ -75,7 +75,7 @@ public final class Main {
         CommandInput[] commands = objectMapper.readValue(new File(CheckerConstants.TESTS_PATH + filePath1), CommandInput[].class);
         ArrayNode outputs = objectMapper.createArrayNode();
 
-        DataBase database = new DataBase(library.getUsers(), library.getSongs(), library.getPodcasts());
+        DataBase database =  DataBase.getInstance(library.getUsers(), library.getSongs(), library.getPodcasts());
         Admin.setUsers(database.getAllUsers());
         Admin.setSongs(database.getAllSongs());
         Admin.setPodcasts(database.getAllPodcasts());

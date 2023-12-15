@@ -11,9 +11,6 @@ public abstract class LibraryEntry {
     @Setter
     private String name;
 
-    private LibraryEntry(){
-
-    }
     public LibraryEntry(String name) {
         this.name = name;
     }

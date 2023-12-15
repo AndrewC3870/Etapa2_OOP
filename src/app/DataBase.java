@@ -13,26 +13,21 @@ import java.util.List;
 public class DataBase {
 
     public static DataBase instance = null;
-    private List<UserInput> users = new ArrayList<>();
+    private List<UserInput> users;
 
-    private List<SongInput> songs = new ArrayList<>();
-    private List<PodcastInput> podcasts = new ArrayList<>();
+    private List<SongInput> songs;
+    private List<PodcastInput> podcasts;
 
-    private DataBase() {
-
-    }
-
-
-
-    public DataBase(List<UserInput> users, List<SongInput> songs, List<PodcastInput> podcasts) {
+    private DataBase(List<UserInput> users, List<SongInput> songs, List<PodcastInput> podcasts) {
         this.songs = songs;
         this.users = users;
         this.podcasts = podcasts;
     }
 
-    public static DataBase getInstance() {
+
+    public static DataBase getInstance(List<UserInput> users, List<SongInput> songs, List<PodcastInput> podcasts) {
         if (instance == null) {
-            instance = new DataBase();
+            instance = new DataBase( users, songs, podcasts);
         }
         return instance;
     }
@@ -47,9 +42,7 @@ public class DataBase {
         return this.podcasts;
     }
     public void resetDB() {
-        this.songs = new ArrayList<>();
-        this.users = new ArrayList<>();
-        this.podcasts = new ArrayList<>();
+        instance = null;
     }
 
 

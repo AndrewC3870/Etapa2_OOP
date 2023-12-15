@@ -110,9 +110,6 @@ public class User {
                 }
             }
         }
-        for (User user: results) {
-            System.out.println(user.getUsername());
-        }
         return results;
     }
 
@@ -323,10 +320,6 @@ public class User {
         }
 
         playlist.addSong((Song)player.getCurrentAudioFile());
-//        for (Song song: playlist.getSongs()) {
-//            System.out.println(song.getName() + " " + song.getDuration());
-//        }
-//        System.out.println("++++++++++++++++++++++++++");
         return "Successfully added to playlist.";
     }
 
