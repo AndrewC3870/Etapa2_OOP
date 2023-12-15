@@ -172,15 +172,18 @@ public class Admin {
 
 //    ce adaug eu ******************
     public static List<String> getTop5Albums() {
-        List<Album> albums = new ArrayList<>(getAlbums());
-        List<Song> sortedSongs = new ArrayList<>(songs);
-        List<String> top = new ArrayList<>();
-        sortedSongs.sort(Comparator.comparingInt(Song::getLikes).reversed());
-        System.out.println(sortedSongs);
-//        for (Album album: albums) {
-//
+//        List<Album> sortedPlaylists = new ArrayList<>(getAlbums());
+//        sortedPlaylists.sort(Comparator.comparingInt(Album::getFollowers)
+//                .reversed()
+//                .thenComparing(Playlist::getTimestamp, Comparator.naturalOrder()));
+//        List<String> topPlaylists = new ArrayList<>();
+//        int count = 0;
+//        for (Playlist playlist : sortedPlaylists) {
+//            if (count >= 5) break;
+//            topPlaylists.add(playlist.getName());
+//            count++;
 //        }
-        return top;
+//        return topPlaylists;
     }
 
     public static List<String> getOnlineUsers() {

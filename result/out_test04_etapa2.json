@@ -1,292 +1,159 @@
 [ {
   "command" : "addUser",
   "user" : "melodymaster",
-  "timestamp" : 2,
+  "timestamp" : 5,
   "message" : "The username melodymaster has been added successfully."
 }, {
-  "command" : "addAlbum",
-  "user" : "melodymaster",
-  "timestamp" : 4,
-  "message" : "melodymaster has added new album successfully."
-}, {
-  "command" : "createPlaylist",
-  "user" : "bob35",
-  "timestamp" : 150,
-  "message" : "Playlist created successfully."
-}, {
-  "command" : "search",
-  "user" : "bob35",
-  "timestamp" : 170,
-  "message" : "Search returned 1 results",
-  "results" : [ "Night Pulse" ]
-}, {
-  "command" : "select",
-  "user" : "bob35",
-  "timestamp" : 190,
-  "message" : "Successfully selected Night Pulse."
-}, {
-  "command" : "load",
-  "user" : "bob35",
-  "timestamp" : 195,
-  "message" : "Playback loaded successfully."
-}, {
-  "command" : "addRemoveInPlaylist",
-  "user" : "bob35",
-  "timestamp" : 240,
-  "message" : "Successfully added to playlist."
-}, {
-  "command" : "search",
-  "user" : "bob35",
-  "timestamp" : 270,
-  "message" : "Search returned 5 results",
-  "results" : [ "Shape of You", "Don't", "Maps", "The Man", "Freedom" ]
-}, {
-  "command" : "select",
-  "user" : "bob35",
-  "timestamp" : 290,
-  "message" : "Successfully selected Shape of You."
-}, {
-  "command" : "load",
-  "user" : "bob35",
-  "timestamp" : 295,
-  "message" : "Playback loaded successfully."
-}, {
-  "command" : "addRemoveInPlaylist",
-  "user" : "bob35",
-  "timestamp" : 320,
-  "message" : "Successfully added to playlist."
-}, {
-  "command" : "search",
-  "user" : "bob35",
-  "timestamp" : 370,
-  "message" : "Search returned 5 results",
-  "results" : [ "Stairway to Heaven", "Under Pressure", "Dream On", "Big Pimpin'", "The Unforgiven" ]
-}, {
-  "command" : "select",
-  "user" : "bob35",
-  "timestamp" : 390,
-  "message" : "Successfully selected Stairway to Heaven."
-}, {
-  "command" : "load",
-  "user" : "bob35",
-  "timestamp" : 420,
-  "message" : "Playback loaded successfully."
-}, {
-  "command" : "addRemoveInPlaylist",
-  "user" : "bob35",
-  "timestamp" : 430,
-  "message" : "Successfully added to playlist."
-}, {
-  "command" : "search",
-  "user" : "bob35",
-  "timestamp" : 440,
-  "message" : "Search returned 1 results",
-  "results" : [ "Vibrant Echoes" ]
-}, {
-  "command" : "select",
-  "user" : "bob35",
-  "timestamp" : 445,
-  "message" : "Successfully selected Vibrant Echoes."
-}, {
-  "command" : "load",
-  "user" : "bob35",
-  "timestamp" : 446,
-  "message" : "Playback loaded successfully."
-}, {
-  "command" : "addRemoveInPlaylist",
-  "user" : "bob35",
-  "timestamp" : 450,
-  "message" : "Successfully added to playlist."
-}, {
-  "command" : "status",
-  "user" : "bob35",
-  "timestamp" : 480,
-  "stats" : {
-    "name" : "Vibrant Echoes",
-    "remainedTime" : 216,
-    "repeat" : "No Repeat",
-    "shuffle" : false,
-    "paused" : false
-  }
-}, {
-  "command" : "search",
-  "user" : "bob35",
-  "timestamp" : 500,
-  "message" : "Search returned 1 results",
-  "results" : [ "My favourite songs" ]
-}, {
-  "command" : "select",
-  "user" : "bob35",
-  "timestamp" : 510,
-  "message" : "Successfully selected My favourite songs."
-}, {
-  "command" : "load",
-  "user" : "bob35",
-  "timestamp" : 650,
-  "message" : "Playback loaded successfully."
-}, {
-  "command" : "status",
-  "user" : "bob35",
-  "timestamp" : 655,
-  "stats" : {
-    "name" : "Night Pulse",
-    "remainedTime" : 235,
-    "repeat" : "No Repeat",
-    "shuffle" : false,
-    "paused" : false
-  }
-}, {
-  "command" : "next",
-  "user" : "bob35",
-  "timestamp" : 670,
-  "message" : "Skipped to next track successfully. The current track is Shape of You."
-}, {
-  "command" : "status",
-  "user" : "bob35",
-  "timestamp" : 690,
-  "stats" : {
-    "name" : "Shape of You",
-    "remainedTime" : 213,
-    "repeat" : "No Repeat",
-    "shuffle" : false,
-    "paused" : false
-  }
-}, {
-  "command" : "prev",
-  "user" : "bob35",
-  "timestamp" : 710,
-  "message" : "Returned to previous track successfully. The current track is Shape of You."
-}, {
-  "command" : "status",
-  "user" : "bob35",
-  "timestamp" : 711,
-  "stats" : {
-    "name" : "Shape of You",
-    "remainedTime" : 192,
-    "repeat" : "No Repeat",
-    "shuffle" : false,
-    "paused" : false
-  }
-}, {
-  "command" : "prev",
-  "user" : "bob35",
-  "timestamp" : 712,
-  "message" : "Returned to previous track successfully. The current track is Shape of You."
-}, {
-  "command" : "prev",
-  "user" : "bob35",
-  "timestamp" : 712,
-  "message" : "Returned to previous track successfully. The current track is Shape of You."
-}, {
-  "command" : "status",
-  "user" : "bob35",
-  "timestamp" : 713,
-  "stats" : {
-    "name" : "Shape of You",
-    "remainedTime" : 190,
-    "repeat" : "No Repeat",
-    "shuffle" : false,
-    "paused" : false
-  }
+  "command" : "addUser",
+  "user" : "rhythmrider",
+  "timestamp" : 10,
+  "message" : "The username rhythmrider has been added successfully."
 }, {
   "command" : "addUser",
-  "user" : "soundseeker",
-  "timestamp" : 715,
-  "message" : "The username soundseeker has been added successfully."
+  "user" : "beatblazer",
+  "timestamp" : 15,
+  "message" : "The username beatblazer has been added successfully."
 }, {
-  "command" : "addPodcast",
-  "user" : "soundseeker",
-  "timestamp" : 716,
-  "message" : "soundseeker has added new podcast successfully."
+  "command" : "addUser",
+  "user" : "harmonichero",
+  "timestamp" : 20,
+  "message" : "The username harmonichero has been added successfully."
+}, {
+  "command" : "addUser",
+  "user" : "melodicmind42",
+  "timestamp" : 25,
+  "message" : "The username melodicmind42 has been added successfully."
+}, {
+  "command" : "addUser",
+  "user" : "rhythmicrider58",
+  "timestamp" : 30,
+  "message" : "The username rhythmicrider58 has been added successfully."
+}, {
+  "command" : "addUser",
+  "user" : "harmonyhunter73",
+  "timestamp" : 35,
+  "message" : "The username harmonyhunter73 has been added successfully."
+}, {
+  "command" : "addUser",
+  "user" : "irene33",
+  "timestamp" : 40,
+  "message" : "The username irene33 is already taken."
+}, {
+  "command" : "getAllUsers",
+  "timestamp" : 45,
+  "result" : [ "alice22", "bob35", "carol19", "david27", "emily30", "frank21", "grace25", "henry26", "irene33", "jack29", "melodicmind42", "rhythmicrider58", "harmonyhunter73", "melodymaster", "rhythmrider", "beatblazer", "harmonichero" ]
+}, {
+  "command" : "addAlbum",
+  "user" : "rhythmrider",
+  "timestamp" : 50,
+  "message" : "rhythmrider has added new album successfully."
+}, {
+  "command" : "addAlbum",
+  "user" : "beatblazer",
+  "timestamp" : 55,
+  "message" : "beatblazer has added new album successfully."
 }, {
   "command" : "search",
-  "user" : "bob35",
-  "timestamp" : 800,
-  "message" : "Search returned 1 results",
-  "results" : [ "Auditory Adventures" ]
+  "user" : "melodicmind42",
+  "timestamp" : 60,
+  "message" : "Search returned 3 results",
+  "results" : [ "Radio Ga Ga", "Rhythm Rise", "Rhythmic Revolution" ]
 }, {
   "command" : "select",
-  "user" : "bob35",
-  "timestamp" : 890,
-  "message" : "Successfully selected Auditory Adventures."
+  "user" : "alice22",
+  "timestamp" : 65,
+  "message" : "Please conduct a search before making a selection."
+}, {
+  "command" : "select",
+  "user" : "melodicmind42",
+  "timestamp" : 70,
+  "message" : "Successfully selected Rhythmic Revolution."
 }, {
   "command" : "load",
-  "user" : "bob35",
-  "timestamp" : 900,
+  "user" : "melodicmind42",
+  "timestamp" : 75,
   "message" : "Playback loaded successfully."
 }, {
   "command" : "status",
-  "user" : "bob35",
-  "timestamp" : 1049,
+  "user" : "melodicmind42",
+  "timestamp" : 90,
   "stats" : {
-    "name" : "Exploring Sonic Landscapes",
-    "remainedTime" : 2551,
+    "name" : "Rhythmic Revolution",
+    "remainedTime" : 185,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
   }
 }, {
-  "command" : "forward",
-  "user" : "bob35",
-  "timestamp" : 1050,
-  "message" : "Skipped forward successfully."
+  "command" : "like",
+  "user" : "melodicmind42",
+  "timestamp" : 120,
+  "message" : "Like registered successfully."
 }, {
-  "command" : "removePodcast",
-  "user" : "soundseeker",
-  "timestamp" : 1050,
-  "message" : "soundseeker can't delete this podcast."
+  "user" : "melodicmind42",
+  "command" : "printCurrentPage",
+  "timestamp" : 135,
+  "message" : "Liked songs:\n\t[Rhythmic Revolution]\n\nFollowed playlists:\n\t[]"
 }, {
-  "command" : "status",
-  "user" : "bob35",
-  "timestamp" : 1051,
-  "stats" : {
-    "name" : "Exploring Sonic Landscapes",
-    "remainedTime" : 2459,
-    "repeat" : "No Repeat",
-    "shuffle" : false,
-    "paused" : false
-  }
+  "command" : "deleteUser",
+  "user" : "beatblazer",
+  "timestamp" : 150,
+  "message" : "beatblazer can't be deleted."
 }, {
   "command" : "search",
-  "user" : "bob35",
-  "timestamp" : 1198,
+  "user" : "alice22",
+  "timestamp" : 190,
   "message" : "Search returned 1 results",
-  "results" : [ "Auditory Adventures" ]
+  "results" : [ "Beat Odyssey" ]
 }, {
   "command" : "select",
-  "user" : "bob35",
-  "timestamp" : 1199,
-  "message" : "Successfully selected Auditory Adventures."
+  "user" : "alice22",
+  "timestamp" : 280,
+  "message" : "Successfully selected Beat Odyssey."
 }, {
   "command" : "load",
-  "user" : "bob35",
-  "timestamp" : 1200,
+  "user" : "alice22",
+  "timestamp" : 285,
   "message" : "Playback loaded successfully."
 }, {
-  "command" : "status",
-  "user" : "bob35",
-  "timestamp" : 1389,
-  "stats" : {
-    "name" : "Exploring Sonic Landscapes",
-    "remainedTime" : 2123,
-    "repeat" : "No Repeat",
-    "shuffle" : false,
-    "paused" : false
-  }
+  "command" : "deleteUser",
+  "user" : "beatblazer",
+  "timestamp" : 1158,
+  "message" : "beatblazer can't be deleted."
 }, {
-  "command" : "backward",
-  "user" : "bob35",
+  "command" : "prev",
+  "user" : "alice22",
+  "timestamp" : 1159,
+  "message" : "Returned to previous track successfully. The current track is Melodic Motion."
+}, {
+  "command" : "deleteUser",
+  "user" : "beatblazer",
+  "timestamp" : 1380,
+  "message" : "beatblazer was successfully deleted."
+}, {
+  "command" : "search",
+  "user" : "melodicmind42",
+  "timestamp" : 1385,
+  "message" : "Search returned 1 results",
+  "results" : [ "Rapid Rhythms" ]
+}, {
+  "command" : "select",
+  "user" : "melodicmind42",
   "timestamp" : 1390,
-  "message" : "Rewound successfully."
+  "message" : "Successfully selected Rapid Rhythms."
 }, {
-  "command" : "status",
-  "user" : "bob35",
-  "timestamp" : 1391,
-  "stats" : {
-    "name" : "Exploring Sonic Landscapes",
-    "remainedTime" : 2211,
-    "repeat" : "No Repeat",
-    "shuffle" : false,
-    "paused" : false
-  }
+  "command" : "load",
+  "user" : "melodicmind42",
+  "timestamp" : 1440,
+  "message" : "Playback loaded successfully."
+}, {
+  "command" : "like",
+  "user" : "melodicmind42",
+  "timestamp" : 1455,
+  "message" : "Like registered successfully."
+}, {
+  "user" : "melodicmind42",
+  "command" : "printCurrentPage",
+  "timestamp" : 1480,
+  "message" : "Liked songs:\n\t[Rapid Rhythms]\n\nFollowed playlists:\n\t[]"
 } ]

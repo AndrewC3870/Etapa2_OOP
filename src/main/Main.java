@@ -72,7 +72,7 @@ public final class Main {
                               final String filePath2) throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
         LibraryInput library = objectMapper.readValue(new File(CheckerConstants.TESTS_PATH + "library/library.json"), LibraryInput.class);
-        CommandInput[] commands = objectMapper.readValue(new File(CheckerConstants.TESTS_PATH + "test10_etapa2_next_prev_forward_backward.json"), CommandInput[].class);
+        CommandInput[] commands = objectMapper.readValue(new File(CheckerConstants.TESTS_PATH + filePath1), CommandInput[].class);
         ArrayNode outputs = objectMapper.createArrayNode();
 
         Admin.setUsers(library.getUsers());

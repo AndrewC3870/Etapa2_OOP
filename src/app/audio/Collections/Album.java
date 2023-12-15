@@ -25,6 +25,14 @@ public class Album extends AudioCollection {
         this.songs = songs;
 
     }
+    public Integer calculateLikes() {
+        int likes = 0;
+        for(Song song: convertSongs()) {
+            likes += song.getLikes();
+        }
+        return likes;
+    }
+
 
     public ArrayList<Song> convertSongs() {
         ArrayList<Song> converted = new ArrayList<>();

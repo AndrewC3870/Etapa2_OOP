@@ -1,292 +1,336 @@
 [ {
   "command" : "addUser",
   "user" : "melodymaster",
-  "timestamp" : 2,
+  "timestamp" : 1,
   "message" : "The username melodymaster has been added successfully."
 }, {
   "command" : "addAlbum",
   "user" : "melodymaster",
-  "timestamp" : 4,
+  "timestamp" : 2,
   "message" : "melodymaster has added new album successfully."
 }, {
-  "command" : "createPlaylist",
-  "user" : "bob35",
-  "timestamp" : 150,
-  "message" : "Playlist created successfully."
+  "command" : "addUser",
+  "user" : "rhythmicrider58",
+  "timestamp" : 30,
+  "message" : "The username rhythmicrider58 has been added successfully."
 }, {
   "command" : "search",
-  "user" : "bob35",
-  "timestamp" : 170,
+  "user" : "emily30",
+  "timestamp" : 1000,
   "message" : "Search returned 1 results",
   "results" : [ "Night Pulse" ]
 }, {
+  "command" : "repeat",
+  "user" : "emily30",
+  "timestamp" : 1035,
+  "message" : "Please load a source before setting the repeat status."
+}, {
   "command" : "select",
-  "user" : "bob35",
-  "timestamp" : 190,
+  "user" : "emily30",
+  "timestamp" : 1100,
   "message" : "Successfully selected Night Pulse."
 }, {
   "command" : "load",
-  "user" : "bob35",
-  "timestamp" : 195,
+  "user" : "emily30",
+  "timestamp" : 1120,
   "message" : "Playback loaded successfully."
 }, {
-  "command" : "addRemoveInPlaylist",
-  "user" : "bob35",
-  "timestamp" : 240,
-  "message" : "Successfully added to playlist."
-}, {
   "command" : "search",
-  "user" : "bob35",
-  "timestamp" : 270,
+  "user" : "rhythmicrider58",
+  "timestamp" : 1170,
   "message" : "Search returned 5 results",
-  "results" : [ "Shape of You", "Don't", "Maps", "The Man", "Freedom" ]
-}, {
-  "command" : "select",
-  "user" : "bob35",
-  "timestamp" : 290,
-  "message" : "Successfully selected Shape of You."
-}, {
-  "command" : "load",
-  "user" : "bob35",
-  "timestamp" : 295,
-  "message" : "Playback loaded successfully."
-}, {
-  "command" : "addRemoveInPlaylist",
-  "user" : "bob35",
-  "timestamp" : 320,
-  "message" : "Successfully added to playlist."
-}, {
-  "command" : "search",
-  "user" : "bob35",
-  "timestamp" : 370,
-  "message" : "Search returned 5 results",
-  "results" : [ "Stairway to Heaven", "Under Pressure", "Dream On", "Big Pimpin'", "The Unforgiven" ]
-}, {
-  "command" : "select",
-  "user" : "bob35",
-  "timestamp" : 390,
-  "message" : "Successfully selected Stairway to Heaven."
-}, {
-  "command" : "load",
-  "user" : "bob35",
-  "timestamp" : 420,
-  "message" : "Playback loaded successfully."
-}, {
-  "command" : "addRemoveInPlaylist",
-  "user" : "bob35",
-  "timestamp" : 430,
-  "message" : "Successfully added to playlist."
-}, {
-  "command" : "search",
-  "user" : "bob35",
-  "timestamp" : 440,
-  "message" : "Search returned 1 results",
-  "results" : [ "Vibrant Echoes" ]
-}, {
-  "command" : "select",
-  "user" : "bob35",
-  "timestamp" : 445,
-  "message" : "Successfully selected Vibrant Echoes."
-}, {
-  "command" : "load",
-  "user" : "bob35",
-  "timestamp" : 446,
-  "message" : "Playback loaded successfully."
-}, {
-  "command" : "addRemoveInPlaylist",
-  "user" : "bob35",
-  "timestamp" : 450,
-  "message" : "Successfully added to playlist."
+  "results" : [ "Sicko Mode", "Stargazing", "Sicko Mode", "Swimming Pools (Drank)", "Synth Symphony" ]
 }, {
   "command" : "status",
-  "user" : "bob35",
-  "timestamp" : 480,
+  "user" : "emily30",
+  "timestamp" : 1190,
   "stats" : {
-    "name" : "Vibrant Echoes",
-    "remainedTime" : 216,
+    "name" : "Night Pulse",
+    "remainedTime" : 170,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
   }
 }, {
+  "command" : "repeat",
+  "user" : "emily30",
+  "timestamp" : 1191,
+  "message" : "Repeat mode changed to repeat once."
+}, {
+  "command" : "repeat",
+  "user" : "emily30",
+  "timestamp" : 1192,
+  "message" : "Repeat mode changed to repeat infinite."
+}, {
+  "command" : "repeat",
+  "user" : "emily30",
+  "timestamp" : 2000,
+  "message" : "Repeat mode changed to no repeat."
+}, {
+  "command" : "select",
+  "user" : "rhythmicrider58",
+  "timestamp" : 2050,
+  "message" : "Successfully selected Synth Symphony."
+}, {
+  "command" : "status",
+  "user" : "emily30",
+  "timestamp" : 2100,
+  "stats" : {
+    "name" : "",
+    "remainedTime" : 0,
+    "repeat" : "No Repeat",
+    "shuffle" : false,
+    "paused" : true
+  }
+}, {
+  "command" : "repeat",
+  "user" : "emily30",
+  "timestamp" : 2135,
+  "message" : "Please load a source before setting the repeat status."
+}, {
+  "command" : "load",
+  "user" : "rhythmicrider58",
+  "timestamp" : 2185,
+  "message" : "Playback loaded successfully."
+}, {
+  "command" : "status",
+  "user" : "emily30",
+  "timestamp" : 2200,
+  "stats" : {
+    "name" : "",
+    "remainedTime" : 0,
+    "repeat" : "No Repeat",
+    "shuffle" : false,
+    "paused" : true
+  }
+}, {
   "command" : "search",
-  "user" : "bob35",
-  "timestamp" : 500,
+  "user" : "emily30",
+  "timestamp" : 2245,
+  "message" : "Search returned 0 results",
+  "results" : [ ]
+}, {
+  "command" : "repeat",
+  "user" : "emily30",
+  "timestamp" : 2290,
+  "message" : "Please load a source before setting the repeat status."
+}, {
+  "command" : "like",
+  "user" : "rhythmicrider58",
+  "timestamp" : 2295,
+  "message" : "Like registered successfully."
+}, {
+  "command" : "repeat",
+  "user" : "rhythmicrider58",
+  "timestamp" : 2480,
+  "message" : "Repeat mode changed to repeat once."
+}, {
+  "command" : "forward",
+  "user" : "rhythmicrider58",
+  "timestamp" : 2555,
+  "message" : "The loaded source is not a podcast."
+}, {
+  "command" : "changePage",
+  "user" : "rhythmicrider58",
+  "timestamp" : 2755,
+  "message" : "rhythmicrider58 accessed LikedContent successfully."
+}, {
+  "command" : "deleteUser",
+  "user" : "melodymaster",
+  "timestamp" : 2760,
+  "message" : "melodymaster can't be deleted."
+}, {
+  "command" : "load",
+  "user" : "emily30",
+  "timestamp" : 3000,
+  "message" : "Please select a source before attempting to load."
+}, {
+  "command" : "status",
+  "user" : "emily30",
+  "timestamp" : 3100,
+  "stats" : {
+    "name" : "",
+    "remainedTime" : 0,
+    "repeat" : "No Repeat",
+    "shuffle" : false,
+    "paused" : true
+  }
+}, {
+  "command" : "createPlaylist",
+  "user" : "emily30",
+  "timestamp" : 3150,
+  "message" : "Playlist created successfully."
+}, {
+  "command" : "search",
+  "user" : "emily30",
+  "timestamp" : 3170,
+  "message" : "Search returned 1 results",
+  "results" : [ "99 Problems" ]
+}, {
+  "command" : "select",
+  "user" : "emily30",
+  "timestamp" : 3190,
+  "message" : "Successfully selected 99 Problems."
+}, {
+  "command" : "search",
+  "user" : "rhythmicrider58",
+  "timestamp" : 3190,
   "message" : "Search returned 1 results",
   "results" : [ "My favourite songs" ]
 }, {
+  "command" : "load",
+  "user" : "emily30",
+  "timestamp" : 3195,
+  "message" : "Playback loaded successfully."
+}, {
+  "command" : "repeat",
+  "user" : "emily30",
+  "timestamp" : 3200,
+  "message" : "Repeat mode changed to repeat once."
+}, {
+  "command" : "status",
+  "user" : "emily30",
+  "timestamp" : 3220,
+  "stats" : {
+    "name" : "99 Problems",
+    "remainedTime" : 209,
+    "repeat" : "Repeat Once",
+    "shuffle" : false,
+    "paused" : false
+  }
+}, {
   "command" : "select",
-  "user" : "bob35",
-  "timestamp" : 510,
+  "user" : "rhythmicrider58",
+  "timestamp" : 3225,
   "message" : "Successfully selected My favourite songs."
 }, {
-  "command" : "load",
-  "user" : "bob35",
-  "timestamp" : 650,
-  "message" : "Playback loaded successfully."
-}, {
-  "command" : "status",
-  "user" : "bob35",
-  "timestamp" : 655,
-  "stats" : {
-    "name" : "Night Pulse",
-    "remainedTime" : 235,
-    "repeat" : "No Repeat",
-    "shuffle" : false,
-    "paused" : false
-  }
-}, {
-  "command" : "next",
-  "user" : "bob35",
-  "timestamp" : 670,
-  "message" : "Skipped to next track successfully. The current track is Shape of You."
-}, {
-  "command" : "status",
-  "user" : "bob35",
-  "timestamp" : 690,
-  "stats" : {
-    "name" : "Shape of You",
-    "remainedTime" : 213,
-    "repeat" : "No Repeat",
-    "shuffle" : false,
-    "paused" : false
-  }
-}, {
-  "command" : "prev",
-  "user" : "bob35",
-  "timestamp" : 710,
-  "message" : "Returned to previous track successfully. The current track is Shape of You."
-}, {
-  "command" : "status",
-  "user" : "bob35",
-  "timestamp" : 711,
-  "stats" : {
-    "name" : "Shape of You",
-    "remainedTime" : 192,
-    "repeat" : "No Repeat",
-    "shuffle" : false,
-    "paused" : false
-  }
-}, {
-  "command" : "prev",
-  "user" : "bob35",
-  "timestamp" : 712,
-  "message" : "Returned to previous track successfully. The current track is Shape of You."
-}, {
-  "command" : "prev",
-  "user" : "bob35",
-  "timestamp" : 712,
-  "message" : "Returned to previous track successfully. The current track is Shape of You."
-}, {
-  "command" : "status",
-  "user" : "bob35",
-  "timestamp" : 713,
-  "stats" : {
-    "name" : "Shape of You",
-    "remainedTime" : 190,
-    "repeat" : "No Repeat",
-    "shuffle" : false,
-    "paused" : false
-  }
-}, {
-  "command" : "addUser",
-  "user" : "soundseeker",
-  "timestamp" : 715,
-  "message" : "The username soundseeker has been added successfully."
-}, {
-  "command" : "addPodcast",
-  "user" : "soundseeker",
-  "timestamp" : 716,
-  "message" : "soundseeker has added new podcast successfully."
+  "command" : "addRemoveInPlaylist",
+  "user" : "emily30",
+  "timestamp" : 3240,
+  "message" : "Successfully added to playlist."
 }, {
   "command" : "search",
-  "user" : "bob35",
-  "timestamp" : 800,
+  "user" : "emily30",
+  "timestamp" : 3260,
   "message" : "Search returned 1 results",
-  "results" : [ "Auditory Adventures" ]
+  "results" : [ "My favourite songs" ]
+}, {
+  "command" : "repeat",
+  "user" : "emily30",
+  "timestamp" : 3270,
+  "message" : "Please load a source before setting the repeat status."
+}, {
+  "command" : "follow",
+  "user" : "rhythmicrider58",
+  "timestamp" : 3285,
+  "message" : "Playlist followed successfully."
 }, {
   "command" : "select",
-  "user" : "bob35",
-  "timestamp" : 890,
-  "message" : "Successfully selected Auditory Adventures."
+  "user" : "emily30",
+  "timestamp" : 3290,
+  "message" : "Successfully selected My favourite songs."
 }, {
-  "command" : "load",
-  "user" : "bob35",
-  "timestamp" : 900,
-  "message" : "Playback loaded successfully."
+  "command" : "repeat",
+  "user" : "emily30",
+  "timestamp" : 3295,
+  "message" : "Please load a source before setting the repeat status."
 }, {
-  "command" : "status",
-  "user" : "bob35",
-  "timestamp" : 1049,
-  "stats" : {
-    "name" : "Exploring Sonic Landscapes",
-    "remainedTime" : 2551,
-    "repeat" : "No Repeat",
-    "shuffle" : false,
-    "paused" : false
-  }
-}, {
-  "command" : "forward",
-  "user" : "bob35",
-  "timestamp" : 1050,
-  "message" : "Skipped forward successfully."
-}, {
-  "command" : "removePodcast",
-  "user" : "soundseeker",
-  "timestamp" : 1050,
-  "message" : "soundseeker can't delete this podcast."
+  "user" : "rhythmicrider58",
+  "command" : "printCurrentPage",
+  "timestamp" : 3300,
+  "message" : "Liked songs:\n\t[Synth Symphony - melodymaster]\n\nFollowed playlists:\n\t[My favourite songs - emily30]"
 }, {
   "command" : "status",
-  "user" : "bob35",
-  "timestamp" : 1051,
+  "user" : "emily30",
+  "timestamp" : 3310,
   "stats" : {
-    "name" : "Exploring Sonic Landscapes",
-    "remainedTime" : 2459,
+    "name" : "",
+    "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
+}, {
+  "command" : "changePage",
+  "user" : "rhythmicrider58",
+  "timestamp" : 3320,
+  "message" : "rhythmicrider58 accessed Home successfully."
+}, {
+  "command" : "repeat",
+  "user" : "emily30",
+  "timestamp" : 3335,
+  "message" : "Please load a source before setting the repeat status."
+}, {
+  "command" : "deleteUser",
+  "user" : "melodymaster",
+  "timestamp" : 3335,
+  "message" : "melodymaster was successfully deleted."
 }, {
   "command" : "search",
-  "user" : "bob35",
-  "timestamp" : 1198,
+  "user" : "rhythmicrider58",
+  "timestamp" : 3380,
+  "message" : "Search returned 0 results",
+  "results" : [ ]
+}, {
+  "command" : "search",
+  "user" : "rhythmicrider58",
+  "timestamp" : 3395,
   "message" : "Search returned 1 results",
-  "results" : [ "Auditory Adventures" ]
+  "results" : [ "Shape of You" ]
+}, {
+  "command" : "status",
+  "user" : "emily30",
+  "timestamp" : 3400,
+  "stats" : {
+    "name" : "",
+    "remainedTime" : 0,
+    "repeat" : "No Repeat",
+    "shuffle" : false,
+    "paused" : true
+  }
+}, {
+  "command" : "createPlaylist",
+  "user" : "emily30",
+  "timestamp" : 3405,
+  "message" : "A playlist with the same name already exists."
 }, {
   "command" : "select",
-  "user" : "bob35",
-  "timestamp" : 1199,
-  "message" : "Successfully selected Auditory Adventures."
+  "user" : "rhythmicrider58",
+  "timestamp" : 3410,
+  "message" : "Successfully selected Shape of You."
+}, {
+  "command" : "repeat",
+  "user" : "emily30",
+  "timestamp" : 3435,
+  "message" : "Please load a source before setting the repeat status."
+}, {
+  "command" : "showPlaylists",
+  "user" : "emily30",
+  "timestamp" : 3438,
+  "result" : [ {
+    "name" : "My favourite songs",
+    "songs" : [ "99 Problems" ],
+    "visibility" : "public",
+    "followers" : 1
+  } ]
 }, {
   "command" : "load",
-  "user" : "bob35",
-  "timestamp" : 1200,
+  "user" : "rhythmicrider58",
+  "timestamp" : 3440,
   "message" : "Playback loaded successfully."
 }, {
-  "command" : "status",
-  "user" : "bob35",
-  "timestamp" : 1389,
-  "stats" : {
-    "name" : "Exploring Sonic Landscapes",
-    "remainedTime" : 2123,
-    "repeat" : "No Repeat",
-    "shuffle" : false,
-    "paused" : false
-  }
+  "command" : "deleteUser",
+  "user" : "emily30",
+  "timestamp" : 3443,
+  "message" : "emily30 was successfully deleted."
 }, {
-  "command" : "backward",
-  "user" : "bob35",
-  "timestamp" : 1390,
-  "message" : "Rewound successfully."
+  "command" : "like",
+  "user" : "rhythmicrider58",
+  "timestamp" : 3445,
+  "message" : "Like registered successfully."
 }, {
-  "command" : "status",
-  "user" : "bob35",
-  "timestamp" : 1391,
-  "stats" : {
-    "name" : "Exploring Sonic Landscapes",
-    "remainedTime" : 2211,
-    "repeat" : "No Repeat",
-    "shuffle" : false,
-    "paused" : false
-  }
+  "user" : "rhythmicrider58",
+  "command" : "printCurrentPage",
+  "timestamp" : 7000,
+  "message" : "Liked songs:\n\t[Shape of You]\n\nFollowed playlists:\n\t[]"
 } ]

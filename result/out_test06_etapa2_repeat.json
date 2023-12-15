@@ -1,292 +1,387 @@
 [ {
   "command" : "addUser",
   "user" : "melodymaster",
-  "timestamp" : 2,
+  "timestamp" : 1,
   "message" : "The username melodymaster has been added successfully."
 }, {
   "command" : "addAlbum",
   "user" : "melodymaster",
-  "timestamp" : 4,
+  "timestamp" : 2,
   "message" : "melodymaster has added new album successfully."
-}, {
-  "command" : "createPlaylist",
-  "user" : "bob35",
-  "timestamp" : 150,
-  "message" : "Playlist created successfully."
 }, {
   "command" : "search",
   "user" : "bob35",
-  "timestamp" : 170,
+  "timestamp" : 6,
+  "message" : "Search returned 1 results",
+  "results" : [ "Retro Rhythms" ]
+}, {
+  "command" : "search",
+  "user" : "alice22",
+  "timestamp" : 10,
   "message" : "Search returned 1 results",
   "results" : [ "Night Pulse" ]
 }, {
   "command" : "select",
-  "user" : "bob35",
-  "timestamp" : 190,
+  "user" : "alice22",
+  "timestamp" : 15,
   "message" : "Successfully selected Night Pulse."
 }, {
   "command" : "load",
-  "user" : "bob35",
-  "timestamp" : 195,
+  "user" : "alice22",
+  "timestamp" : 20,
   "message" : "Playback loaded successfully."
-}, {
-  "command" : "addRemoveInPlaylist",
-  "user" : "bob35",
-  "timestamp" : 240,
-  "message" : "Successfully added to playlist."
-}, {
-  "command" : "search",
-  "user" : "bob35",
-  "timestamp" : 270,
-  "message" : "Search returned 5 results",
-  "results" : [ "Shape of You", "Don't", "Maps", "The Man", "Freedom" ]
 }, {
   "command" : "select",
   "user" : "bob35",
-  "timestamp" : 290,
-  "message" : "Successfully selected Shape of You."
-}, {
-  "command" : "load",
-  "user" : "bob35",
-  "timestamp" : 295,
-  "message" : "Playback loaded successfully."
-}, {
-  "command" : "addRemoveInPlaylist",
-  "user" : "bob35",
-  "timestamp" : 320,
-  "message" : "Successfully added to playlist."
-}, {
-  "command" : "search",
-  "user" : "bob35",
-  "timestamp" : 370,
-  "message" : "Search returned 5 results",
-  "results" : [ "Stairway to Heaven", "Under Pressure", "Dream On", "Big Pimpin'", "The Unforgiven" ]
-}, {
-  "command" : "select",
-  "user" : "bob35",
-  "timestamp" : 390,
-  "message" : "Successfully selected Stairway to Heaven."
-}, {
-  "command" : "load",
-  "user" : "bob35",
-  "timestamp" : 420,
-  "message" : "Playback loaded successfully."
-}, {
-  "command" : "addRemoveInPlaylist",
-  "user" : "bob35",
-  "timestamp" : 430,
-  "message" : "Successfully added to playlist."
-}, {
-  "command" : "search",
-  "user" : "bob35",
-  "timestamp" : 440,
-  "message" : "Search returned 1 results",
-  "results" : [ "Vibrant Echoes" ]
-}, {
-  "command" : "select",
-  "user" : "bob35",
-  "timestamp" : 445,
-  "message" : "Successfully selected Vibrant Echoes."
-}, {
-  "command" : "load",
-  "user" : "bob35",
-  "timestamp" : 446,
-  "message" : "Playback loaded successfully."
-}, {
-  "command" : "addRemoveInPlaylist",
-  "user" : "bob35",
-  "timestamp" : 450,
-  "message" : "Successfully added to playlist."
+  "timestamp" : 25,
+  "message" : "Successfully selected Retro Rhythms."
 }, {
   "command" : "status",
-  "user" : "bob35",
-  "timestamp" : 480,
+  "user" : "alice22",
+  "timestamp" : 30,
   "stats" : {
-    "name" : "Vibrant Echoes",
-    "remainedTime" : 216,
+    "name" : "Night Pulse",
+    "remainedTime" : 230,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
   }
 }, {
-  "command" : "search",
+  "command" : "repeat",
+  "user" : "alice22",
+  "timestamp" : 31,
+  "message" : "Repeat mode changed to repeat once."
+}, {
+  "command" : "createPlaylist",
   "user" : "bob35",
-  "timestamp" : 500,
+  "timestamp" : 31,
+  "message" : "Playlist created successfully."
+}, {
+  "command" : "status",
+  "user" : "alice22",
+  "timestamp" : 32,
+  "stats" : {
+    "name" : "Night Pulse",
+    "remainedTime" : 228,
+    "repeat" : "Repeat Once",
+    "shuffle" : false,
+    "paused" : false
+  }
+}, {
+  "command" : "status",
+  "user" : "alice22",
+  "timestamp" : 257,
+  "stats" : {
+    "name" : "Night Pulse",
+    "remainedTime" : 3,
+    "repeat" : "Repeat Once",
+    "shuffle" : false,
+    "paused" : false
+  }
+}, {
+  "command" : "repeat",
+  "user" : "alice22",
+  "timestamp" : 258,
+  "message" : "Repeat mode changed to repeat infinite."
+}, {
+  "command" : "repeat",
+  "user" : "alice22",
+  "timestamp" : 258,
+  "message" : "Repeat mode changed to no repeat."
+}, {
+  "command" : "status",
+  "user" : "alice22",
+  "timestamp" : 1000,
+  "stats" : {
+    "name" : "",
+    "remainedTime" : 0,
+    "repeat" : "No Repeat",
+    "shuffle" : false,
+    "paused" : true
+  }
+}, {
+  "command" : "load",
+  "user" : "bob35",
+  "timestamp" : 1000,
+  "message" : "Playback loaded successfully."
+}, {
+  "command" : "createPlaylist",
+  "user" : "alice22",
+  "timestamp" : 1005,
+  "message" : "Playlist created successfully."
+}, {
+  "command" : "search",
+  "user" : "alice22",
+  "timestamp" : 1006,
+  "message" : "Search returned 1 results",
+  "results" : [ "Harmonic Horizons" ]
+}, {
+  "command" : "select",
+  "user" : "alice22",
+  "timestamp" : 1007,
+  "message" : "Successfully selected Harmonic Horizons."
+}, {
+  "command" : "load",
+  "user" : "alice22",
+  "timestamp" : 1008,
+  "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "alice22",
+  "timestamp" : 1009,
+  "message" : "Successfully added to playlist."
+}, {
+  "command" : "removeAlbum",
+  "user" : "melodymaster",
+  "timestamp" : 1010,
+  "message" : "melodymaster can't delete this album."
+}, {
+  "command" : "search",
+  "user" : "alice22",
+  "timestamp" : 1010,
+  "message" : "Search returned 1 results",
+  "results" : [ "Hustle Hard" ]
+}, {
+  "command" : "select",
+  "user" : "alice22",
+  "timestamp" : 1011,
+  "message" : "Successfully selected Hustle Hard."
+}, {
+  "command" : "load",
+  "user" : "alice22",
+  "timestamp" : 1012,
+  "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "bob35",
+  "timestamp" : 1012,
+  "message" : "Successfully added to playlist."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "alice22",
+  "timestamp" : 1013,
+  "message" : "Successfully added to playlist."
+}, {
+  "command" : "search",
+  "user" : "alice22",
+  "timestamp" : 1014,
+  "message" : "Search returned 1 results",
+  "results" : [ "Butterfly Effect" ]
+}, {
+  "command" : "select",
+  "user" : "alice22",
+  "timestamp" : 1015,
+  "message" : "Successfully selected Butterfly Effect."
+}, {
+  "command" : "load",
+  "user" : "alice22",
+  "timestamp" : 1016,
+  "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "alice22",
+  "timestamp" : 1017,
+  "message" : "Successfully added to playlist."
+}, {
+  "command" : "search",
+  "user" : "alice22",
+  "timestamp" : 1018,
+  "message" : "Search returned 1 results",
+  "results" : [ "Moves Like Jagger" ]
+}, {
+  "command" : "select",
+  "user" : "alice22",
+  "timestamp" : 1019,
+  "message" : "Successfully selected Moves Like Jagger."
+}, {
+  "command" : "load",
+  "user" : "alice22",
+  "timestamp" : 1020,
+  "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "alice22",
+  "timestamp" : 1021,
+  "message" : "Successfully added to playlist."
+}, {
+  "command" : "search",
+  "user" : "carol19",
+  "timestamp" : 1021,
+  "message" : "Search returned 1 results",
+  "results" : [ "My favourite songs" ]
+}, {
+  "command" : "search",
+  "user" : "alice22",
+  "timestamp" : 1022,
+  "message" : "Search returned 1 results",
+  "results" : [ "Dream Chaser" ]
+}, {
+  "command" : "select",
+  "user" : "alice22",
+  "timestamp" : 1023,
+  "message" : "Successfully selected Dream Chaser."
+}, {
+  "command" : "load",
+  "user" : "alice22",
+  "timestamp" : 1024,
+  "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "alice22",
+  "timestamp" : 1025,
+  "message" : "Successfully added to playlist."
+}, {
+  "command" : "select",
+  "user" : "carol19",
+  "timestamp" : 1025,
+  "message" : "Successfully selected My favourite songs."
+}, {
+  "command" : "search",
+  "user" : "alice22",
+  "timestamp" : 1026,
   "message" : "Search returned 1 results",
   "results" : [ "My favourite songs" ]
 }, {
   "command" : "select",
-  "user" : "bob35",
-  "timestamp" : 510,
+  "user" : "alice22",
+  "timestamp" : 1027,
   "message" : "Successfully selected My favourite songs."
 }, {
+  "command" : "follow",
+  "user" : "carol19",
+  "timestamp" : 1027,
+  "message" : "Playlist followed successfully."
+}, {
   "command" : "load",
-  "user" : "bob35",
-  "timestamp" : 650,
+  "user" : "alice22",
+  "timestamp" : 1028,
   "message" : "Playback loaded successfully."
 }, {
   "command" : "status",
-  "user" : "bob35",
-  "timestamp" : 655,
+  "user" : "alice22",
+  "timestamp" : 1035,
   "stats" : {
-    "name" : "Night Pulse",
-    "remainedTime" : 235,
+    "name" : "Vibrant Echoes",
+    "remainedTime" : 243,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
   }
 }, {
-  "command" : "next",
-  "user" : "bob35",
-  "timestamp" : 670,
-  "message" : "Skipped to next track successfully. The current track is Shape of You."
+  "command" : "repeat",
+  "user" : "alice22",
+  "timestamp" : 1036,
+  "message" : "Repeat mode changed to repeat all."
 }, {
   "command" : "status",
-  "user" : "bob35",
-  "timestamp" : 690,
+  "user" : "alice22",
+  "timestamp" : 1037,
   "stats" : {
-    "name" : "Shape of You",
-    "remainedTime" : 213,
-    "repeat" : "No Repeat",
+    "name" : "Vibrant Echoes",
+    "remainedTime" : 241,
+    "repeat" : "Repeat All",
     "shuffle" : false,
     "paused" : false
   }
 }, {
-  "command" : "prev",
-  "user" : "bob35",
-  "timestamp" : 710,
-  "message" : "Returned to previous track successfully. The current track is Shape of You."
-}, {
-  "command" : "status",
-  "user" : "bob35",
-  "timestamp" : 711,
-  "stats" : {
-    "name" : "Shape of You",
-    "remainedTime" : 192,
-    "repeat" : "No Repeat",
-    "shuffle" : false,
-    "paused" : false
-  }
-}, {
-  "command" : "prev",
-  "user" : "bob35",
-  "timestamp" : 712,
-  "message" : "Returned to previous track successfully. The current track is Shape of You."
-}, {
-  "command" : "prev",
-  "user" : "bob35",
-  "timestamp" : 712,
-  "message" : "Returned to previous track successfully. The current track is Shape of You."
-}, {
-  "command" : "status",
-  "user" : "bob35",
-  "timestamp" : 713,
-  "stats" : {
-    "name" : "Shape of You",
-    "remainedTime" : 190,
-    "repeat" : "No Repeat",
-    "shuffle" : false,
-    "paused" : false
-  }
-}, {
-  "command" : "addUser",
-  "user" : "soundseeker",
-  "timestamp" : 715,
-  "message" : "The username soundseeker has been added successfully."
-}, {
-  "command" : "addPodcast",
-  "user" : "soundseeker",
-  "timestamp" : 716,
-  "message" : "soundseeker has added new podcast successfully."
+  "user" : "alice22",
+  "command" : "printCurrentPage",
+  "timestamp" : 1038,
+  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
-  "user" : "bob35",
-  "timestamp" : 800,
-  "message" : "Search returned 1 results",
-  "results" : [ "Auditory Adventures" ]
+  "user" : "carol19",
+  "timestamp" : 1039,
+  "message" : "Search returned 0 results",
+  "results" : [ ]
+}, {
+  "user" : "carol19",
+  "command" : "printCurrentPage",
+  "timestamp" : 1040,
+  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[My favourite songs]"
+}, {
+  "command" : "status",
+  "user" : "alice22",
+  "timestamp" : 2099,
+  "stats" : {
+    "name" : "Dream Chaser",
+    "remainedTime" : 7,
+    "repeat" : "Repeat All",
+    "shuffle" : false,
+    "paused" : false
+  }
 }, {
   "command" : "select",
-  "user" : "bob35",
-  "timestamp" : 890,
-  "message" : "Successfully selected Auditory Adventures."
+  "user" : "carol19",
+  "timestamp" : 2100,
+  "message" : "The selected ID is too high."
 }, {
-  "command" : "load",
-  "user" : "bob35",
-  "timestamp" : 900,
-  "message" : "Playback loaded successfully."
+  "command" : "repeat",
+  "user" : "alice22",
+  "timestamp" : 2100,
+  "message" : "Repeat mode changed to repeat current song."
 }, {
   "command" : "status",
-  "user" : "bob35",
-  "timestamp" : 1049,
+  "user" : "alice22",
+  "timestamp" : 2101,
   "stats" : {
-    "name" : "Exploring Sonic Landscapes",
-    "remainedTime" : 2551,
+    "name" : "Dream Chaser",
+    "remainedTime" : 5,
+    "repeat" : "Repeat Current Song",
+    "shuffle" : false,
+    "paused" : false
+  }
+}, {
+  "command" : "changePage",
+  "user" : "carol19",
+  "timestamp" : 2102,
+  "message" : "carol19 accessed LikedContent successfully."
+}, {
+  "command" : "status",
+  "user" : "alice22",
+  "timestamp" : 2334,
+  "stats" : {
+    "name" : "Dream Chaser",
+    "remainedTime" : 182,
+    "repeat" : "Repeat Current Song",
+    "shuffle" : false,
+    "paused" : false
+  }
+}, {
+  "command" : "follow",
+  "user" : "carol19",
+  "timestamp" : 2335,
+  "message" : "Please select a source before following or unfollowing."
+}, {
+  "command" : "repeat",
+  "user" : "alice22",
+  "timestamp" : 2335,
+  "message" : "Repeat mode changed to no repeat."
+}, {
+  "command" : "status",
+  "user" : "alice22",
+  "timestamp" : 2336,
+  "stats" : {
+    "name" : "Dream Chaser",
+    "remainedTime" : 180,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
   }
 }, {
-  "command" : "forward",
-  "user" : "bob35",
-  "timestamp" : 1050,
-  "message" : "Skipped forward successfully."
-}, {
-  "command" : "removePodcast",
-  "user" : "soundseeker",
-  "timestamp" : 1050,
-  "message" : "soundseeker can't delete this podcast."
+  "user" : "carol19",
+  "command" : "printCurrentPage",
+  "timestamp" : 2338,
+  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[My favourite songs - alice22]"
 }, {
   "command" : "status",
-  "user" : "bob35",
-  "timestamp" : 1051,
+  "user" : "alice22",
+  "timestamp" : 3600,
   "stats" : {
-    "name" : "Exploring Sonic Landscapes",
-    "remainedTime" : 2459,
+    "name" : "",
+    "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
-  }
-}, {
-  "command" : "search",
-  "user" : "bob35",
-  "timestamp" : 1198,
-  "message" : "Search returned 1 results",
-  "results" : [ "Auditory Adventures" ]
-}, {
-  "command" : "select",
-  "user" : "bob35",
-  "timestamp" : 1199,
-  "message" : "Successfully selected Auditory Adventures."
-}, {
-  "command" : "load",
-  "user" : "bob35",
-  "timestamp" : 1200,
-  "message" : "Playback loaded successfully."
-}, {
-  "command" : "status",
-  "user" : "bob35",
-  "timestamp" : 1389,
-  "stats" : {
-    "name" : "Exploring Sonic Landscapes",
-    "remainedTime" : 2123,
-    "repeat" : "No Repeat",
-    "shuffle" : false,
-    "paused" : false
-  }
-}, {
-  "command" : "backward",
-  "user" : "bob35",
-  "timestamp" : 1390,
-  "message" : "Rewound successfully."
-}, {
-  "command" : "status",
-  "user" : "bob35",
-  "timestamp" : 1391,
-  "stats" : {
-    "name" : "Exploring Sonic Landscapes",
-    "remainedTime" : 2211,
-    "repeat" : "No Repeat",
-    "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 } ]

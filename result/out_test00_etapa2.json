@@ -1,292 +1,183 @@
 [ {
-  "command" : "addUser",
-  "user" : "melodymaster",
-  "timestamp" : 2,
-  "message" : "The username melodymaster has been added successfully."
-}, {
-  "command" : "addAlbum",
-  "user" : "melodymaster",
-  "timestamp" : 4,
-  "message" : "melodymaster has added new album successfully."
-}, {
-  "command" : "createPlaylist",
-  "user" : "bob35",
-  "timestamp" : 150,
-  "message" : "Playlist created successfully."
-}, {
   "command" : "search",
-  "user" : "bob35",
-  "timestamp" : 170,
+  "user" : "alice22",
+  "timestamp" : 10,
   "message" : "Search returned 1 results",
-  "results" : [ "Night Pulse" ]
+  "results" : [ "TED Radio Hour" ]
 }, {
   "command" : "select",
-  "user" : "bob35",
-  "timestamp" : 190,
-  "message" : "Successfully selected Night Pulse."
+  "user" : "alice22",
+  "timestamp" : 15,
+  "message" : "Successfully selected TED Radio Hour."
 }, {
   "command" : "load",
-  "user" : "bob35",
-  "timestamp" : 195,
+  "user" : "alice22",
+  "timestamp" : 20,
   "message" : "Playback loaded successfully."
 }, {
-  "command" : "addRemoveInPlaylist",
-  "user" : "bob35",
-  "timestamp" : 240,
-  "message" : "Successfully added to playlist."
+  "command" : "status",
+  "user" : "alice22",
+  "timestamp" : 59,
+  "stats" : {
+    "name" : "The Power of Design",
+    "remainedTime" : 3065,
+    "repeat" : "No Repeat",
+    "shuffle" : false,
+    "paused" : false
+  }
 }, {
   "command" : "search",
-  "user" : "bob35",
-  "timestamp" : 270,
-  "message" : "Search returned 5 results",
-  "results" : [ "Shape of You", "Don't", "Maps", "The Man", "Freedom" ]
+  "user" : "alice22",
+  "timestamp" : 60,
+  "message" : "Search returned 1 results",
+  "results" : [ "Stairway to Heaven" ]
 }, {
   "command" : "select",
-  "user" : "bob35",
-  "timestamp" : 290,
-  "message" : "Successfully selected Shape of You."
-}, {
-  "command" : "load",
-  "user" : "bob35",
-  "timestamp" : 295,
-  "message" : "Playback loaded successfully."
-}, {
-  "command" : "addRemoveInPlaylist",
-  "user" : "bob35",
-  "timestamp" : 320,
-  "message" : "Successfully added to playlist."
-}, {
-  "command" : "search",
-  "user" : "bob35",
-  "timestamp" : 370,
-  "message" : "Search returned 5 results",
-  "results" : [ "Stairway to Heaven", "Under Pressure", "Dream On", "Big Pimpin'", "The Unforgiven" ]
-}, {
-  "command" : "select",
-  "user" : "bob35",
-  "timestamp" : 390,
+  "user" : "alice22",
+  "timestamp" : 65,
   "message" : "Successfully selected Stairway to Heaven."
 }, {
   "command" : "load",
-  "user" : "bob35",
-  "timestamp" : 420,
+  "user" : "alice22",
+  "timestamp" : 70,
+  "message" : "Playback loaded successfully."
+}, {
+  "command" : "search",
+  "user" : "alice22",
+  "timestamp" : 75,
+  "message" : "Search returned 1 results",
+  "results" : [ "TED Radio Hour" ]
+}, {
+  "command" : "select",
+  "user" : "alice22",
+  "timestamp" : 80,
+  "message" : "Successfully selected TED Radio Hour."
+}, {
+  "command" : "load",
+  "user" : "alice22",
+  "timestamp" : 85,
+  "message" : "Playback loaded successfully."
+}, {
+  "command" : "status",
+  "user" : "alice22",
+  "timestamp" : 86,
+  "stats" : {
+    "name" : "The Power of Design",
+    "remainedTime" : 3063,
+    "repeat" : "No Repeat",
+    "shuffle" : false,
+    "paused" : false
+  }
+}, {
+  "command" : "playPause",
+  "user" : "alice22",
+  "timestamp" : 3200,
+  "message" : "Playback paused successfully."
+}, {
+  "command" : "status",
+  "user" : "alice22",
+  "timestamp" : 3201,
+  "stats" : {
+    "name" : "The Science of Us",
+    "remainedTime" : 3081,
+    "repeat" : "No Repeat",
+    "shuffle" : false,
+    "paused" : true
+  }
+}, {
+  "command" : "createPlaylist",
+  "user" : "alice22",
+  "timestamp" : 3210,
+  "message" : "Playlist created successfully."
+}, {
+  "command" : "search",
+  "user" : "alice22",
+  "timestamp" : 3215,
+  "message" : "Search returned 2 results",
+  "results" : [ "Freedom", "Freedom" ]
+}, {
+  "command" : "select",
+  "user" : "alice22",
+  "timestamp" : 3220,
+  "message" : "Successfully selected Freedom."
+}, {
+  "command" : "load",
+  "user" : "alice22",
+  "timestamp" : 3225,
   "message" : "Playback loaded successfully."
 }, {
   "command" : "addRemoveInPlaylist",
-  "user" : "bob35",
-  "timestamp" : 430,
+  "user" : "alice22",
+  "timestamp" : 3230,
   "message" : "Successfully added to playlist."
 }, {
   "command" : "search",
-  "user" : "bob35",
-  "timestamp" : 440,
+  "user" : "alice22",
+  "timestamp" : 3235,
   "message" : "Search returned 1 results",
-  "results" : [ "Vibrant Echoes" ]
+  "results" : [ "Happier" ]
 }, {
   "command" : "select",
-  "user" : "bob35",
-  "timestamp" : 445,
-  "message" : "Successfully selected Vibrant Echoes."
+  "user" : "alice22",
+  "timestamp" : 3240,
+  "message" : "Successfully selected Happier."
 }, {
   "command" : "load",
-  "user" : "bob35",
-  "timestamp" : 446,
+  "user" : "alice22",
+  "timestamp" : 3245,
   "message" : "Playback loaded successfully."
 }, {
   "command" : "addRemoveInPlaylist",
-  "user" : "bob35",
-  "timestamp" : 450,
+  "user" : "alice22",
+  "timestamp" : 3250,
   "message" : "Successfully added to playlist."
 }, {
-  "command" : "status",
-  "user" : "bob35",
-  "timestamp" : 480,
-  "stats" : {
-    "name" : "Vibrant Echoes",
-    "remainedTime" : 216,
-    "repeat" : "No Repeat",
-    "shuffle" : false,
-    "paused" : false
-  }
-}, {
   "command" : "search",
-  "user" : "bob35",
-  "timestamp" : 500,
+  "user" : "alice22",
+  "timestamp" : 3255,
   "message" : "Search returned 1 results",
-  "results" : [ "My favourite songs" ]
+  "results" : [ "2010 hits" ]
 }, {
   "command" : "select",
-  "user" : "bob35",
-  "timestamp" : 510,
-  "message" : "Successfully selected My favourite songs."
+  "user" : "alice22",
+  "timestamp" : 3260,
+  "message" : "Successfully selected 2010 hits."
 }, {
   "command" : "load",
-  "user" : "bob35",
-  "timestamp" : 650,
+  "user" : "alice22",
+  "timestamp" : 3265,
   "message" : "Playback loaded successfully."
 }, {
   "command" : "status",
-  "user" : "bob35",
-  "timestamp" : 655,
+  "user" : "alice22",
+  "timestamp" : 3270,
   "stats" : {
-    "name" : "Night Pulse",
-    "remainedTime" : 235,
+    "name" : "Freedom",
+    "remainedTime" : 173,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
   }
 }, {
-  "command" : "next",
-  "user" : "bob35",
-  "timestamp" : 670,
-  "message" : "Skipped to next track successfully. The current track is Shape of You."
-}, {
   "command" : "status",
-  "user" : "bob35",
-  "timestamp" : 690,
+  "user" : "alice22",
+  "timestamp" : 3448,
   "stats" : {
-    "name" : "Shape of You",
-    "remainedTime" : 213,
+    "name" : "Happier",
+    "remainedTime" : 202,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
   }
 }, {
-  "command" : "prev",
-  "user" : "bob35",
-  "timestamp" : 710,
-  "message" : "Returned to previous track successfully. The current track is Shape of You."
-}, {
   "command" : "status",
-  "user" : "bob35",
-  "timestamp" : 711,
+  "user" : "alice22",
+  "timestamp" : 4000,
   "stats" : {
-    "name" : "Shape of You",
-    "remainedTime" : 192,
+    "name" : "",
+    "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
-  }
-}, {
-  "command" : "prev",
-  "user" : "bob35",
-  "timestamp" : 712,
-  "message" : "Returned to previous track successfully. The current track is Shape of You."
-}, {
-  "command" : "prev",
-  "user" : "bob35",
-  "timestamp" : 712,
-  "message" : "Returned to previous track successfully. The current track is Shape of You."
-}, {
-  "command" : "status",
-  "user" : "bob35",
-  "timestamp" : 713,
-  "stats" : {
-    "name" : "Shape of You",
-    "remainedTime" : 190,
-    "repeat" : "No Repeat",
-    "shuffle" : false,
-    "paused" : false
-  }
-}, {
-  "command" : "addUser",
-  "user" : "soundseeker",
-  "timestamp" : 715,
-  "message" : "The username soundseeker has been added successfully."
-}, {
-  "command" : "addPodcast",
-  "user" : "soundseeker",
-  "timestamp" : 716,
-  "message" : "soundseeker has added new podcast successfully."
-}, {
-  "command" : "search",
-  "user" : "bob35",
-  "timestamp" : 800,
-  "message" : "Search returned 1 results",
-  "results" : [ "Auditory Adventures" ]
-}, {
-  "command" : "select",
-  "user" : "bob35",
-  "timestamp" : 890,
-  "message" : "Successfully selected Auditory Adventures."
-}, {
-  "command" : "load",
-  "user" : "bob35",
-  "timestamp" : 900,
-  "message" : "Playback loaded successfully."
-}, {
-  "command" : "status",
-  "user" : "bob35",
-  "timestamp" : 1049,
-  "stats" : {
-    "name" : "Exploring Sonic Landscapes",
-    "remainedTime" : 2551,
-    "repeat" : "No Repeat",
-    "shuffle" : false,
-    "paused" : false
-  }
-}, {
-  "command" : "forward",
-  "user" : "bob35",
-  "timestamp" : 1050,
-  "message" : "Skipped forward successfully."
-}, {
-  "command" : "removePodcast",
-  "user" : "soundseeker",
-  "timestamp" : 1050,
-  "message" : "soundseeker can't delete this podcast."
-}, {
-  "command" : "status",
-  "user" : "bob35",
-  "timestamp" : 1051,
-  "stats" : {
-    "name" : "Exploring Sonic Landscapes",
-    "remainedTime" : 2459,
-    "repeat" : "No Repeat",
-    "shuffle" : false,
-    "paused" : false
-  }
-}, {
-  "command" : "search",
-  "user" : "bob35",
-  "timestamp" : 1198,
-  "message" : "Search returned 1 results",
-  "results" : [ "Auditory Adventures" ]
-}, {
-  "command" : "select",
-  "user" : "bob35",
-  "timestamp" : 1199,
-  "message" : "Successfully selected Auditory Adventures."
-}, {
-  "command" : "load",
-  "user" : "bob35",
-  "timestamp" : 1200,
-  "message" : "Playback loaded successfully."
-}, {
-  "command" : "status",
-  "user" : "bob35",
-  "timestamp" : 1389,
-  "stats" : {
-    "name" : "Exploring Sonic Landscapes",
-    "remainedTime" : 2123,
-    "repeat" : "No Repeat",
-    "shuffle" : false,
-    "paused" : false
-  }
-}, {
-  "command" : "backward",
-  "user" : "bob35",
-  "timestamp" : 1390,
-  "message" : "Rewound successfully."
-}, {
-  "command" : "status",
-  "user" : "bob35",
-  "timestamp" : 1391,
-  "stats" : {
-    "name" : "Exploring Sonic Landscapes",
-    "remainedTime" : 2211,
-    "repeat" : "No Repeat",
-    "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 } ]

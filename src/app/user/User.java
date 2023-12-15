@@ -237,7 +237,7 @@ public class User {
         if (player.getCurrentAudioFile() == null)
             return "Please load a source before liking or unliking.";
 
-        if (!player.getType().equals("song") && !player.getType().equals("playlist"))
+        if (!player.getType().equals("song") && !player.getType().equals("playlist") && !player.getType().equals("album"))
             return "Loaded source is not a song.";
 
         Song song = (Song) player.getCurrentAudioFile();
@@ -267,10 +267,9 @@ public class User {
     }
 
     public String prev() {
-        System.out.println("Hereeeeeeeee");
         if (player.getCurrentAudioFile() == null)
             return "Please load a source before returning to the previous track.";
-
+        player.prev();
         System.out.println(player.getCurrentAudioFile().getName());
         return "Returned to previous track successfully. The current track is %s.".formatted(player.getCurrentAudioFile().getName());
     }

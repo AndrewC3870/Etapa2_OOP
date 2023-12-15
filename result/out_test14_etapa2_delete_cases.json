@@ -1,292 +1,302 @@
 [ {
   "command" : "addUser",
-  "user" : "melodymaster",
-  "timestamp" : 2,
-  "message" : "The username melodymaster has been added successfully."
-}, {
-  "command" : "addAlbum",
-  "user" : "melodymaster",
-  "timestamp" : 4,
-  "message" : "melodymaster has added new album successfully."
-}, {
-  "command" : "createPlaylist",
-  "user" : "bob35",
-  "timestamp" : 150,
-  "message" : "Playlist created successfully."
-}, {
-  "command" : "search",
-  "user" : "bob35",
-  "timestamp" : 170,
-  "message" : "Search returned 1 results",
-  "results" : [ "Night Pulse" ]
-}, {
-  "command" : "select",
-  "user" : "bob35",
-  "timestamp" : 190,
-  "message" : "Successfully selected Night Pulse."
-}, {
-  "command" : "load",
-  "user" : "bob35",
-  "timestamp" : 195,
-  "message" : "Playback loaded successfully."
-}, {
-  "command" : "addRemoveInPlaylist",
-  "user" : "bob35",
-  "timestamp" : 240,
-  "message" : "Successfully added to playlist."
-}, {
-  "command" : "search",
-  "user" : "bob35",
-  "timestamp" : 270,
-  "message" : "Search returned 5 results",
-  "results" : [ "Shape of You", "Don't", "Maps", "The Man", "Freedom" ]
-}, {
-  "command" : "select",
-  "user" : "bob35",
-  "timestamp" : 290,
-  "message" : "Successfully selected Shape of You."
-}, {
-  "command" : "load",
-  "user" : "bob35",
-  "timestamp" : 295,
-  "message" : "Playback loaded successfully."
-}, {
-  "command" : "addRemoveInPlaylist",
-  "user" : "bob35",
-  "timestamp" : 320,
-  "message" : "Successfully added to playlist."
-}, {
-  "command" : "search",
-  "user" : "bob35",
-  "timestamp" : 370,
-  "message" : "Search returned 5 results",
-  "results" : [ "Stairway to Heaven", "Under Pressure", "Dream On", "Big Pimpin'", "The Unforgiven" ]
-}, {
-  "command" : "select",
-  "user" : "bob35",
-  "timestamp" : 390,
-  "message" : "Successfully selected Stairway to Heaven."
-}, {
-  "command" : "load",
-  "user" : "bob35",
-  "timestamp" : 420,
-  "message" : "Playback loaded successfully."
-}, {
-  "command" : "addRemoveInPlaylist",
-  "user" : "bob35",
-  "timestamp" : 430,
-  "message" : "Successfully added to playlist."
-}, {
-  "command" : "search",
-  "user" : "bob35",
-  "timestamp" : 440,
-  "message" : "Search returned 1 results",
-  "results" : [ "Vibrant Echoes" ]
-}, {
-  "command" : "select",
-  "user" : "bob35",
-  "timestamp" : 445,
-  "message" : "Successfully selected Vibrant Echoes."
-}, {
-  "command" : "load",
-  "user" : "bob35",
-  "timestamp" : 446,
-  "message" : "Playback loaded successfully."
-}, {
-  "command" : "addRemoveInPlaylist",
-  "user" : "bob35",
-  "timestamp" : 450,
-  "message" : "Successfully added to playlist."
-}, {
-  "command" : "status",
-  "user" : "bob35",
-  "timestamp" : 480,
-  "stats" : {
-    "name" : "Vibrant Echoes",
-    "remainedTime" : 216,
-    "repeat" : "No Repeat",
-    "shuffle" : false,
-    "paused" : false
-  }
-}, {
-  "command" : "search",
-  "user" : "bob35",
-  "timestamp" : 500,
-  "message" : "Search returned 1 results",
-  "results" : [ "My favourite songs" ]
-}, {
-  "command" : "select",
-  "user" : "bob35",
-  "timestamp" : 510,
-  "message" : "Successfully selected My favourite songs."
-}, {
-  "command" : "load",
-  "user" : "bob35",
-  "timestamp" : 650,
-  "message" : "Playback loaded successfully."
-}, {
-  "command" : "status",
-  "user" : "bob35",
-  "timestamp" : 655,
-  "stats" : {
-    "name" : "Night Pulse",
-    "remainedTime" : 235,
-    "repeat" : "No Repeat",
-    "shuffle" : false,
-    "paused" : false
-  }
-}, {
-  "command" : "next",
-  "user" : "bob35",
-  "timestamp" : 670,
-  "message" : "Skipped to next track successfully. The current track is Shape of You."
-}, {
-  "command" : "status",
-  "user" : "bob35",
-  "timestamp" : 690,
-  "stats" : {
-    "name" : "Shape of You",
-    "remainedTime" : 213,
-    "repeat" : "No Repeat",
-    "shuffle" : false,
-    "paused" : false
-  }
-}, {
-  "command" : "prev",
-  "user" : "bob35",
-  "timestamp" : 710,
-  "message" : "Returned to previous track successfully. The current track is Shape of You."
-}, {
-  "command" : "status",
-  "user" : "bob35",
-  "timestamp" : 711,
-  "stats" : {
-    "name" : "Shape of You",
-    "remainedTime" : 192,
-    "repeat" : "No Repeat",
-    "shuffle" : false,
-    "paused" : false
-  }
-}, {
-  "command" : "prev",
-  "user" : "bob35",
-  "timestamp" : 712,
-  "message" : "Returned to previous track successfully. The current track is Shape of You."
-}, {
-  "command" : "prev",
-  "user" : "bob35",
-  "timestamp" : 712,
-  "message" : "Returned to previous track successfully. The current track is Shape of You."
-}, {
-  "command" : "status",
-  "user" : "bob35",
-  "timestamp" : 713,
-  "stats" : {
-    "name" : "Shape of You",
-    "remainedTime" : 190,
-    "repeat" : "No Repeat",
-    "shuffle" : false,
-    "paused" : false
-  }
+  "user" : "sonicpainter",
+  "timestamp" : 45,
+  "message" : "The username sonicpainter has been added successfully."
 }, {
   "command" : "addUser",
-  "user" : "soundseeker",
-  "timestamp" : 715,
-  "message" : "The username soundseeker has been added successfully."
+  "user" : "echoexplorer",
+  "timestamp" : 50,
+  "message" : "The username echoexplorer has been added successfully."
+}, {
+  "command" : "addUser",
+  "user" : "rhythmweaver",
+  "timestamp" : 55,
+  "message" : "The username rhythmweaver has been added successfully."
+}, {
+  "command" : "addUser",
+  "user" : "soundseeker21",
+  "timestamp" : 60,
+  "message" : "The username soundseeker21 has been added successfully."
+}, {
+  "command" : "addUser",
+  "user" : "melodicwanderer",
+  "timestamp" : 65,
+  "message" : "The username melodicwanderer has been added successfully."
+}, {
+  "command" : "addUser",
+  "user" : "audiosage",
+  "timestamp" : 70,
+  "message" : "The username audiosage has been added successfully."
+}, {
+  "command" : "addUser",
+  "user" : "soundcurator",
+  "timestamp" : 75,
+  "message" : "The username soundcurator has been added successfully."
+}, {
+  "command" : "addUser",
+  "user" : "musicmaven",
+  "timestamp" : 80,
+  "message" : "The username musicmaven has been added successfully."
+}, {
+  "command" : "getAllUsers",
+  "timestamp" : 85,
+  "result" : [ "alice22", "bob35", "carol19", "david27", "emily30", "frank21", "grace25", "henry26", "irene33", "jack29", "soundseeker21", "melodicwanderer", "sonicpainter", "echoexplorer", "rhythmweaver", "audiosage", "soundcurator", "musicmaven" ]
 }, {
   "command" : "addPodcast",
-  "user" : "soundseeker",
-  "timestamp" : 716,
-  "message" : "soundseeker has added new podcast successfully."
+  "user" : "audiosage",
+  "timestamp" : 280,
+  "message" : "audiosage has added new podcast successfully."
+}, {
+  "command" : "addPodcast",
+  "user" : "audiosage",
+  "timestamp" : 285,
+  "message" : "audiosage has added new podcast successfully."
+}, {
+  "command" : "addPodcast",
+  "user" : "musicmaven",
+  "timestamp" : 290,
+  "message" : "musicmaven has added new podcast successfully."
+}, {
+  "command" : "addPodcast",
+  "user" : "musicmaven",
+  "timestamp" : 295,
+  "message" : "musicmaven has added new podcast successfully."
+}, {
+  "command" : "addPodcast",
+  "user" : "musicmaven",
+  "timestamp" : 300,
+  "message" : "musicmaven has added new podcast successfully."
+}, {
+  "command" : "createPlaylist",
+  "user" : "melodicwanderer",
+  "timestamp" : 305,
+  "message" : "Playlist created successfully."
+}, {
+  "command" : "addAlbum",
+  "user" : "sonicpainter",
+  "timestamp" : 310,
+  "message" : "sonicpainter has added new album successfully."
+}, {
+  "command" : "search",
+  "user" : "melodicwanderer",
+  "timestamp" : 315,
+  "message" : "Search returned 2 results",
+  "results" : [ "Aurora Harmony", "Azure Echoes" ]
+}, {
+  "command" : "select",
+  "user" : "melodicwanderer",
+  "timestamp" : 320,
+  "message" : "Successfully selected Azure Echoes."
+}, {
+  "command" : "load",
+  "user" : "melodicwanderer",
+  "timestamp" : 325,
+  "message" : "Playback loaded successfully."
+}, {
+  "command" : "addRemoveInPlaylist",
+  "user" : "melodicwanderer",
+  "timestamp" : 330,
+  "message" : "Successfully added to playlist."
+}, {
+  "command" : "search",
+  "user" : "alice22",
+  "timestamp" : 335,
+  "message" : "Search returned 1 results",
+  "results" : [ "Rhythmic Dialogues" ]
+}, {
+  "command" : "select",
+  "user" : "alice22",
+  "timestamp" : 340,
+  "message" : "Successfully selected Rhythmic Dialogues."
+}, {
+  "command" : "load",
+  "user" : "alice22",
+  "timestamp" : 345,
+  "message" : "Playback loaded successfully."
 }, {
   "command" : "search",
   "user" : "bob35",
-  "timestamp" : 800,
+  "timestamp" : 350,
   "message" : "Search returned 1 results",
-  "results" : [ "Auditory Adventures" ]
+  "results" : [ "Playlist bengos" ]
 }, {
   "command" : "select",
   "user" : "bob35",
-  "timestamp" : 890,
-  "message" : "Successfully selected Auditory Adventures."
+  "timestamp" : 355,
+  "message" : "Successfully selected Playlist bengos."
+}, {
+  "command" : "follow",
+  "user" : "bob35",
+  "timestamp" : 360,
+  "message" : "Playlist followed successfully."
+}, {
+  "command" : "search",
+  "user" : "bob35",
+  "timestamp" : 365,
+  "message" : "Search returned 1 results",
+  "results" : [ "Aurora Harmony" ]
+}, {
+  "command" : "select",
+  "user" : "bob35",
+  "timestamp" : 370,
+  "message" : "Successfully selected Aurora Harmony."
 }, {
   "command" : "load",
   "user" : "bob35",
-  "timestamp" : 900,
+  "timestamp" : 375,
   "message" : "Playback loaded successfully."
 }, {
-  "command" : "status",
+  "command" : "like",
   "user" : "bob35",
-  "timestamp" : 1049,
-  "stats" : {
-    "name" : "Exploring Sonic Landscapes",
-    "remainedTime" : 2551,
-    "repeat" : "No Repeat",
-    "shuffle" : false,
-    "paused" : false
-  }
+  "timestamp" : 380,
+  "message" : "Like registered successfully."
 }, {
-  "command" : "forward",
+  "command" : "repeat",
+  "user" : "melodicwanderer",
+  "timestamp" : 480,
+  "message" : "Repeat mode changed to repeat once."
+}, {
   "user" : "bob35",
-  "timestamp" : 1050,
-  "message" : "Skipped forward successfully."
+  "command" : "printCurrentPage",
+  "timestamp" : 525,
+  "message" : "Liked songs:\n\t[Aurora Harmony]\n\nFollowed playlists:\n\t[Playlist bengos]"
+}, {
+  "command" : "deleteUser",
+  "user" : "sonicpainter",
+  "timestamp" : 620,
+  "message" : "sonicpainter can't be deleted."
+}, {
+  "command" : "search",
+  "user" : "soundseeker21",
+  "timestamp" : 625,
+  "message" : "Search returned 1 results",
+  "results" : [ "audiosage" ]
+}, {
+  "command" : "select",
+  "user" : "soundseeker21",
+  "timestamp" : 630,
+  "message" : "Successfully selected audiosage's page."
+}, {
+  "command" : "search",
+  "user" : "carol19",
+  "timestamp" : 725,
+  "message" : "Search returned 1 results",
+  "results" : [ "Playlist bengos" ]
+}, {
+  "command" : "select",
+  "user" : "carol19",
+  "timestamp" : 730,
+  "message" : "Successfully selected Playlist bengos."
+}, {
+  "command" : "follow",
+  "user" : "carol19",
+  "timestamp" : 735,
+  "message" : "Playlist followed successfully."
+}, {
+  "command" : "load",
+  "user" : "carol19",
+  "timestamp" : 740,
+  "message" : "Playback loaded successfully."
+}, {
+  "command" : "search",
+  "user" : "david27",
+  "timestamp" : 760,
+  "message" : "Search returned 3 results",
+  "results" : [ "sonicpainter", "soundseeker21", "soundcurator" ]
+}, {
+  "command" : "deleteUser",
+  "user" : "sonicpainter",
+  "timestamp" : 900,
+  "message" : "sonicpainter can't be deleted."
+}, {
+  "command" : "deleteUser",
+  "user" : "audiosage",
+  "timestamp" : 930,
+  "message" : "audiosage can't be deleted."
+}, {
+  "command" : "changePage",
+  "user" : "soundseeker21",
+  "timestamp" : 955,
+  "message" : "soundseeker21 accessed Home successfully."
+}, {
+  "command" : "deleteUser",
+  "user" : "melodicwanderer",
+  "timestamp" : 960,
+  "message" : "melodicwanderer was successfully deleted."
+}, {
+  "command" : "repeat",
+  "user" : "carol19",
+  "timestamp" : 965,
+  "message" : "Repeat mode changed to repeat all."
+}, {
+  "command" : "deleteUser",
+  "user" : "sonicpainter",
+  "timestamp" : 975,
+  "message" : "sonicpainter can't be deleted."
 }, {
   "command" : "removePodcast",
-  "user" : "soundseeker",
-  "timestamp" : 1050,
-  "message" : "soundseeker can't delete this podcast."
+  "user" : "musicmaven",
+  "timestamp" : 980,
+  "message" : "musicmaven can't delete this podcast."
 }, {
-  "command" : "status",
-  "user" : "bob35",
-  "timestamp" : 1051,
-  "stats" : {
-    "name" : "Exploring Sonic Landscapes",
-    "remainedTime" : 2459,
-    "repeat" : "No Repeat",
-    "shuffle" : false,
-    "paused" : false
-  }
-}, {
-  "command" : "search",
-  "user" : "bob35",
-  "timestamp" : 1198,
-  "message" : "Search returned 1 results",
-  "results" : [ "Auditory Adventures" ]
+  "command" : "deleteUser",
+  "user" : "audiosage",
+  "timestamp" : 1100,
+  "message" : "audiosage was successfully deleted."
 }, {
   "command" : "select",
-  "user" : "bob35",
-  "timestamp" : 1199,
-  "message" : "Successfully selected Auditory Adventures."
+  "user" : "david27",
+  "timestamp" : 1225,
+  "message" : "Successfully selected sonicpainter's page."
 }, {
-  "command" : "load",
-  "user" : "bob35",
-  "timestamp" : 1200,
-  "message" : "Playback loaded successfully."
+  "command" : "deleteUser",
+  "user" : "melodicwanderer",
+  "timestamp" : 1500,
+  "message" : "The username melodicwanderer doesn't exist."
 }, {
-  "command" : "status",
-  "user" : "bob35",
-  "timestamp" : 1389,
-  "stats" : {
-    "name" : "Exploring Sonic Landscapes",
-    "remainedTime" : 2123,
-    "repeat" : "No Repeat",
-    "shuffle" : false,
-    "paused" : false
-  }
+  "command" : "deleteUser",
+  "user" : "musicmaven",
+  "timestamp" : 6900,
+  "message" : "musicmaven can't be deleted."
 }, {
-  "command" : "backward",
-  "user" : "bob35",
-  "timestamp" : 1390,
-  "message" : "Rewound successfully."
+  "command" : "repeat",
+  "user" : "carol19",
+  "timestamp" : 7200,
+  "message" : "Repeat mode changed to repeat current song."
 }, {
-  "command" : "status",
+  "command" : "deleteUser",
+  "user" : "sonicpainter",
+  "timestamp" : 7225,
+  "message" : "sonicpainter can't be deleted."
+}, {
+  "command" : "repeat",
+  "user" : "carol19",
+  "timestamp" : 7505,
+  "message" : "Repeat mode changed to no repeat."
+}, {
+  "command" : "deleteUser",
+  "user" : "melodicwanderer",
+  "timestamp" : 7855,
+  "message" : "The username melodicwanderer doesn't exist."
+}, {
+  "command" : "deleteUser",
+  "user" : "sonicpainter",
+  "timestamp" : 7860,
+  "message" : "sonicpainter was successfully deleted."
+}, {
+  "command" : "changePage",
+  "user" : "david27",
+  "timestamp" : 7885,
+  "message" : "david27 accessed Home successfully."
+}, {
+  "command" : "deleteUser",
+  "user" : "sonicpainter",
+  "timestamp" : 7890,
+  "message" : "The username sonicpainter doesn't exist."
+}, {
   "user" : "bob35",
-  "timestamp" : 1391,
-  "stats" : {
-    "name" : "Exploring Sonic Landscapes",
-    "remainedTime" : 2211,
-    "repeat" : "No Repeat",
-    "shuffle" : false,
-    "paused" : false
-  }
+  "command" : "printCurrentPage",
+  "timestamp" : 7900,
+  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 } ]
