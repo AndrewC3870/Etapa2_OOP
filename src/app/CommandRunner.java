@@ -130,7 +130,6 @@ public class CommandRunner {
                         for (Song songInput: album.getSongs()) {
                             for (User user1: Admin.getUsers()) {
                                 if (user1.getType().equals("user")) {
-                                    System.out.println("here");
                                     user1.getLikedSongs().remove(songInput);
                                 }
                             }

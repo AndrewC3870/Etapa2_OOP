@@ -10,8 +10,10 @@ import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import fileio.input.*;
 import lombok.Getter;
+import lombok.Setter;
 
 import java.util.*;
+
 /**
  * The type Admin.
  */
@@ -19,7 +21,7 @@ public class Admin {
     @Getter
     private static List<User> users = new ArrayList<>();
     @Getter
-    private static List<UserArtist> userArtists= new ArrayList<>();
+    private static List<UserArtist> userArtists = new ArrayList<>();
     private static List<UserHost> userHosts = new ArrayList<>();
     @Getter
     private static List<Song> songs = new ArrayList<>();
@@ -39,20 +41,6 @@ public class Admin {
     }
 
     /**
-     * Sets songs.
-     *
-     * @param songInputList the song input list
-     */
-    public static void setSongs(List<SongInput> songInputList) {
-        songs = new ArrayList<>();
-        for (SongInput songInput : songInputList) {
-            songs.add(new Song(songInput.getName(), songInput.getDuration(), songInput.getAlbum(),
-                    songInput.getTags(), songInput.getLyrics(), songInput.getGenre(),
-                    songInput.getReleaseYear(), songInput.getArtist()));
-        }
-    }
-
-    /**
      * add new song into song list
      *
      * @param songInput song
@@ -68,17 +56,49 @@ public class Admin {
      * add new podcast in podcast list
      *
      * @param podcast podcast
-     * @param name name
+     * @param name    name
      */
     public static void addNewPodcast(Podcasts podcast, String name) {
         List<Episode> episodes = new ArrayList<>();
         Episode episode;
-        for (EpisodeInput episodeInput: podcast.getEpisodes()) {
+        for (EpisodeInput episodeInput : podcast.getEpisodes()) {
             episode = new Episode(episodeInput.getName(), episodeInput.getDuration(), episodeInput.getDescription());
             episodes.add(episode);
         }
         Podcast newPodcast = new Podcast(podcast.getName(), name, episodes);
         podcasts.add(newPodcast);
+    }
+
+    /**
+     * Gets songs.
+     *
+     * @return the songs
+     */
+    public static List<Song> getSongs() {
+        return new ArrayList<>(songs);
+    }
+
+    /**
+     * Sets songs.
+     *
+     * @param songInputList the song input list
+     */
+    public static void setSongs(List<SongInput> songInputList) {
+        songs = new ArrayList<>();
+        for (SongInput songInput : songInputList) {
+            songs.add(new Song(songInput.getName(), songInput.getDuration(), songInput.getAlbum(),
+                    songInput.getTags(), songInput.getLyrics(), songInput.getGenre(),
+                    songInput.getReleaseYear(), songInput.getArtist()));
+        }
+    }
+
+    /**
+     * Gets podcasts.
+     *
+     * @return the podcasts
+     */
+    public static List<Podcast> getPodcasts() {
+        return new ArrayList<>(podcasts);
     }
 
     /**
@@ -95,24 +115,6 @@ public class Admin {
             }
             podcasts.add(new Podcast(podcastInput.getName(), podcastInput.getOwner(), episodes));
         }
-    }
-
-    /**
-     * Gets songs.
-     *
-     * @return the songs
-     */
-    public static List<Song> getSongs() {
-        return new ArrayList<>(songs);
-    }
-
-    /**
-     * Gets podcasts.
-     *
-     * @return the podcasts
-     */
-    public static List<Podcast> getPodcasts() {
-        return new ArrayList<>(podcasts);
     }
 
     /**
@@ -135,7 +137,7 @@ public class Admin {
      */
     public static List<Album> getAlbums() {
         List<Album> albums = new ArrayList<>();
-        for(UserArtist user: userArtists) {
+        for (UserArtist user : userArtists) {
             albums.addAll(user.getAlbum());
         }
         return albums;
@@ -178,7 +180,7 @@ public class Admin {
      * @return host
      */
     public static UserHost getHost(String name) {
-        for (UserHost user: userHosts) {
+        for (UserHost user : userHosts) {
             if (user.getUsername().equals(name)) {
                 return user;
             }
@@ -209,11 +211,41 @@ public class Admin {
      * @return the top 5 songs
      */
     public static List<String> getTop5Songs() {
-        List<Song> sortedSongs = new ArrayList<>(songs);
-        sortedSongs.sort(Comparator.comparingInt(Song::getLikes).reversed());
+        List<Song> topSongs1 = new ArrayList<>();
+
+        for (Song songAdm : songs) {
+            for (User auxUser : users) {
+                for (Song liked : auxUser.getLikedSongs()) {
+                    if (!topSongs1.contains(liked) && songAdm.getName().equals(liked.getName()) && songAdm.getAlbum().equals(liked.getAlbum())) {
+                        topSongs1.add(liked);
+                    }
+                }
+            }
+        }
+
+        topSongs1.sort(Comparator.comparingInt(Song::getLikes));
+
+        if (topSongs1.size() < 5) {
+            for (Song auxSong : songs) {
+                if (!topSongs1.contains(auxSong)) {
+                    topSongs1.add(auxSong);
+                }
+            }
+        }
+
+        for (int i = 0; i < topSongs1.size() - 1; i++) {
+            for (int j = 0; j < topSongs1.size() - i - 1; j++) {
+                if (topSongs1.get(j).getLikes() < topSongs1.get(j + 1).getLikes()) {
+                    Collections.swap(topSongs1, j, j + 1);
+                }
+            }
+        }
+
+//        List<Song> sortedSongs = new ArrayList<>(songs);
+//        topSongs1.sort(Comparator.comparingInt(Song::getLikes).reversed());
         List<String> topSongs = new ArrayList<>();
         int count = 0;
-        for (Song song : sortedSongs) {
+        for (Song song : topSongs1) {
             if (count >= 5) break;
             topSongs.add(song.getName());
             count++;
@@ -274,7 +306,7 @@ public class Admin {
         while (sortedArtist.size() > 5) {
             sortedArtist.remove(sortedArtist.size() - 1);
         }
-        for (UserArtist user: sortedArtist) {
+        for (UserArtist user : sortedArtist) {
             topAlbum.add(user.getUsername());
         }
 
@@ -288,7 +320,7 @@ public class Admin {
      */
     public static List<String> getOnlineUsers() {
         List<String> onlineUsers = new ArrayList<>();
-        for (User user: users) {
+        for (User user : users) {
             if (user.isConectionStatus() && Objects.equals(user.getType(), "user")) {
                 onlineUsers.add(user.getUsername());
             }
@@ -336,6 +368,7 @@ public class Admin {
 
     /**
      * remove artist
+     *
      * @param user artist
      */
     public static void removeUserArtist(UserArtist user) {
@@ -346,6 +379,7 @@ public class Admin {
 
     /**
      * remove host
+     *
      * @param user host
      */
     public static void removeUserHost(UserHost user) {
@@ -359,7 +393,7 @@ public class Admin {
      *
      * @param song song
      */
-    public  static void removeSong(Song song) {
+    public static void removeSong(Song song) {
         songs.removeIf((s) -> song.getName().equals(s.getName()));
     }
 
@@ -379,8 +413,8 @@ public class Admin {
         users = new ArrayList<>();
         songs = new ArrayList<>();
         podcasts = new ArrayList<>();
-        userArtists=new ArrayList<>();
-        userHosts=new ArrayList<>();
+        userArtists = new ArrayList<>();
+        userHosts = new ArrayList<>();
         timestamp = 0;
     }
 
@@ -391,10 +425,10 @@ public class Admin {
      * @return boolean
      */
     public static boolean cantDeleteSimpleUser(User user) {
-        for (User auxUser: users) {
+        for (User auxUser : users) {
             if (auxUser.getPlayer().getSource() != null) {
-                for (Playlist playlist: user.getPlaylists()) {
-                    if (Objects.equals(auxUser.getPlayer().getSource().getAudioCollection(),playlist)){
+                for (Playlist playlist : user.getPlaylists()) {
+                    if (Objects.equals(auxUser.getPlayer().getSource().getAudioCollection(), playlist)) {
                         return true;
                     }
                 }
@@ -409,8 +443,8 @@ public class Admin {
      * @param user user
      */
     public static void prepareForDelete(User user) {
-        for (Playlist playlist: user.getPlaylists()) {
-            for (User user1: Admin.getUsers()) {
+        for (Playlist playlist : user.getPlaylists()) {
+            for (User user1 : Admin.getUsers()) {
                 if (user1.getType().equals("user"))
                     user1.getFollowedPlaylists().remove(playlist);
             }

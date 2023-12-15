@@ -275,19 +275,6 @@ public class UserCommandRunner {
         return objectNode;
     }
 
-//   ASA ERA DE LA INCEPUT
-//    User user = Admin.getUser(commandInput.getUsername());
-//    PlayerStats stats = user.getPlayerStats();
-//
-//    ObjectNode objectNode = objectMapper.createObjectNode();
-//        objectNode.put("command", commandInput.getCommand());
-//        objectNode.put("user", commandInput.getUsername());
-//        objectNode.put("timestamp", commandInput.getTimestamp());
-//        objectNode.put("stats", objectMapper.valueToTree(stats));
-//
-//        return objectNode;
-
-
 
     public static ObjectNode showLikedSongs(CommandInput commandInput) {
         User user = Admin.getUser(commandInput.getUsername());

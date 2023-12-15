@@ -35,7 +35,8 @@ public class HomePage implements Pages {
      */
     public List<String> getTopFiveLikedSongs() {
         List<Song> sortedSongs = new ArrayList<>(Admin.getSongs());
-        sortedSongs.sort(Comparator.comparingInt(Song::getLikes));
+        sortedSongs.sort(Comparator.comparingInt(Song::getLikes).reversed());
+
 
         List<Song> list = new ArrayList<>();
         list.addAll(likedSongs);
@@ -50,6 +51,8 @@ public class HomePage implements Pages {
                 }
             }
         }
+
+
 
         while(topSongs.size() > 5) {
             topSongs.remove(topSongs.size() - 1);

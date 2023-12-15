@@ -79,7 +79,6 @@ public final class Main {
         Admin.setUsers(database.getAllUsers());
         Admin.setSongs(database.getAllSongs());
         Admin.setPodcasts(database.getAllPodcasts());
-        System.out.println(filePath1);
         for (CommandInput command : commands) {
             Admin.updateTimestamp(command.getTimestamp());
             String commandName = command.getCommand();
