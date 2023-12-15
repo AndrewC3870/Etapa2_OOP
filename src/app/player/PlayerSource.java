@@ -147,7 +147,6 @@ public class PlayerSource {
     public void setPrevAudioFile(final boolean shuffle) {
         if (type == Enums.PlayerSourceType.LIBRARY) {
             remainedDuration = audioFile.getDuration();
-//            System.out.println(remainedDuration);
 
         } else {
             if (remainedDuration != audioFile.getDuration()) {

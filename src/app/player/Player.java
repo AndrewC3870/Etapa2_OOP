@@ -148,7 +148,6 @@ public class Player {
     }
 
     public void prev() {
-        System.out.println("HERE");
         source.setPrevAudioFile(shuffle);
         paused = false;
     }

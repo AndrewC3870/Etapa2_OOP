@@ -17955,8 +17955,8 @@
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 11770,
-  "message" : "Search returned 1 results",
-  "results" : [ "fwebb" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "alice22",
@@ -18027,8 +18027,8 @@
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 11790,
-  "message" : "Search returned 1 results",
-  "results" : [ "matthewporter" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "carol19",
@@ -18063,8 +18063,8 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 11800,
-  "message" : "Search returned 1 results",
-  "results" : [ "john99" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "david27",
@@ -18135,8 +18135,8 @@
   "command" : "search",
   "user" : "frank21",
   "timestamp" : 11820,
-  "message" : "Search returned 1 results",
-  "results" : [ "fwebb" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "frank21",
@@ -18171,8 +18171,8 @@
   "command" : "search",
   "user" : "grace25",
   "timestamp" : 11830,
-  "message" : "Search returned 1 results",
-  "results" : [ "john99" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "grace25",
@@ -18279,8 +18279,8 @@
   "command" : "search",
   "user" : "jack29",
   "timestamp" : 11860,
-  "message" : "Search returned 1 results",
-  "results" : [ "fwebb" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "jack29",
@@ -18351,8 +18351,8 @@
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 11880,
-  "message" : "Search returned 1 results",
-  "results" : [ "john99" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "bob35",
@@ -18387,8 +18387,8 @@
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 11890,
-  "message" : "Search returned 1 results",
-  "results" : [ "charlesgarcia" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "carol19",
@@ -18423,8 +18423,8 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 11900,
-  "message" : "Search returned 1 results",
-  "results" : [ "john99" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "david27",
@@ -18459,8 +18459,8 @@
   "command" : "search",
   "user" : "emily30",
   "timestamp" : 11910,
-  "message" : "Search returned 1 results",
-  "results" : [ "matthewporter" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "emily30",
@@ -18495,8 +18495,8 @@
   "command" : "search",
   "user" : "frank21",
   "timestamp" : 11920,
-  "message" : "Search returned 1 results",
-  "results" : [ "matthewporter" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "frank21",
@@ -18639,8 +18639,8 @@
   "command" : "search",
   "user" : "jack29",
   "timestamp" : 11960,
-  "message" : "Search returned 1 results",
-  "results" : [ "charlesgarcia" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "jack29",
@@ -18675,8 +18675,8 @@
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 11970,
-  "message" : "Search returned 1 results",
-  "results" : [ "matthewporter" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "alice22",
@@ -18747,8 +18747,8 @@
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 11990,
-  "message" : "Search returned 1 results",
-  "results" : [ "matthewporter" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "carol19",
@@ -18891,8 +18891,8 @@
   "command" : "search",
   "user" : "grace25",
   "timestamp" : 12030,
-  "message" : "Search returned 1 results",
-  "results" : [ "john99" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "grace25",
@@ -18963,8 +18963,8 @@
   "command" : "search",
   "user" : "irene33",
   "timestamp" : 12050,
-  "message" : "Search returned 1 results",
-  "results" : [ "john99" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "irene33",
@@ -19035,8 +19035,8 @@
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 12070,
-  "message" : "Search returned 1 results",
-  "results" : [ "john99" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "alice22",
@@ -19143,8 +19143,8 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 12100,
-  "message" : "Search returned 1 results",
-  "results" : [ "matthewporter" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "david27",
@@ -19215,8 +19215,8 @@
   "command" : "search",
   "user" : "frank21",
   "timestamp" : 12120,
-  "message" : "Search returned 1 results",
-  "results" : [ "fwebb" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "frank21",
@@ -19287,8 +19287,8 @@
   "command" : "search",
   "user" : "henry26",
   "timestamp" : 12140,
-  "message" : "Search returned 1 results",
-  "results" : [ "matthewporter" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "henry26",
@@ -19395,8 +19395,8 @@
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 12170,
-  "message" : "Search returned 1 results",
-  "results" : [ "john99" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "alice22",
@@ -19431,8 +19431,8 @@
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 12180,
-  "message" : "Search returned 1 results",
-  "results" : [ "matthewporter" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "bob35",
@@ -19503,8 +19503,8 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 12200,
-  "message" : "Search returned 1 results",
-  "results" : [ "john99" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "david27",
@@ -19575,8 +19575,8 @@
   "command" : "search",
   "user" : "frank21",
   "timestamp" : 12220,
-  "message" : "Search returned 1 results",
-  "results" : [ "matthewporter" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "frank21",
@@ -19611,8 +19611,8 @@
   "command" : "search",
   "user" : "grace25",
   "timestamp" : 12230,
-  "message" : "Search returned 1 results",
-  "results" : [ "barmstrong" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "grace25",
@@ -19647,8 +19647,8 @@
   "command" : "search",
   "user" : "henry26",
   "timestamp" : 12240,
-  "message" : "Search returned 1 results",
-  "results" : [ "matthewporter" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "henry26",
@@ -19755,8 +19755,8 @@
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 12270,
-  "message" : "Search returned 1 results",
-  "results" : [ "charlesgarcia" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "alice22",
@@ -19791,8 +19791,8 @@
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 12280,
-  "message" : "Search returned 1 results",
-  "results" : [ "matthewporter" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "bob35",
@@ -19863,8 +19863,8 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 12300,
-  "message" : "Search returned 1 results",
-  "results" : [ "matthewporter" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "david27",
@@ -19935,8 +19935,8 @@
   "command" : "search",
   "user" : "frank21",
   "timestamp" : 12320,
-  "message" : "Search returned 1 results",
-  "results" : [ "fwebb" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "frank21",
@@ -19971,8 +19971,8 @@
   "command" : "search",
   "user" : "grace25",
   "timestamp" : 12330,
-  "message" : "Search returned 1 results",
-  "results" : [ "john99" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "grace25",
@@ -20043,8 +20043,8 @@
   "command" : "search",
   "user" : "irene33",
   "timestamp" : 12350,
-  "message" : "Search returned 1 results",
-  "results" : [ "matthewporter" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "irene33",
@@ -20079,8 +20079,8 @@
   "command" : "search",
   "user" : "jack29",
   "timestamp" : 12360,
-  "message" : "Search returned 1 results",
-  "results" : [ "matthewporter" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "jack29",
@@ -20187,8 +20187,8 @@
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 12390,
-  "message" : "Search returned 1 results",
-  "results" : [ "barmstrong" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "carol19",
@@ -20223,8 +20223,8 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 12400,
-  "message" : "Search returned 1 results",
-  "results" : [ "john99" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "david27",
@@ -20295,8 +20295,8 @@
   "command" : "search",
   "user" : "frank21",
   "timestamp" : 12420,
-  "message" : "Search returned 1 results",
-  "results" : [ "john99" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "frank21",
@@ -20331,8 +20331,8 @@
   "command" : "search",
   "user" : "grace25",
   "timestamp" : 12430,
-  "message" : "Search returned 1 results",
-  "results" : [ "barmstrong" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "grace25",
@@ -20403,8 +20403,8 @@
   "command" : "search",
   "user" : "irene33",
   "timestamp" : 12450,
-  "message" : "Search returned 1 results",
-  "results" : [ "barmstrong" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "irene33",
@@ -20439,8 +20439,8 @@
   "command" : "search",
   "user" : "jack29",
   "timestamp" : 12460,
-  "message" : "Search returned 1 results",
-  "results" : [ "john99" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "jack29",
@@ -20511,8 +20511,8 @@
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 12480,
-  "message" : "Search returned 1 results",
-  "results" : [ "john99" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "bob35",
@@ -20655,8 +20655,8 @@
   "command" : "search",
   "user" : "frank21",
   "timestamp" : 12520,
-  "message" : "Search returned 1 results",
-  "results" : [ "charlesgarcia" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "frank21",
@@ -20691,8 +20691,8 @@
   "command" : "search",
   "user" : "grace25",
   "timestamp" : 12530,
-  "message" : "Search returned 1 results",
-  "results" : [ "matthewporter" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "grace25",
@@ -20727,8 +20727,8 @@
   "command" : "search",
   "user" : "henry26",
   "timestamp" : 12540,
-  "message" : "Search returned 1 results",
-  "results" : [ "john99" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "henry26",
@@ -20799,8 +20799,8 @@
   "command" : "search",
   "user" : "jack29",
   "timestamp" : 12560,
-  "message" : "Search returned 1 results",
-  "results" : [ "matthewporter" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "jack29",
@@ -20979,8 +20979,8 @@
   "command" : "search",
   "user" : "emily30",
   "timestamp" : 12610,
-  "message" : "Search returned 1 results",
-  "results" : [ "barmstrong" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "emily30",
@@ -21051,8 +21051,8 @@
   "command" : "search",
   "user" : "grace25",
   "timestamp" : 12630,
-  "message" : "Search returned 1 results",
-  "results" : [ "barmstrong" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "grace25",
@@ -21087,8 +21087,8 @@
   "command" : "search",
   "user" : "henry26",
   "timestamp" : 12640,
-  "message" : "Search returned 1 results",
-  "results" : [ "fwebb" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "henry26",
@@ -21123,8 +21123,8 @@
   "command" : "search",
   "user" : "irene33",
   "timestamp" : 12650,
-  "message" : "Search returned 1 results",
-  "results" : [ "john99" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "irene33",
@@ -21159,8 +21159,8 @@
   "command" : "search",
   "user" : "jack29",
   "timestamp" : 12660,
-  "message" : "Search returned 1 results",
-  "results" : [ "john99" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "jack29",
@@ -21303,8 +21303,8 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 12700,
-  "message" : "Search returned 1 results",
-  "results" : [ "matthewporter" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "david27",
@@ -21339,8 +21339,8 @@
   "command" : "search",
   "user" : "emily30",
   "timestamp" : 12710,
-  "message" : "Search returned 1 results",
-  "results" : [ "john99" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "emily30",
@@ -21375,8 +21375,8 @@
   "command" : "search",
   "user" : "frank21",
   "timestamp" : 12720,
-  "message" : "Search returned 1 results",
-  "results" : [ "charlesgarcia" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "frank21",
@@ -21447,8 +21447,8 @@
   "command" : "search",
   "user" : "henry26",
   "timestamp" : 12740,
-  "message" : "Search returned 1 results",
-  "results" : [ "charlesgarcia" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "henry26",
@@ -21483,8 +21483,8 @@
   "command" : "search",
   "user" : "irene33",
   "timestamp" : 12750,
-  "message" : "Search returned 1 results",
-  "results" : [ "john99" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "irene33",
@@ -21519,8 +21519,8 @@
   "command" : "search",
   "user" : "jack29",
   "timestamp" : 12760,
-  "message" : "Search returned 1 results",
-  "results" : [ "fwebb" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "jack29",
@@ -21627,8 +21627,8 @@
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 12790,
-  "message" : "Search returned 1 results",
-  "results" : [ "john99" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "carol19",
@@ -21735,8 +21735,8 @@
   "command" : "search",
   "user" : "frank21",
   "timestamp" : 12820,
-  "message" : "Search returned 1 results",
-  "results" : [ "matthewporter" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "frank21",
@@ -21879,8 +21879,8 @@
   "command" : "search",
   "user" : "jack29",
   "timestamp" : 12860,
-  "message" : "Search returned 1 results",
-  "results" : [ "john99" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "jack29",
@@ -21951,8 +21951,8 @@
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 12880,
-  "message" : "Search returned 1 results",
-  "results" : [ "matthewporter" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "bob35",
@@ -22023,8 +22023,8 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 12900,
-  "message" : "Search returned 1 results",
-  "results" : [ "john99" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "david27",
@@ -22095,8 +22095,8 @@
   "command" : "search",
   "user" : "frank21",
   "timestamp" : 12920,
-  "message" : "Search returned 1 results",
-  "results" : [ "john99" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "frank21",
@@ -22131,8 +22131,8 @@
   "command" : "search",
   "user" : "grace25",
   "timestamp" : 12930,
-  "message" : "Search returned 1 results",
-  "results" : [ "john99" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "grace25",
@@ -22167,8 +22167,8 @@
   "command" : "search",
   "user" : "henry26",
   "timestamp" : 12940,
-  "message" : "Search returned 1 results",
-  "results" : [ "john99" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "henry26",
@@ -22203,8 +22203,8 @@
   "command" : "search",
   "user" : "irene33",
   "timestamp" : 12950,
-  "message" : "Search returned 1 results",
-  "results" : [ "matthewporter" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "irene33",
@@ -22275,8 +22275,8 @@
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 12970,
-  "message" : "Search returned 1 results",
-  "results" : [ "fwebb" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "alice22",
@@ -22311,8 +22311,8 @@
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 12980,
-  "message" : "Search returned 1 results",
-  "results" : [ "matthewporter" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "bob35",
@@ -22419,8 +22419,8 @@
   "command" : "search",
   "user" : "emily30",
   "timestamp" : 13010,
-  "message" : "Search returned 1 results",
-  "results" : [ "charlesgarcia" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "emily30",
@@ -22491,8 +22491,8 @@
   "command" : "search",
   "user" : "grace25",
   "timestamp" : 13030,
-  "message" : "Search returned 1 results",
-  "results" : [ "fwebb" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "grace25",
@@ -22671,8 +22671,8 @@
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 13080,
-  "message" : "Search returned 1 results",
-  "results" : [ "matthewporter" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "bob35",
@@ -22743,8 +22743,8 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 13100,
-  "message" : "Search returned 1 results",
-  "results" : [ "john99" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "david27",
@@ -22779,8 +22779,8 @@
   "command" : "search",
   "user" : "emily30",
   "timestamp" : 13110,
-  "message" : "Search returned 1 results",
-  "results" : [ "matthewporter" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "emily30",
@@ -22815,8 +22815,8 @@
   "command" : "search",
   "user" : "frank21",
   "timestamp" : 13120,
-  "message" : "Search returned 1 results",
-  "results" : [ "matthewporter" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "frank21",
@@ -22851,8 +22851,8 @@
   "command" : "search",
   "user" : "grace25",
   "timestamp" : 13130,
-  "message" : "Search returned 1 results",
-  "results" : [ "john99" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "grace25",
@@ -22887,8 +22887,8 @@
   "command" : "search",
   "user" : "henry26",
   "timestamp" : 13140,
-  "message" : "Search returned 1 results",
-  "results" : [ "matthewporter" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "henry26",
@@ -22995,8 +22995,8 @@
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 13170,
-  "message" : "Search returned 1 results",
-  "results" : [ "matthewporter" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "alice22",
@@ -23067,8 +23067,8 @@
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 13190,
-  "message" : "Search returned 1 results",
-  "results" : [ "john99" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "carol19",
@@ -23139,8 +23139,8 @@
   "command" : "search",
   "user" : "emily30",
   "timestamp" : 13210,
-  "message" : "Search returned 1 results",
-  "results" : [ "barmstrong" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "emily30",
@@ -23211,8 +23211,8 @@
   "command" : "search",
   "user" : "grace25",
   "timestamp" : 13230,
-  "message" : "Search returned 1 results",
-  "results" : [ "barmstrong" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "grace25",
@@ -23283,8 +23283,8 @@
   "command" : "search",
   "user" : "irene33",
   "timestamp" : 13250,
-  "message" : "Search returned 1 results",
-  "results" : [ "barmstrong" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "irene33",
@@ -23319,8 +23319,8 @@
   "command" : "search",
   "user" : "jack29",
   "timestamp" : 13260,
-  "message" : "Search returned 1 results",
-  "results" : [ "fwebb" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "jack29",
@@ -25966,5 +25966,5 @@
 }, {
   "command" : "getTop5Albums",
   "timestamp" : 14850,
-  "result" : [ ]
+  "result" : [ "Alone Autumn", "Alone Dirt", "Alone Guide", "Alone Hood", "Alone Hood" ]
 } ]

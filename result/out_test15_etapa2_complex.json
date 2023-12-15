@@ -18219,8 +18219,8 @@
   "command" : "search",
   "user" : "frank21",
   "timestamp" : 11819,
-  "message" : "Search returned 1 results",
-  "results" : [ "conniealvarez" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "frank21",
@@ -18399,8 +18399,8 @@
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 11869,
-  "message" : "Search returned 1 results",
-  "results" : [ "conniealvarez" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "alice22",
@@ -18687,8 +18687,8 @@
   "command" : "search",
   "user" : "irene33",
   "timestamp" : 11949,
-  "message" : "Search returned 1 results",
-  "results" : [ "conniealvarez" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "irene33",
@@ -19011,8 +19011,8 @@
   "command" : "search",
   "user" : "henry26",
   "timestamp" : 12039,
-  "message" : "Search returned 1 results",
-  "results" : [ "conniealvarez" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "henry26",
@@ -19191,8 +19191,8 @@
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 12089,
-  "message" : "Search returned 1 results",
-  "results" : [ "conniealvarez" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "carol19",
@@ -19299,8 +19299,8 @@
   "command" : "search",
   "user" : "frank21",
   "timestamp" : 12119,
-  "message" : "Search returned 1 results",
-  "results" : [ "conniealvarez" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "frank21",
@@ -19371,8 +19371,8 @@
   "command" : "search",
   "user" : "henry26",
   "timestamp" : 12139,
-  "message" : "Search returned 1 results",
-  "results" : [ "conniealvarez" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "henry26",
@@ -19443,8 +19443,8 @@
   "command" : "search",
   "user" : "jack29",
   "timestamp" : 12159,
-  "message" : "Search returned 1 results",
-  "results" : [ "conniealvarez" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "jack29",
@@ -19803,8 +19803,8 @@
   "command" : "search",
   "user" : "jack29",
   "timestamp" : 12259,
-  "message" : "Search returned 1 results",
-  "results" : [ "conniealvarez" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "jack29",
@@ -19911,8 +19911,8 @@
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 12289,
-  "message" : "Search returned 1 results",
-  "results" : [ "conniealvarez" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "carol19",
@@ -19947,8 +19947,8 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 12299,
-  "message" : "Search returned 1 results",
-  "results" : [ "jenningsbeth" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "david27",
@@ -20091,8 +20091,8 @@
   "command" : "search",
   "user" : "henry26",
   "timestamp" : 12339,
-  "message" : "Search returned 1 results",
-  "results" : [ "conniealvarez" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "henry26",
@@ -20235,8 +20235,8 @@
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 12379,
-  "message" : "Search returned 1 results",
-  "results" : [ "conniealvarez" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "bob35",
@@ -20559,8 +20559,8 @@
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 12469,
-  "message" : "Search returned 1 results",
-  "results" : [ "conniealvarez" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "alice22",
@@ -20667,8 +20667,8 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 12499,
-  "message" : "Search returned 1 results",
-  "results" : [ "conniealvarez" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "david27",
@@ -20703,8 +20703,8 @@
   "command" : "search",
   "user" : "emily30",
   "timestamp" : 12509,
-  "message" : "Search returned 1 results",
-  "results" : [ "conniealvarez" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "emily30",
@@ -20811,8 +20811,8 @@
   "command" : "search",
   "user" : "henry26",
   "timestamp" : 12539,
-  "message" : "Search returned 1 results",
-  "results" : [ "conniealvarez" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "henry26",
@@ -20847,8 +20847,8 @@
   "command" : "search",
   "user" : "irene33",
   "timestamp" : 12549,
-  "message" : "Search returned 1 results",
-  "results" : [ "conniealvarez" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "irene33",
@@ -21171,8 +21171,8 @@
   "command" : "search",
   "user" : "henry26",
   "timestamp" : 12639,
-  "message" : "Search returned 1 results",
-  "results" : [ "conniealvarez" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "henry26",
@@ -21495,8 +21495,8 @@
   "command" : "search",
   "user" : "grace25",
   "timestamp" : 12729,
-  "message" : "Search returned 1 results",
-  "results" : [ "conniealvarez" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "grace25",
@@ -21999,8 +21999,8 @@
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 12869,
-  "message" : "Search returned 1 results",
-  "results" : [ "conniealvarez" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "alice22",
@@ -22359,8 +22359,8 @@
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 12969,
-  "message" : "Search returned 1 results",
-  "results" : [ "conniealvarez" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "alice22",
@@ -22467,8 +22467,8 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 12999,
-  "message" : "Search returned 1 results",
-  "results" : [ "conniealvarez" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "david27",
@@ -22899,8 +22899,8 @@
   "command" : "search",
   "user" : "frank21",
   "timestamp" : 13119,
-  "message" : "Search returned 1 results",
-  "results" : [ "conniealvarez" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "frank21",
@@ -22935,8 +22935,8 @@
   "command" : "search",
   "user" : "grace25",
   "timestamp" : 13129,
-  "message" : "Search returned 1 results",
-  "results" : [ "jenningsbeth" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "grace25",
@@ -26050,5 +26050,5 @@
 }, {
   "command" : "getTop5Albums",
   "timestamp" : 14849,
-  "result" : [ ]
+  "result" : [ "Alone Autumn", "Alone Dirt", "Alone Dirt", "Alone Funeral ", "Alone Hood" ]
 } ]

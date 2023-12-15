@@ -85,8 +85,14 @@ public class User {
         for (LibraryEntry libraryEntry : libraryEntries) {
             results.add(libraryEntry.getName());
         }
-        if (type.equals("artist") || type.equals("host")) {
-            ArrayList<User> users = searchUser(filters);
+        if (type.equals("artist")) {
+            ArrayList<User> users = searchUserArtist(filters);
+            for (User user: users) {
+                results.add(user.getUsername());
+            }
+            searchBar.setSearchUserResult(results);
+        } else if (type.equals("host")) {
+            ArrayList<User> users = seearchUserHost(filters);
             for (User user: users) {
                 results.add(user.getUsername());
             }
@@ -95,14 +101,31 @@ public class User {
         return results;
     }
 
-    public ArrayList<User> searchUser (Filters filters) {
+    public ArrayList<User> searchUserArtist (Filters filters) {
         ArrayList<User> results = new ArrayList<>();
         for (User user: Admin.getUsers()) {
-            if(user.getUsername().toLowerCase().startsWith(filters.getName())) {
-                results.add(user);
+            if (user.getType().equals("artist")) {
+                if(user.getUsername().toLowerCase().startsWith(filters.getName())) {
+                    results.add(user);
+                }
             }
         }
+        for (User user: results) {
+            System.out.println(user.getUsername());
+        }
         return results;
+    }
+
+    public ArrayList<User> seearchUserHost (Filters filters) {
+        ArrayList<User> results = new ArrayList<>();
+        for (User user: Admin.getUsers()) {
+            if (user.getType().equals("host")) {
+                if(user.getUsername().toLowerCase().startsWith(filters.getName())) {
+                    results.add(user);
+                }
+            }
+        }
+        return  results;
     }
 
 
@@ -270,7 +293,6 @@ public class User {
         if (player.getCurrentAudioFile() == null)
             return "Please load a source before returning to the previous track.";
         player.prev();
-        System.out.println(player.getCurrentAudioFile().getName());
         return "Returned to previous track successfully. The current track is %s.".formatted(player.getCurrentAudioFile().getName());
     }
 

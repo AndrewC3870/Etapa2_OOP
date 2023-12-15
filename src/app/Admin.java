@@ -172,18 +172,32 @@ public class Admin {
 
 //    ce adaug eu ******************
     public static List<String> getTop5Albums() {
-//        List<Album> sortedPlaylists = new ArrayList<>(getAlbums());
-//        sortedPlaylists.sort(Comparator.comparingInt(Album::getFollowers)
-//                .reversed()
-//                .thenComparing(Playlist::getTimestamp, Comparator.naturalOrder()));
-//        List<String> topPlaylists = new ArrayList<>();
-//        int count = 0;
-//        for (Playlist playlist : sortedPlaylists) {
-//            if (count >= 5) break;
-//            topPlaylists.add(playlist.getName());
-//            count++;
-//        }
-//        return topPlaylists;
+        List<Album> sortedAlbum = new ArrayList<>(getAlbums());
+        sortedAlbum.sort(Comparator.comparingInt(Album::calculateLikes)
+                .reversed()
+                .thenComparing(Album::getName, Comparator.naturalOrder()));
+        List<String> topAlbum = new ArrayList<>();
+        int count = 0;
+        for (Album album : sortedAlbum) {
+            if (count >= 5) break;
+            topAlbum.add(album.getName());
+            count++;
+        }
+        return topAlbum;
+    }
+
+    public static List<String> getTop5Artists() {
+        List<UserArtist> sortedArtist = new ArrayList<>(getUserArtists());
+        sortedArtist.sort(Comparator.comparingInt(UserArtist::numberOfLikes)
+                .reversed());
+        List<String> topAlbum = new ArrayList<>();
+        int count = 0;
+        for (UserArtist artist : sortedArtist) {
+            if (count >= 5) break;
+            topAlbum.add(artist.getUsername());
+            count++;
+        }
+        return topAlbum;
     }
 
     public static List<String> getOnlineUsers() {
@@ -238,14 +252,27 @@ public class Admin {
         timestamp = 0;
     }
 
-//    public static void removeSongs(List<Song> songsInput) {
-//
-//        for (Song song: songsInput) {
-//            songs.remove(song);
-//        }
-//
-//    }
+    public static boolean cantDeleteSimpleUser(User user) {
+        for (User auxUser: users) {
+            if (auxUser.getPlayer().getSource() != null) {
+                for (Playlist playlist: user.getPlaylists()) {
+                    if (Objects.equals(auxUser.getPlayer().getSource().getAudioCollection(),playlist)){
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
 
+    public static void prepareForDelete(User user) {
+        for (Playlist playlist: user.getPlaylists()) {
+            for (User user1: Admin.getUsers()) {
+                if (user1.getType().equals("user"))
+                    user1.getFollowedPlaylists().remove(playlist);
+            }
+        }
+    }
 
 
 }

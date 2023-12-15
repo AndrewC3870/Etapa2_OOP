@@ -298,5 +298,5 @@
 }, {
   "command" : "getTop5Albums",
   "timestamp" : 3480,
-  "result" : [ ]
+  "result" : [ "Harmonic Horizons", "Harmonic Horizons 2" ]
 } ]

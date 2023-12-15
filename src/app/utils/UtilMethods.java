@@ -39,13 +39,13 @@ public class UtilMethods {
 
     public static boolean ifDeletingForArtist(UserArtist artist) {
         for (User user: Admin.getUsers()) {
-            if (user.getPlayer().getSource() != null && user.getPlayer().getSource().getAudioCollection() != null) {
-                for (Album album: artist.getAlbum()) {
-                    if (user.getPlayer().getSource().getAudioCollection().equals(album)) {
-                        return true;
-                    }
-                }
-            }
+//            if (user.getPlayer().getSource() != null && user.getPlayer().getSource().getAudioCollection() != null) {
+//                for (Album album: artist.getAlbum()) {
+//                    if (user.getPlayer().getSource().getAudioCollection().equals(album)) {
+//                        return true;
+//                    }
+//                }
+//            }
             if (user.getPlayer().getCurrentAudioFile() != null) {
                 for (Album album: artist.getAlbum()) {
                     for (SongInput songInput: album.getSongs()) {

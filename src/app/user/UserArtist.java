@@ -41,6 +41,14 @@ public class UserArtist extends User {
         return false;
     }
 
+    public Integer numberOfLikes() {
+        int sum = 0;
+        for (Album album1: album) {
+            sum += album1.calculateLikes();
+        }
+        return sum;
+    }
+
     public void removeAlbum(String name) {
         this.album.removeIf(auxAlbum -> Objects.equals(name, auxAlbum.getName()));
     }

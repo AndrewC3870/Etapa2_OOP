@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import static app.Admin.cantDeleteSimpleUser;
 import static app.utils.UtilMethods.*;
 
 public class CommandRunner {
@@ -70,7 +71,7 @@ public class CommandRunner {
 
         if (user != null) {
             if (Objects.equals(user.getType(), "user")) {
-                if (user.getPlayer().getSource() != null){
+                if (cantDeleteSimpleUser(user)){ /////////////
                     message = user.getUsername() + " can't be deleted.";
                 } else {
                     message = user.getUsername() + " was successfully deleted.";
@@ -89,7 +90,7 @@ public class CommandRunner {
                 }
             } else if (Objects.equals(user.getType(), "artist")) {
                 UserArtist artist = (UserArtist)user;
-                if (ifDeletingForArtist(artist) || ifDeletingForArtist(artist)) {
+                if (ifDeletingForArtist(artist) || ifOnTheArtistPage(artist)) {
                     message = artist.getUsername() + " can't be deleted.";
                 } else {
                     for (Album album: artist.getAlbum()) {
@@ -205,6 +206,17 @@ public class CommandRunner {
         objectNode.put("command", commandInput.getCommand());
         objectNode.put("timestamp", commandInput.getTimestamp());
         objectNode.put("result", objectMapper.valueToTree(albums));
+
+        return objectNode;
+    }
+
+    public static ObjectNode getTop5Artists(CommandInput commandInput) {
+        List<String> songs = Admin.getTop5Artists();
+
+        ObjectNode objectNode = objectMapper.createObjectNode();
+        objectNode.put("command", commandInput.getCommand());
+        objectNode.put("timestamp", commandInput.getTimestamp());
+        objectNode.put("result", objectMapper.valueToTree(songs));
 
         return objectNode;
     }
