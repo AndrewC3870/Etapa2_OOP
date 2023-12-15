@@ -7,6 +7,8 @@ import app.user.User;
 import java.util.ArrayList;
 
 public abstract class Pages {
+
+
 //    private String type;
 //    private ArrayList<Playlist> playlists;
 //    private ArrayList<Song> likedSongs;

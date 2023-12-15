@@ -75,9 +75,10 @@ public final class Main {
         CommandInput[] commands = objectMapper.readValue(new File(CheckerConstants.TESTS_PATH + filePath1), CommandInput[].class);
         ArrayNode outputs = objectMapper.createArrayNode();
 
-        Admin.setUsers(library.getUsers());
-        Admin.setSongs(library.getSongs());
-        Admin.setPodcasts(library.getPodcasts());
+        DataBase database = new DataBase(library.getUsers(), library.getSongs(), library.getPodcasts());
+        Admin.setUsers(database.getAllUsers());
+        Admin.setSongs(database.getAllSongs());
+        Admin.setPodcasts(database.getAllPodcasts());
         System.out.println(filePath1);
         for (CommandInput command : commands) {
             Admin.updateTimestamp(command.getTimestamp());
@@ -135,5 +136,6 @@ public final class Main {
         objectWriter.writeValue(new File(filePath2), outputs);
 
         Admin.reset();
+        database.resetDB();
     }
 }

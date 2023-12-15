@@ -4,12 +4,16 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 public abstract class LibraryEntry {
     @Setter
     private String name;
 
+    private LibraryEntry(){
+
+    }
     public LibraryEntry(String name) {
         this.name = name;
     }

@@ -20,6 +20,8 @@ public class Player {
     @Getter
     private String type;
 
+
+
     private ArrayList<PodcastBookmark> bookmarks = new ArrayList<>();
 
 

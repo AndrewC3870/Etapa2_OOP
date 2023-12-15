@@ -23,6 +23,8 @@ public class Admin {
     private static List<Song> songs = new ArrayList<>();
     private static List<Podcast> podcasts = new ArrayList<>();
     private static int timestamp = 0;
+
+
 //  creaza liste separate pt artist si pt host
     public static void setUsers(List<UserInput> userInputList) {
         users = new ArrayList<>();

@@ -15,6 +15,7 @@ public final class Song extends AudioFile {
     private final String artist;
     private Integer likes;
 
+
     public Song(String name, Integer duration, String album, ArrayList<String> tags, String lyrics,
                 String genre, Integer releaseYear, String artist) {
         super(name, duration);
