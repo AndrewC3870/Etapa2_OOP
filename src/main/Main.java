@@ -107,7 +107,7 @@ public final class Main {
                 case "getTop5Songs" -> outputs.add(UserCommandRunner.getTop5Songs(command));
                 case "getTop5Playlists" -> outputs.add(UserCommandRunner.getTop5Playlists(command));
                 case "getTop5Albums" -> outputs.add(CommandRunner.getTop5Albums(command));
-                case "getTop5artists" -> outputs.add(CommandRunner.getTop5Albums(command));
+                case "getTop5Artists" -> outputs.add(CommandRunner.getTop5Artists(command));
                 case "switchConnectionStatus" -> outputs.add(UserCommandRunner.switchConnectionStatus(command));
                 case "getOnlineUsers" -> outputs.add(UserCommandRunner.getOnlineUsers(command));
                 case "addUser" -> outputs.add(CommandRunner.addUsers(command));

@@ -271,12 +271,13 @@ public class Admin {
         sortedArtist.sort(Comparator.comparingInt(UserArtist::numberOfLikes)
                 .reversed());
         List<String> topAlbum = new ArrayList<>();
-        int count = 0;
-        for (UserArtist artist : sortedArtist) {
-            if (count >= 5) break;
-            topAlbum.add(artist.getUsername());
-            count++;
+        while (sortedArtist.size() > 5) {
+            sortedArtist.remove(sortedArtist.size() - 1);
         }
+        for (UserArtist user: sortedArtist) {
+            topAlbum.add(user.getUsername());
+        }
+
         return topAlbum;
     }
 
