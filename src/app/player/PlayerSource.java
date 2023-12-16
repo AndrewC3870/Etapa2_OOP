@@ -224,6 +224,4 @@ public class PlayerSource {
     public void setAudioFile(final AudioFile audioFile) {
         this.audioFile = audioFile;
     }
-
-
 }

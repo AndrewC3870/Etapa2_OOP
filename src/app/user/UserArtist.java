@@ -4,8 +4,6 @@ import app.audio.Collections.Album;
 import app.events.ArtistEvent;
 import app.events.ArtistMerch;
 import app.pages.ArtistPage;
-import fileio.input.CommandInput;
-import fileio.input.SongInput;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -29,7 +27,7 @@ public class UserArtist extends User {
      * @param age age
      * @param city city
      */
-    public UserArtist(String username, int age, String city) {
+    public UserArtist(final String username, final int age, final String city) {
         super(username, age, city, "artist");
         this.played = false;
         this.album  = new ArrayList<>();
@@ -45,7 +43,7 @@ public class UserArtist extends User {
      * @param name name of album
      * @return boolean
      */
-    public boolean containsAlbum(String name) {
+    public boolean containsAlbum(final String name) {
         for (Album auxAlbum: this.album) {
             if (Objects.equals(name, auxAlbum.getName())) {
                 return true;
@@ -72,7 +70,7 @@ public class UserArtist extends User {
      *
      * @param name album's name
      */
-    public void removeAlbum(String name) {
+    public void removeAlbum(final String name) {
         this.album.removeIf(auxAlbum -> Objects.equals(name, auxAlbum.getName()));
     }
 
@@ -89,7 +87,7 @@ public class UserArtist extends User {
      * @param name event's name
      * @return boolean
      */
-    public boolean verifyEvents(String name) {
+    public boolean verifyEvents(final String name) {
         for (ArtistEvent event: this.events) {
             if (Objects.equals(name, event.getName())) {
                 return true;
@@ -104,7 +102,7 @@ public class UserArtist extends User {
      * @param name merch name
      * @return
      */
-    public boolean verifyMerch (String name) {
+    public boolean verifyMerch(final String name) {
         for (ArtistMerch merch: this.merches) {
             if (Objects.equals(merch.getName(), name)) {
                 return true;
@@ -118,7 +116,7 @@ public class UserArtist extends User {
      *
      * @param name event name
      */
-    public void removeEvent(String name) {
+    public void removeEvent(final String name) {
         ArtistEvent aux = new ArtistEvent();
         for (ArtistEvent event: this.events) {
             if (Objects.equals(name, event.getName())) {
@@ -134,7 +132,7 @@ public class UserArtist extends User {
      * @param name album name
      * @return album
      */
-    public Album getAlbumByName(String name) {
+    public Album getAlbumByName(final String name) {
         for (Album auxAlbum: album) {
             if (auxAlbum.getName().equals(name)) {
                 return auxAlbum;

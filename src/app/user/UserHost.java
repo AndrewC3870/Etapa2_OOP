@@ -1,6 +1,5 @@
 package app.user;
 
-import app.audio.Collections.Album;
 import app.audio.Collections.Podcasts;
 import app.events.Announcement;
 import app.pages.HostPage;
@@ -11,7 +10,7 @@ import java.util.ArrayList;
 
 @Getter
 @Setter
-public class UserHost extends User{
+public class UserHost extends User {
     private boolean player;
     private String type;
     private ArrayList<Podcasts> podcasts;
@@ -25,12 +24,12 @@ public class UserHost extends User{
      * @param age age
      * @param city city
      */
-    public UserHost(String username, int age, String city) {
+    public UserHost(final String username, final int age, final String city) {
         super(username, age, city, "host");
         this.player = false;
         this.podcasts = new ArrayList<>();
         this.announcements = new ArrayList<>();
-        this.hostPage = new HostPage(this.podcasts,this.announcements);
+        this.hostPage = new HostPage(this.podcasts, this.announcements);
     }
 
     /**
@@ -39,7 +38,7 @@ public class UserHost extends User{
      * @param name announcement name
      * @return anouncement
      */
-    public Announcement containsAnnouncement(String name) {
+    public Announcement containsAnnouncement(final String name) {
         for (Announcement announcement: announcements) {
             if (announcement.getName().equals(name)) {
                 return announcement;
@@ -54,7 +53,7 @@ public class UserHost extends User{
      * @param name podcast name
      * @return podcast
      */
-    public Podcasts getPodcastByName(String name) {
+    public Podcasts getPodcastByName(final String name) {
         for (Podcasts auxPodcasts: podcasts) {
             if (auxPodcasts.getName().equals(name)) {
                 return auxPodcasts;

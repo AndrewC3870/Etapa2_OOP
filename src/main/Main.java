@@ -1,8 +1,10 @@
 package main;
 
-import app.*;
-import app.audio.Collections.Album;
-import app.pages.HostPage;
+import app.Admin;
+import app.DataBase;
+import app.CommandRunner;
+import app.ArtistCommandRunner;
+import app.UserCommandRunner;
 import checker.Checker;
 import checker.CheckerConstants;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -10,7 +12,7 @@ import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import fileio.input.CommandInput;
 import fileio.input.LibraryInput;
-
+import app.HostCommandRunner;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -71,11 +73,15 @@ public final class Main {
     public static void action(final String filePath1,
                               final String filePath2) throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
-        LibraryInput library = objectMapper.readValue(new File(CheckerConstants.TESTS_PATH + "library/library.json"), LibraryInput.class);
-        CommandInput[] commands = objectMapper.readValue(new File(CheckerConstants.TESTS_PATH + filePath1), CommandInput[].class);
+        LibraryInput library = objectMapper.readValue(
+                new File(CheckerConstants.TESTS_PATH + "library/library.json"),
+                LibraryInput.class);
+        CommandInput[] commands = objectMapper.readValue(
+                new File(CheckerConstants.TESTS_PATH + filePath1), CommandInput[].class);
         ArrayNode outputs = objectMapper.createArrayNode();
 
-        DataBase database =  DataBase.getInstance(library.getUsers(), library.getSongs(), library.getPodcasts());
+        DataBase database =  DataBase.getInstance(library.getUsers(),
+                library.getSongs(), library.getPodcasts());
         Admin.setUsers(database.getAllUsers());
         Admin.setSongs(database.getAllSongs());
         Admin.setPodcasts(database.getAllPodcasts());
@@ -96,18 +102,21 @@ public final class Main {
                 case "next" -> outputs.add(UserCommandRunner.next(command));
                 case "prev" -> outputs.add(UserCommandRunner.prev(command));
                 case "createPlaylist" -> outputs.add(UserCommandRunner.createPlaylist(command));
-                case "addRemoveInPlaylist" -> outputs.add(UserCommandRunner.addRemoveInPlaylist(command));
+                case "addRemoveInPlaylist" ->
+                        outputs.add(UserCommandRunner.addRemoveInPlaylist(command));
                 case "switchVisibility" -> outputs.add(UserCommandRunner.switchVisibility(command));
                 case "showPlaylists" -> outputs.add(UserCommandRunner.showPlaylists(command));
                 case "follow" -> outputs.add(UserCommandRunner.follow(command));
                 case "status" -> outputs.add(UserCommandRunner.status(command));
                 case "showPreferredSongs" -> outputs.add(UserCommandRunner.showLikedSongs(command));
-                case "getPreferredGenre" -> outputs.add(UserCommandRunner.getPreferredGenre(command));
+                case "getPreferredGenre" ->
+                        outputs.add(UserCommandRunner.getPreferredGenre(command));
                 case "getTop5Songs" -> outputs.add(UserCommandRunner.getTop5Songs(command));
                 case "getTop5Playlists" -> outputs.add(UserCommandRunner.getTop5Playlists(command));
                 case "getTop5Albums" -> outputs.add(CommandRunner.getTop5Albums(command));
                 case "getTop5Artists" -> outputs.add(CommandRunner.getTop5Artists(command));
-                case "switchConnectionStatus" -> outputs.add(UserCommandRunner.switchConnectionStatus(command));
+                case "switchConnectionStatus" ->
+                        outputs.add(UserCommandRunner.switchConnectionStatus(command));
                 case "getOnlineUsers" -> outputs.add(UserCommandRunner.getOnlineUsers(command));
                 case "addUser" -> outputs.add(CommandRunner.addUsers(command));
                 case "deleteUser" -> outputs.add(CommandRunner.removeUser(command));
@@ -121,7 +130,8 @@ public final class Main {
                 case "showPodcasts" -> outputs.add(CommandRunner.showPodacst(command));
                 case "removePodcast" -> outputs.add(HostCommandRunner.removePodcast(command));
                 case "addAnnouncement" -> outputs.add(HostCommandRunner.addAnnouncement(command));
-                case "removeAnnouncement" -> outputs.add(HostCommandRunner.removeAnnouncement(command));
+                case "removeAnnouncement" ->
+                        outputs.add(HostCommandRunner.removeAnnouncement(command));
                 case "changePage" -> outputs.add(UserCommandRunner.changePage(command));
                 case "getAllUsers" -> outputs.add(CommandRunner.getAllUsers(command));
                 case "printCurrentPage" -> outputs.add(UserCommandRunner.printCurrentPage(command));

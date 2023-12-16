@@ -6,7 +6,7 @@ import app.user.User;
 
 import java.util.ArrayList;
 
-public class LikedContentPage implements Pages{
+public class LikedContentPage implements Pages {
 
     private ArrayList<Playlist> playlists;
     private ArrayList<Song> likedSongs;
@@ -16,7 +16,7 @@ public class LikedContentPage implements Pages{
      * Constructor for likedContentPage
      * @param user
      */
-    public LikedContentPage(User user) {
+    public LikedContentPage(final User user) {
         this.playlists = user.getPlaylists();
         this.followedPlaylists = user.getFollowedPlaylists();
         this.likedSongs = user.getLikedSongs();
@@ -26,7 +26,7 @@ public class LikedContentPage implements Pages{
      * Creating a list with all liked fongs
      * @return
      */
-    public ArrayList <String> allLikedSongs() {
+    public ArrayList<String> allLikedSongs() {
         ArrayList<String> result = new ArrayList<>();
         for (Song song: likedSongs) {
             String liked = song.getName() + " - " + song.getArtist();
@@ -40,7 +40,7 @@ public class LikedContentPage implements Pages{
      * @return
      */
 
-    public ArrayList <String> allFollowedPlaylists() {
+    public ArrayList<String> allFollowedPlaylists() {
         ArrayList<String> result = new ArrayList<>();
         for (Playlist playlist: followedPlaylists) {
             String followed = playlist.getName() + " - " + playlist.getOwner();
@@ -55,6 +55,7 @@ public class LikedContentPage implements Pages{
      */
     @Override
     public String printCurrentPage() {
-        return "Liked songs:\n\t" + allLikedSongs() + "\n\nFollowed playlists:\n\t" + allFollowedPlaylists();
+        return "Liked songs:\n\t" + allLikedSongs() + "\n\nFollowed playlists:\n\t"
+                + allFollowedPlaylists();
     }
 }

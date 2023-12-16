@@ -17,12 +17,13 @@ public class HomePage implements Pages {
     private ArrayList<Playlist> playlists;
     private ArrayList<Song> likedSongs;
     private ArrayList<Playlist> followedPlaylists;
+    private static final int FIVE = 5;
 
     /**
      * Constructor for Homepage
      * @param user
      */
-    public HomePage(User user) {
+    public HomePage(final User user) {
         this.playlists = user.getPlaylists();
         this.followedPlaylists = user.getFollowedPlaylists();
         this.likedSongs = user.getLikedSongs();
@@ -36,25 +37,20 @@ public class HomePage implements Pages {
     public List<String> getTopFiveLikedSongs() {
         List<Song> sortedSongs = new ArrayList<>(Admin.getSongs());
         sortedSongs.sort(Comparator.comparingInt(Song::getLikes).reversed());
-
-
         List<Song> list = new ArrayList<>();
         list.addAll(likedSongs);
         list.sort(Comparator.comparingInt(Song::getLikes).reversed());
-
         List<String> topSongs = new ArrayList<>();
+
         for (Song auxSong: list) {
             for (Song song: sortedSongs) {
-                if (auxSong.getName().equals(song.getName()) &&
-                        auxSong.getAlbum().equals(song.getAlbum())) {
+                if (auxSong.getName().equals(song.getName())
+                        && auxSong.getAlbum().equals(song.getAlbum())) {
                     topSongs.add(auxSong.getName());
                 }
             }
         }
-
-
-
-        while(topSongs.size() > 5) {
+        while (topSongs.size() > FIVE) {
             topSongs.remove(topSongs.size() - 1);
         }
         return topSongs;
@@ -73,7 +69,9 @@ public class HomePage implements Pages {
         List<String> topPlaylists = new ArrayList<>();
         int count = 0;
         for (Playlist playlist : sortedPlaylists) {
-            if (count >= 5) break;
+            if (count >= FIVE) {
+                break;
+            }
             for (Playlist auxPlaylist: followedPlaylists) {
                 if (auxPlaylist.getName().equals(playlist.getName())) {
                     topPlaylists.add(playlist.getName());
@@ -90,8 +88,8 @@ public class HomePage implements Pages {
      */
     @Override
     public String printCurrentPage() {
-        return "Liked songs:\n\t" + getTopFiveLikedSongs() + "\n\nFollowed playlists:\n\t" +
-                firstFiveFollowed();
+        return "Liked songs:\n\t" + getTopFiveLikedSongs() + "\n\nFollowed playlists:\n\t"
+                + firstFiveFollowed();
     }
 
 

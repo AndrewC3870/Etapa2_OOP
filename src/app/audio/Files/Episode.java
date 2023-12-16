@@ -9,9 +9,9 @@ public final class Episode extends AudioFile {
     /**
      * constructor
      *
-     * @param name
-     * @param duration
-     * @param description
+     * @param name name
+     * @param duration duration
+     * @param description description
      */
     public Episode(final String name, final Integer duration, final String description) {
         super(name, duration);

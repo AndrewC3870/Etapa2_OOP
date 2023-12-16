@@ -4,9 +4,9 @@ import fileio.input.SongInput;
 import fileio.input.UserInput;
 import java.util.List;
 
-public class DataBase {
+public final class DataBase {
 
-    public static DataBase instance = null;
+    private static DataBase instance = null;
     private final List<UserInput> users;
 
     private final List<SongInput> songs;
@@ -18,7 +18,8 @@ public class DataBase {
      * @param songs songs
      * @param podcasts pdcasts
      */
-    private DataBase(List<UserInput> users, List<SongInput> songs, List<PodcastInput> podcasts) {
+    private DataBase(final List<UserInput> users, final List<SongInput> songs,
+                     final List<PodcastInput> podcasts) {
         this.songs = songs;
         this.users = users;
         this.podcasts = podcasts;
@@ -31,9 +32,10 @@ public class DataBase {
      * @param podcasts podcasts
      * @return instance
      */
-    public static DataBase getInstance(List<UserInput> users, List<SongInput> songs, List<PodcastInput> podcasts) {
+    public static DataBase getInstance(final List<UserInput> users, final List<SongInput> songs,
+                                       final List<PodcastInput> podcasts) {
         if (instance == null) {
-            instance = new DataBase( users, songs, podcasts);
+            instance = new DataBase(users, songs, podcasts);
         }
         return instance;
     }
@@ -52,7 +54,7 @@ public class DataBase {
      *
      * @return songs
      */
-    public List<SongInput> getAllSongs(){
+    public List<SongInput> getAllSongs() {
         return this.songs;
     }
 
@@ -60,7 +62,7 @@ public class DataBase {
      * Getter for list of Podcasts
      * @return podcasts
      */
-    public List<PodcastInput> getAllPodcasts(){
+    public List<PodcastInput> getAllPodcasts() {
         return this.podcasts;
     }
 

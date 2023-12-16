@@ -15,9 +15,12 @@ import java.util.Objects;
 import static app.utils.UtilMethods.createMessageOutput;
 
 public class UserCommandRunner {
-    static ObjectMapper objectMapper = new ObjectMapper();
+    private static ObjectMapper objectMapper = new ObjectMapper();
 
-    public static ObjectNode search(CommandInput commandInput) {
+    /**
+     * searching by filters
+     */
+    public static ObjectNode search(final CommandInput commandInput) {
         User user = Admin.getUser(commandInput.getUsername());
 
         Filters filters = new Filters(commandInput.getFilters());
@@ -43,7 +46,10 @@ public class UserCommandRunner {
         return objectNode;
     }
 
-    public static ObjectNode select(CommandInput commandInput) {
+    /**
+     * select source
+     */
+    public static ObjectNode select(final CommandInput commandInput) {
 
         User user = Admin.getUser(commandInput.getUsername());
         String message = "";
@@ -60,10 +66,13 @@ public class UserCommandRunner {
         return objectNode;
     }
 
-    public static ObjectNode load(CommandInput commandInput) {
+    /**
+     * load a song, playlist, podcast, album
+     */
+    public static ObjectNode load(final CommandInput commandInput) {
         User user = Admin.getUser(commandInput.getUsername());
         String message = "";
-        if (user!=null) {
+        if (user != null) {
             message = user.load();
         }
 
@@ -76,7 +85,10 @@ public class UserCommandRunner {
         return objectNode;
     }
 
-    public static ObjectNode playPause(CommandInput commandInput) {
+    /**
+     * set play pause for user's player
+     */
+    public static ObjectNode playPause(final CommandInput commandInput) {
         User user = Admin.getUser(commandInput.getUsername());
         String message = user.playPause();
 
@@ -89,7 +101,10 @@ public class UserCommandRunner {
         return objectNode;
     }
 
-    public static ObjectNode repeat(CommandInput commandInput) {
+    /**
+     * repeat
+     */
+    public static ObjectNode repeat(final CommandInput commandInput) {
         User user = Admin.getUser(commandInput.getUsername());
         String message = "";
         if (user != null) {
@@ -105,7 +120,10 @@ public class UserCommandRunner {
         return objectNode;
     }
 
-    public static ObjectNode shuffle(CommandInput commandInput) {
+    /**
+     * shuffle playlist or album
+     */
+    public static ObjectNode shuffle(final CommandInput commandInput) {
         User user = Admin.getUser(commandInput.getUsername());
         Integer seed = commandInput.getSeed();
         String message = user.shuffle(seed);
@@ -119,7 +137,10 @@ public class UserCommandRunner {
         return objectNode;
     }
 
-    public static ObjectNode forward(CommandInput commandInput) {
+    /**
+     * forward
+     */
+    public static ObjectNode forward(final CommandInput commandInput) {
         User user = Admin.getUser(commandInput.getUsername());
         String message = user.forward();
 
@@ -132,7 +153,10 @@ public class UserCommandRunner {
         return objectNode;
     }
 
-    public static ObjectNode backward(CommandInput commandInput) {
+    /**
+     * backward
+     */
+    public static ObjectNode backward(final CommandInput commandInput) {
         User user = Admin.getUser(commandInput.getUsername());
         String message = user.backward();
 
@@ -145,7 +169,10 @@ public class UserCommandRunner {
         return objectNode;
     }
 
-    public static ObjectNode like(CommandInput commandInput) {
+    /**
+     * like/unlike a song
+     */
+    public static ObjectNode like(final CommandInput commandInput) {
         User user = Admin.getUser(commandInput.getUsername());
         String message = "";
         if (user != null) {
@@ -161,7 +188,10 @@ public class UserCommandRunner {
         return objectNode;
     }
 
-    public static ObjectNode next(CommandInput commandInput) {
+    /**
+     * get next song
+     */
+    public static ObjectNode next(final CommandInput commandInput) {
         User user = Admin.getUser(commandInput.getUsername());
         String message = user.next();
 
@@ -174,7 +204,10 @@ public class UserCommandRunner {
         return objectNode;
     }
 
-    public static ObjectNode prev(CommandInput commandInput) {
+    /**
+     * get prev song
+     */
+    public static ObjectNode prev(final CommandInput commandInput) {
         User user = Admin.getUser(commandInput.getUsername());
         String message = user.prev();
 
@@ -187,11 +220,15 @@ public class UserCommandRunner {
         return objectNode;
     }
 
-    public static ObjectNode createPlaylist(CommandInput commandInput) {
+    /**
+     * create playlist for user
+     */
+    public static ObjectNode createPlaylist(final CommandInput commandInput) {
         User user = Admin.getUser(commandInput.getUsername());
         String message = "";
         if (user != null) {
-            message = user.createPlaylist(commandInput.getPlaylistName(), commandInput.getTimestamp());
+            message = user.createPlaylist(commandInput.getPlaylistName(),
+                    commandInput.getTimestamp());
         }
 
         ObjectNode objectNode = objectMapper.createObjectNode();
@@ -203,7 +240,10 @@ public class UserCommandRunner {
         return objectNode;
     }
 
-    public static ObjectNode addRemoveInPlaylist(CommandInput commandInput) {
+    /**
+     * adding and removing songs from playlist
+     */
+    public static ObjectNode addRemoveInPlaylist(final CommandInput commandInput) {
         User user = Admin.getUser(commandInput.getUsername());
         String message = "";
         if (user != null) {
@@ -219,7 +259,10 @@ public class UserCommandRunner {
         return objectNode;
     }
 
-    public static ObjectNode switchVisibility(CommandInput commandInput) {
+    /**
+     * switch visibility
+     */
+    public static ObjectNode switchVisibility(final CommandInput commandInput) {
         User user = Admin.getUser(commandInput.getUsername());
         String message = user.switchPlaylistVisibility(commandInput.getPlaylistId());
 
@@ -232,7 +275,10 @@ public class UserCommandRunner {
         return objectNode;
     }
 
-    public static ObjectNode showPlaylists(CommandInput commandInput) {
+    /**
+     * show playlist for user
+     */
+    public static ObjectNode showPlaylists(final CommandInput commandInput) {
         User user = Admin.getUser(commandInput.getUsername());
         ArrayList<PlaylistOutput> playlists = user.showPlaylists();
 
@@ -245,7 +291,10 @@ public class UserCommandRunner {
         return objectNode;
     }
 
-    public static ObjectNode follow(CommandInput commandInput) {
+    /**
+     * follow playlist
+     */
+    public static ObjectNode follow(final CommandInput commandInput) {
         User user = Admin.getUser(commandInput.getUsername());
         String message = user.follow();
 
@@ -258,7 +307,10 @@ public class UserCommandRunner {
         return objectNode;
     }
 
-    public static ObjectNode status(CommandInput commandInput) {
+    /**
+     * status of user
+     */
+    public static ObjectNode status(final CommandInput commandInput) {
         User user = Admin.getUser(commandInput.getUsername());
 
         ObjectNode objectNode = objectMapper.createObjectNode();
@@ -275,8 +327,10 @@ public class UserCommandRunner {
         return objectNode;
     }
 
-
-    public static ObjectNode showLikedSongs(CommandInput commandInput) {
+    /**
+     * show list of liked song for a user
+     */
+    public static ObjectNode showLikedSongs(final CommandInput commandInput) {
         User user = Admin.getUser(commandInput.getUsername());
         ArrayList<String> songs = user.showPreferredSongs();
 
@@ -289,7 +343,10 @@ public class UserCommandRunner {
         return objectNode;
     }
 
-    public static ObjectNode getPreferredGenre(CommandInput commandInput) {
+    /**
+     * get preferred Genre
+     */
+    public static ObjectNode getPreferredGenre(final CommandInput commandInput) {
         User user = Admin.getUser(commandInput.getUsername());
         String preferredGenre = user.getPreferredGenre();
 
@@ -302,7 +359,10 @@ public class UserCommandRunner {
         return objectNode;
     }
 
-    public static ObjectNode getTop5Songs(CommandInput commandInput) {
+    /**
+     * get top5 most liked songs
+     */
+    public static ObjectNode getTop5Songs(final CommandInput commandInput) {
         List<String> songs = Admin.getTop5Songs();
 
         ObjectNode objectNode = objectMapper.createObjectNode();
@@ -313,7 +373,10 @@ public class UserCommandRunner {
         return objectNode;
     }
 
-    public static ObjectNode getTop5Playlists(CommandInput commandInput) {
+    /**
+     * get top 5 most followed playlists
+     */
+    public static ObjectNode getTop5Playlists(final CommandInput commandInput) {
         List<String> playlists = Admin.getTop5Playlists();
 
         ObjectNode objectNode = objectMapper.createObjectNode();
@@ -324,17 +387,20 @@ public class UserCommandRunner {
         return objectNode;
     }
 
-//    ce adaug eu nou
-    public static ObjectNode switchConnectionStatus(CommandInput commandInput) {
+    /**
+     * switch connection status for normal user
+     * if online switch to offline and reverse
+     */
+    public static ObjectNode switchConnectionStatus(final CommandInput commandInput) {
         ObjectNode objectNode = objectMapper.createObjectNode();
         User user = Admin.getUser(commandInput.getUsername());
         String message;
         if (user == null) {
             message = "The username " + commandInput.getUsername() + " doesn't exist.";
-        } else if (!Objects.equals(user.getType(), "user")){
+        } else if (!Objects.equals(user.getType(), "user")) {
             message = user.getUsername() + " is not a normal user.";
         } else {
-            message = user.SwitchConnectionStatus();
+            message = user.switchConnectionStatus();
         }
         objectNode.put("command", commandInput.getCommand());
         objectNode.put("user", commandInput.getUsername());
@@ -344,7 +410,10 @@ public class UserCommandRunner {
         return objectNode;
     }
 
-    public static ObjectNode printCurrentPage(CommandInput commandInput) {
+    /**
+     * is printing current page
+     */
+    public static ObjectNode printCurrentPage(final CommandInput commandInput) {
         User user = Admin.getUser(commandInput.getUsername());
         ObjectNode objectNode = objectMapper.createObjectNode();
         String message = "";
@@ -363,7 +432,10 @@ public class UserCommandRunner {
         return objectNode;
     }
 
-    public static ObjectNode getOnlineUsers(CommandInput commandInput) {
+    /**
+     * retuns list of all online users
+     */
+    public static ObjectNode getOnlineUsers(final CommandInput commandInput) {
         ObjectNode objectNode = objectMapper.createObjectNode();
         List<String> onlineUsers = Admin.getOnlineUsers();
 
@@ -374,7 +446,10 @@ public class UserCommandRunner {
         return objectNode;
     }
 
-    public static ObjectNode changePage(CommandInput commandInput) {
+    /**
+     * changes page for normal user
+     */
+    public static ObjectNode changePage(final CommandInput commandInput) {
         User user = Admin.getUser(commandInput.getUsername());
         String message = "";
         if (user != null) {

@@ -6,26 +6,22 @@ import app.events.ArtistEvent;
 import app.events.ArtistMerch;
 import app.user.User;
 import app.user.UserArtist;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import fileio.input.CommandInput;
 import fileio.input.SongInput;
-
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
 import static app.events.ArtistEvent.dateCorrectness;
 import static app.utils.UtilMethods.*;
 
-public class ArtistCommandRunner{
+public class ArtistCommandRunner {
     /**
      * add album to artists list of albums
      *
      * @param commandInput command
      * @return output
      */
-    public static ObjectNode addAlbum(CommandInput commandInput) {
+    public static ObjectNode addAlbum(final CommandInput commandInput) {
         User user = Admin.getUser(commandInput.getUsername());
         String message;
 
@@ -34,15 +30,15 @@ public class ArtistCommandRunner{
         } else if (!user.getType().equals("artist")) {
             message = commandInput.getUsername() + " is not an artist.";
         } else {
-            UserArtist artist = (UserArtist)user;
+            UserArtist artist = (UserArtist) user;
             if (artist.containsAlbum(commandInput.getName())) {
-                message = commandInput.getUsername() +
-                        " has another album with the same name.";
+                message = commandInput.getUsername()
+                        + " has another album with the same name.";
             } else if (sameSongs(commandInput) > 1) {
-                message = commandInput.getUsername() +
-                        " has the same song at least twice in this album.";
+                message = commandInput.getUsername()
+                       + " has the same song at least twice in this album.";
             } else {
-                Album album = new Album(commandInput.getName(),commandInput.getUsername(),
+                Album album = new Album(commandInput.getName(), commandInput.getUsername(),
                         commandInput.getReleaseYear(),
                         commandInput.getDescription(), commandInput.getSongs());
                 album.setName(commandInput.getName());
@@ -64,7 +60,7 @@ public class ArtistCommandRunner{
      * @param commandInput command
      * @return output
      */
-    public static ObjectNode removeAlbum(CommandInput commandInput) {
+    public static ObjectNode removeAlbum(final CommandInput commandInput) {
         User user = Admin.getUser(commandInput.getUsername());
         String message;
 
@@ -73,10 +69,10 @@ public class ArtistCommandRunner{
         } else if (!user.getType().equals("artist")) {
             message = commandInput.getUsername() + " is not an artist.";
         } else {
-            UserArtist artist = (UserArtist)user;
+            UserArtist artist = (UserArtist) user;
             if (!artist.containsAlbum(commandInput.getName())) {
-                message = commandInput.getUsername() +
-                        " doesn't have an album with the given name.";
+                message = commandInput.getUsername()
+                        + " doesn't have an album with the given name.";
             } else if (ifDeletingForArtist(artist) || ifIsInPlaylist(artist.getAlbum())) {
                 message = commandInput.getUsername() + " can't delete this album.";
             } else {
@@ -105,7 +101,7 @@ public class ArtistCommandRunner{
      * @param commandInput command
      * @return number of same songs
      */
-    private static int sameSongs(CommandInput commandInput) {
+    private static int sameSongs(final CommandInput commandInput) {
         int count = 0;
         for (SongInput songs: commandInput.getSongs()) {
             count = 0;
@@ -127,10 +123,10 @@ public class ArtistCommandRunner{
      * @param commandInput command
      * @return output
      */
-    public static ObjectNode addEvent(CommandInput commandInput) {
+    public static ObjectNode addEvent(final CommandInput commandInput) {
         String message;
         User user = Admin.getUser(commandInput.getUsername());
-        if (user == null){
+        if (user == null) {
             message = "The username " + commandInput.getUsername() + " doesn't exist.";
         } else if (!Objects.equals(user.getType(), "artist")) {
             message = user.getUsername() + " is not an artist.";
@@ -161,10 +157,10 @@ public class ArtistCommandRunner{
      * @param commandInput command
      * @return output
      */
-    public static ObjectNode removeEvent(CommandInput commandInput) {
+    public static ObjectNode removeEvent(final CommandInput commandInput) {
         String message;
         User user = Admin.getUser(commandInput.getUsername());
-        if (user == null){
+        if (user == null) {
             message = "The username " + commandInput.getUsername() + " doesn't exist.";
         } else if (!Objects.equals(user.getType(), "artist")) {
             message = user.getUsername() + " is not an artist.";
@@ -187,10 +183,10 @@ public class ArtistCommandRunner{
      * @param commandInput command
      * @return output
      */
-    public static ObjectNode addMerch(CommandInput commandInput) {
+    public static ObjectNode addMerch(final CommandInput commandInput) {
         String message;
         User user = Admin.getUser(commandInput.getUsername());
-        if (user == null){
+        if (user == null) {
             message = "The username " + commandInput.getUsername() + " doesn't exist.";
         } else if (!Objects.equals(user.getType(), "artist")) {
             message = user.getUsername() + " is not an artist.";

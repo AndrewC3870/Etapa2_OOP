@@ -9,7 +9,7 @@ import lombok.Setter;
 import java.util.ArrayList;
 @Getter
 @Setter
-public class ArtistPage implements Pages{
+public class ArtistPage implements Pages {
 
     private ArrayList<Album> albums;
     private ArrayList<ArtistMerch> merch;
@@ -17,11 +17,12 @@ public class ArtistPage implements Pages{
 
     /**
      * Constructor for Artist Page
-     * @param album
-     * @param merch
-     * @param event
+     * @param album album
+     * @param merch merch
+     * @param event event
      */
-    public ArtistPage(ArrayList<Album> album, ArrayList<ArtistMerch> merch, ArrayList<ArtistEvent> event) {
+    public ArtistPage(final ArrayList<Album> album, final ArrayList<ArtistMerch> merch,
+                      final ArrayList<ArtistEvent> event) {
         this.albums = album;
         this.merch = merch;
         this.events = event;
@@ -73,6 +74,7 @@ public class ArtistPage implements Pages{
      */
     @Override
     public String printCurrentPage() {
-        return "Albums:\n\t" + getAlbumsList() + "\n\nMerch:\n\t" + getMerchList() + "\n\nEvents:\n\t" + getEventList();
+        return "Albums:\n\t" + getAlbumsList() + "\n\nMerch:\n\t" + getMerchList()
+                + "\n\nEvents:\n\t" + getEventList();
     }
 }

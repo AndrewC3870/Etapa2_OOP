@@ -1,7 +1,6 @@
 package app.audio.Collections;
 
 import fileio.input.EpisodeInput;
-import fileio.input.PodcastInput;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -18,7 +17,7 @@ public class Podcasts {
      * @param name name
      * @param episodes episodes
      */
-    public Podcasts(String name, ArrayList<EpisodeInput> episodes) {
+    public Podcasts(final String name, final ArrayList<EpisodeInput> episodes) {
         this.name = name;
         this.episodes = episodes;
     }

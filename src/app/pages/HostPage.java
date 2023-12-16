@@ -2,7 +2,6 @@ package app.pages;
 
 import app.audio.Collections.Podcasts;
 import app.events.Announcement;
-import app.user.User;
 import fileio.input.EpisodeInput;
 import lombok.Getter;
 
@@ -18,7 +17,8 @@ public final class HostPage implements Pages {
      * @param podcasts
      * @param announcements
      */
-    public HostPage(ArrayList<Podcasts> podcasts, ArrayList<Announcement> announcements) {
+    public HostPage(final ArrayList<Podcasts> podcasts,
+                    final ArrayList<Announcement> announcements) {
         this.announcements = announcements;
         this.podcasts = podcasts;
     }
@@ -30,7 +30,7 @@ public final class HostPage implements Pages {
     public ArrayList<String> getPodcasts() {
         ArrayList<String> results = new ArrayList<>();
         ArrayList<String> episodes = new ArrayList<>();
-        for(Podcasts podcast: podcasts) {
+        for (Podcasts podcast: podcasts) {
             String result;
             for (EpisodeInput episodeInput: podcast.getEpisodes()) {
                 episodes.add(episodeInput.getName() + " - " + episodeInput.getDescription());

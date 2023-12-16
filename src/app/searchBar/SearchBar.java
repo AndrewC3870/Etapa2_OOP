@@ -3,8 +3,6 @@ package app.searchBar;
 
 import app.Admin;
 import app.audio.LibraryEntry;
-import app.user.User;
-import fileio.input.CommandInput;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -12,7 +10,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static app.searchBar.FilterUtils.*;
-import static app.searchBar.FilterUtils.filterByFollowers;
 
 public class SearchBar {
     private List<LibraryEntry> results;
@@ -174,16 +171,16 @@ public class SearchBar {
      * @param itemNumber
      * @return
      */
-    public LibraryEntry selectUser(Integer itemNumber) {
+    public LibraryEntry selectUser(final Integer itemNumber) {
         if (this.searchUserResult.size() < itemNumber) {
             searchUserResult.clear();
             return null;
         } else {
-            LibraryEntry lastSelected = new LibraryEntry(this.searchUserResult.get(itemNumber-1)){};
+            LibraryEntry lastSelected =
+                    new LibraryEntry(this.searchUserResult.get(itemNumber - 1)) { };
             searchUserResult.clear();
 
             return lastSelected;
         }
     }
-
 }

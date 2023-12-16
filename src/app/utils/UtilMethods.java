@@ -4,7 +4,6 @@ import app.Admin;
 import app.audio.Collections.Album;
 import app.audio.Collections.Playlist;
 import app.audio.Collections.Podcasts;
-import app.audio.Files.Episode;
 import app.audio.Files.Song;
 import app.user.User;
 import app.user.UserArtist;
@@ -14,14 +13,11 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 import fileio.input.CommandInput;
 import fileio.input.EpisodeInput;
 import fileio.input.SongInput;
-
 import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
 import java.util.Objects;
 
 public class UtilMethods {
-    static ObjectMapper objectMapper = new ObjectMapper();
+    private static ObjectMapper objectMapper = new ObjectMapper();
 
     /**
      * method to create output node
@@ -30,7 +26,8 @@ public class UtilMethods {
      * @param message message
      * @return created node
      */
-    public static ObjectNode createMessageOutput(CommandInput commandInput, String message) {
+    public static ObjectNode createMessageOutput(final CommandInput commandInput,
+                                                 final String message) {
         ObjectNode objectNode = objectMapper.createObjectNode();
 
         objectNode.put("command", commandInput.getCommand());
@@ -40,7 +37,11 @@ public class UtilMethods {
         return  objectNode;
     }
 
-    public static ObjectNode createOutputForArtisHost(CommandInput commandInput, String message) {
+    /**
+     * creating output first command, second user
+     */
+    public static ObjectNode createOutputForArtisHost(final CommandInput commandInput,
+                                                      final String message) {
         ObjectNode objectNode = objectMapper.createObjectNode();
         objectNode.put("command", commandInput.getCommand());
         objectNode.put("user", commandInput.getUsername());
@@ -55,7 +56,7 @@ public class UtilMethods {
      * @param song SongInput
      * @return Song
      */
-    public static Song convertToSong(SongInput song) {
+    public static Song convertToSong(final SongInput song) {
         return new Song(song.getName(), song.getDuration(), song.getAlbum(), song.getTags(),
                 song.getLyrics(), song.getGenre(), song.getReleaseYear(), song.getArtist());
     }
@@ -66,12 +67,13 @@ public class UtilMethods {
      * @param artist the artist
      * @return boolean
      */
-    public static boolean ifDeletingForArtist(UserArtist artist) {
+    public static boolean ifDeletingForArtist(final UserArtist artist) {
         for (User user: Admin.getUsers()) {
             if (user.getPlayer().getCurrentAudioFile() != null) {
                 for (Album album: artist.getAlbum()) {
                     for (Song songInput: album.getSongs()) {
-                        if (Objects.equals(user.getPlayer().getCurrentAudioFile().getName(), songInput.getName())) {
+                        if (Objects.equals(user.getPlayer().getCurrentAudioFile().getName(),
+                                songInput.getName())) {
                             return true;
                         }
                     }
@@ -87,12 +89,13 @@ public class UtilMethods {
      * @param host host
      * @return boolean
      */
-    public static boolean ifDeletingForHost(UserHost host) {
+    public static boolean ifDeletingForHost(final UserHost host) {
         for (User user: Admin.getUsers()) {
             if (user.getPlayer().getCurrentAudioFile() != null) {
                 for (Podcasts podcast: host.getPodcasts()) {
                     for (EpisodeInput episode: podcast.getEpisodes()) {
-                        if (Objects.equals(user.getPlayer().getCurrentAudioFile().getName(), episode.getName())) {
+                        if (Objects.equals(user.getPlayer().getCurrentAudioFile()
+                                .getName(), episode.getName())) {
                             return true;
                         }
                     }
@@ -109,7 +112,7 @@ public class UtilMethods {
      * @param host host
      * @return boolean
      */
-    public static boolean ifOnTheHostPage(UserHost host) {
+    public static boolean ifOnTheHostPage(final UserHost host) {
         for (User user: Admin.getUsers()) {
             if (user.getPage().equals(host.getHostPage())) {
                 return true;
@@ -124,7 +127,7 @@ public class UtilMethods {
      * @param artist artist
      * @return boolean
      */
-    public static boolean ifOnTheArtistPage(UserArtist artist) {
+    public static boolean ifOnTheArtistPage(final UserArtist artist) {
         for (User user: Admin.getUsers()) {
             if (user.getPage().equals(artist.getArtistPage())) {
                 return true;
@@ -139,14 +142,15 @@ public class UtilMethods {
      * @param album album
      * @return boolean
      */
-    public static boolean ifIsInPlaylist(ArrayList<Album> album) {
+    public static boolean ifIsInPlaylist(final ArrayList<Album> album) {
         for (User user: Admin.getUsers()) {
             for (Playlist playlist: user.getPlaylists()) {
                 for (Song song: playlist.getSongs()) {
                     for (Album album1: album) {
                         for (Song songInput: album1.getSongs()) {
-                            if (song.getName().equals(songInput.getName()))
+                            if (song.getName().equals(songInput.getName())) {
                                 return true;
+                            }
                         }
                     }
                 }

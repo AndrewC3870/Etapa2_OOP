@@ -42,8 +42,8 @@ public class Player {
      * @param bookmarks the bookmarks
      * @return the player source
      */
-    public static PlayerSource createSource(String type, LibraryEntry entry,
-                                            List<PodcastBookmark> bookmarks) {
+    public static PlayerSource createSource(final String type, final LibraryEntry entry,
+                                            final List<PodcastBookmark> bookmarks) {
         if ("song".equals(type)) {
             return new PlayerSource(Enums.PlayerSourceType.LIBRARY, (AudioFile) entry);
         } else if ("playlist".equals(type)) {
@@ -64,8 +64,8 @@ public class Player {
      * @param bookmarks bookmarks
      * @return playerSource
      */
-    private static PlayerSource createPodcastSource(AudioCollection collection,
-                                                    List<PodcastBookmark> bookmarks) {
+    private static PlayerSource createPodcastSource(final AudioCollection collection,
+                                                   final List<PodcastBookmark> bookmarks) {
         for (PodcastBookmark bookmark : bookmarks) {
             if (bookmark.getName().equals(collection.getName())) {
                 return new PlayerSource(Enums.PlayerSourceType.PODCAST, collection, bookmark);
@@ -134,8 +134,8 @@ public class Player {
             source.generateShuffleOrder(seed);
         }
 
-        if (source.getType() == Enums.PlayerSourceType.PLAYLIST ||
-                source.getType() == Enums.PlayerSourceType.ALBUM) {
+        if (source.getType() == Enums.PlayerSourceType.PLAYLIST
+                || source.getType() == Enums.PlayerSourceType.ALBUM) {
             shuffle = !shuffle;
             if (shuffle) {
                 source.updateShuffleIndex();

@@ -1,6 +1,5 @@
 package app.audio.Collections;
 
-import app.audio.Collections.AudioCollection;
 import app.audio.Files.AudioFile;
 import app.audio.Files.Song;
 import fileio.input.SongInput;
@@ -28,9 +27,10 @@ public class Album extends AudioCollection {
      * @param description
      * @param songs
      */
-    public Album (String name, String owner, int releaseYear, String description,
-                  ArrayList<SongInput> songs) {
-        super(name,owner);
+    public Album(final String name, final String owner, final int releaseYear,
+                  final String description,
+                  final ArrayList<SongInput> songs) {
+        super(name, owner);
         this.releaseYear = releaseYear;
         this.description = description;
         this.songs = new ArrayList<>();
@@ -47,7 +47,7 @@ public class Album extends AudioCollection {
      */
     public Integer calculateLikes() {
         int likes = 0;
-        for(Song song: songs) {
+        for (Song song: songs) {
             likes += song.getLikes();
         }
         return likes;
@@ -82,7 +82,7 @@ public class Album extends AudioCollection {
      * @return
      */
     @Override
-    public AudioFile getTrackByIndex(int index) {
+    public AudioFile getTrackByIndex(final int index) {
         return songs.get(index);
     }
 }

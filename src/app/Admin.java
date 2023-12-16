@@ -1,17 +1,19 @@
 package app;
 
-import app.audio.Collections.*;
+import app.audio.Collections.Album;
+import app.audio.Collections.Playlist;
+import app.audio.Collections.Podcast;
+import app.audio.Collections.Podcasts;
 import app.audio.Files.Episode;
 import app.audio.Files.Song;
 import app.user.User;
 import app.user.UserArtist;
 import app.user.UserHost;
-import com.fasterxml.jackson.databind.node.ArrayNode;
-import com.fasterxml.jackson.databind.node.ObjectNode;
-import fileio.input.*;
+import fileio.input.EpisodeInput;
+import fileio.input.PodcastInput;
+import fileio.input.SongInput;
+import fileio.input.UserInput;
 import lombok.Getter;
-import lombok.Setter;
-
 import java.util.*;
 
 /**
@@ -27,16 +29,18 @@ public class Admin {
     private static List<Song> songs = new ArrayList<>();
     private static List<Podcast> podcasts = new ArrayList<>();
     private static int timestamp = 0;
+    private final static int FIVE = 5;
 
     /**
      * Sets users.
      *
      * @param userInputList the user input list
      */
-    public static void setUsers(List<UserInput> userInputList) {
+    public static void setUsers(final List<UserInput> userInputList) {
         users = new ArrayList<>();
         for (UserInput userInput : userInputList) {
-            users.add(new User(userInput.getUsername(), userInput.getAge(), userInput.getCity(), "user"));
+            users.add(new User(userInput.getUsername(), userInput.getAge(),
+                    userInput.getCity(), "user"));
         }
     }
 
@@ -45,7 +49,7 @@ public class Admin {
      *
      * @param songInput song
      */
-    public static void addNewSongs(SongInput songInput) {
+    public static void addNewSongs(final SongInput songInput) {
         Song song = new Song(songInput.getName(), songInput.getDuration(), songInput.getAlbum(),
                 songInput.getTags(), songInput.getLyrics(), songInput.getGenre(),
                 songInput.getReleaseYear(), songInput.getArtist());
@@ -58,11 +62,12 @@ public class Admin {
      * @param podcast podcast
      * @param name    name
      */
-    public static void addNewPodcast(Podcasts podcast, String name) {
+    public static void addNewPodcast(final Podcasts podcast, final String name) {
         List<Episode> episodes = new ArrayList<>();
         Episode episode;
         for (EpisodeInput episodeInput : podcast.getEpisodes()) {
-            episode = new Episode(episodeInput.getName(), episodeInput.getDuration(), episodeInput.getDescription());
+            episode = new Episode(episodeInput.getName(), episodeInput.getDuration(),
+                    episodeInput.getDescription());
             episodes.add(episode);
         }
         Podcast newPodcast = new Podcast(podcast.getName(), name, episodes);
@@ -83,7 +88,7 @@ public class Admin {
      *
      * @param songInputList the song input list
      */
-    public static void setSongs(List<SongInput> songInputList) {
+    public static void setSongs(final List<SongInput> songInputList) {
         songs = new ArrayList<>();
         for (SongInput songInput : songInputList) {
             songs.add(new Song(songInput.getName(), songInput.getDuration(), songInput.getAlbum(),
@@ -106,12 +111,13 @@ public class Admin {
      *
      * @param podcastInputList the podcast input list
      */
-    public static void setPodcasts(List<PodcastInput> podcastInputList) {
+    public static void setPodcasts(final List<PodcastInput> podcastInputList) {
         podcasts = new ArrayList<>();
         for (PodcastInput podcastInput : podcastInputList) {
             List<Episode> episodes = new ArrayList<>();
             for (EpisodeInput episodeInput : podcastInput.getEpisodes()) {
-                episodes.add(new Episode(episodeInput.getName(), episodeInput.getDuration(), episodeInput.getDescription()));
+                episodes.add(new Episode(episodeInput.getName(), episodeInput.getDuration(),
+                        episodeInput.getDescription()));
             }
             podcasts.add(new Podcast(podcastInput.getName(), podcastInput.getOwner(), episodes));
         }
@@ -149,7 +155,7 @@ public class Admin {
      * @param username the username
      * @return the user
      */
-    public static User getUser(String username) {
+    public static User getUser(final String username) {
         for (User user : users) {
             if (user.getUsername().equals(username)) {
                 return user;
@@ -164,7 +170,7 @@ public class Admin {
      * @param name artist's name
      * @return artist
      */
-    public static UserArtist getArtist(String name) {
+    public static UserArtist getArtist(final String name) {
         for (UserArtist user : userArtists) {
             if (user.getUsername().equals(name)) {
                 return user;
@@ -179,7 +185,7 @@ public class Admin {
      * @param name host's name
      * @return host
      */
-    public static UserHost getHost(String name) {
+    public static UserHost getHost(final String name) {
         for (UserHost user : userHosts) {
             if (user.getUsername().equals(name)) {
                 return user;
@@ -193,7 +199,7 @@ public class Admin {
      *
      * @param newTimestamp the new timestamp
      */
-    public static void updateTimestamp(int newTimestamp) {
+    public static void updateTimestamp(final int newTimestamp) {
         int elapsed = newTimestamp - timestamp;
         timestamp = newTimestamp;
         if (elapsed == 0) {
@@ -206,9 +212,9 @@ public class Admin {
     }
 
     /**
-     * Gets top 5 songs.
+     * Gets top FIVE songs.
      *
-     * @return the top 5 songs
+     * @return the top FIVE songs
      */
     public static List<String> getTop5Songs() {
         List<Song> topSongs1 = new ArrayList<>();
@@ -216,7 +222,8 @@ public class Admin {
         for (Song songAdm : songs) {
             for (User auxUser : users) {
                 for (Song liked : auxUser.getLikedSongs()) {
-                    if (!topSongs1.contains(liked) && songAdm.getName().equals(liked.getName()) && songAdm.getAlbum().equals(liked.getAlbum())) {
+                    if (!topSongs1.contains(liked) && songAdm.getName().equals(liked.getName())
+                            && songAdm.getAlbum().equals(liked.getAlbum())) {
                         topSongs1.add(liked);
                     }
                 }
@@ -225,7 +232,7 @@ public class Admin {
 
         topSongs1.sort(Comparator.comparingInt(Song::getLikes));
 
-        if (topSongs1.size() < 5) {
+        if (topSongs1.size() < FIVE) {
             for (Song auxSong : songs) {
                 if (!topSongs1.contains(auxSong)) {
                     topSongs1.add(auxSong);
@@ -241,12 +248,12 @@ public class Admin {
             }
         }
 
-//        List<Song> sortedSongs = new ArrayList<>(songs);
-//        topSongs1.sort(Comparator.comparingInt(Song::getLikes).reversed());
         List<String> topSongs = new ArrayList<>();
         int count = 0;
         for (Song song : topSongs1) {
-            if (count >= 5) break;
+            if (count >= FIVE) {
+                break;
+            }
             topSongs.add(song.getName());
             count++;
         }
@@ -254,9 +261,9 @@ public class Admin {
     }
 
     /**
-     * Gets top 5 playlists.
+     * Gets top FIVE playlists.
      *
-     * @return the top 5 playlists
+     * @return the top FIVE playlists
      */
     public static List<String> getTop5Playlists() {
         List<Playlist> sortedPlaylists = new ArrayList<>(getPlaylists());
@@ -266,7 +273,9 @@ public class Admin {
         List<String> topPlaylists = new ArrayList<>();
         int count = 0;
         for (Playlist playlist : sortedPlaylists) {
-            if (count >= 5) break;
+            if (count >= FIVE) {
+                break;
+            }
             topPlaylists.add(playlist.getName());
             count++;
         }
@@ -274,7 +283,7 @@ public class Admin {
     }
 
     /**
-     * get top 5 albums
+     * get top FIVE albums
      *
      * @return list of albums
      */
@@ -286,7 +295,9 @@ public class Admin {
         List<String> topAlbum = new ArrayList<>();
         int count = 0;
         for (Album album : sortedAlbum) {
-            if (count >= 5) break;
+            if (count >= FIVE) {
+                break;
+            }
             topAlbum.add(album.getName());
             count++;
         }
@@ -294,7 +305,7 @@ public class Admin {
     }
 
     /**
-     * get top 5 artists
+     * get top FIVE artists
      *
      * @return list of artists
      */
@@ -303,7 +314,7 @@ public class Admin {
         sortedArtist.sort(Comparator.comparingInt(UserArtist::numberOfLikes)
                 .reversed());
         List<String> topAlbum = new ArrayList<>();
-        while (sortedArtist.size() > 5) {
+        while (sortedArtist.size() > FIVE) {
             sortedArtist.remove(sortedArtist.size() - 1);
         }
         for (UserArtist user : sortedArtist) {
@@ -333,7 +344,7 @@ public class Admin {
      *
      * @param user artist
      */
-    public static void addArtist(UserArtist user) {
+    public static void addArtist(final UserArtist user) {
         users.add(user);
         userArtists.add(user);
     }
@@ -343,7 +354,7 @@ public class Admin {
      *
      * @param user host
      */
-    public static void addHost(UserHost user) {
+    public static void addHost(final UserHost user) {
         users.add(user);
         userHosts.add(user);
     }
@@ -353,7 +364,7 @@ public class Admin {
      *
      * @param user user
      */
-    public static void addUser(User user) {
+    public static void addUser(final User user) {
         users.add(user);
     }
 
@@ -362,7 +373,7 @@ public class Admin {
      *
      * @param user user
      */
-    public static void removeUser(User user) {
+    public static void removeUser(final User user) {
         users.remove(user);
     }
 
@@ -371,7 +382,7 @@ public class Admin {
      *
      * @param user artist
      */
-    public static void removeUserArtist(UserArtist user) {
+    public static void removeUserArtist(final UserArtist user) {
         users.remove(user);
         userArtists.remove(user);
         user.getAlbum().clear();
@@ -382,7 +393,7 @@ public class Admin {
      *
      * @param user host
      */
-    public static void removeUserHost(UserHost user) {
+    public static void removeUserHost(final UserHost user) {
         users.remove(user);
         userHosts.remove(user);
         user.getPodcasts().clear();
@@ -393,7 +404,7 @@ public class Admin {
      *
      * @param song song
      */
-    public static void removeSong(Song song) {
+    public static void removeSong(final Song song) {
         songs.removeIf((s) -> song.getName().equals(s.getName()));
     }
 
@@ -402,7 +413,7 @@ public class Admin {
      *
      * @param podcast podcast
      */
-    public static void removePodcast(Podcasts podcast) {
+    public static void removePodcast(final Podcasts podcast) {
         podcasts.removeIf((p) -> podcast.getName().equals(p.getName()));
     }
 
@@ -424,11 +435,12 @@ public class Admin {
      * @param user user
      * @return boolean
      */
-    public static boolean cantDeleteSimpleUser(User user) {
+    public static boolean cantDeleteSimpleUser(final User user) {
         for (User auxUser : users) {
             if (auxUser.getPlayer().getSource() != null) {
                 for (Playlist playlist : user.getPlaylists()) {
-                    if (Objects.equals(auxUser.getPlayer().getSource().getAudioCollection(), playlist)) {
+                    if (Objects.equals(auxUser.getPlayer().
+                            getSource().getAudioCollection(), playlist)) {
                         return true;
                     }
                 }
@@ -442,11 +454,13 @@ public class Admin {
      *
      * @param user user
      */
-    public static void prepareForDelete(User user) {
+    public static void prepareForDelete(final User user) {
         for (Playlist playlist : user.getPlaylists()) {
             for (User user1 : Admin.getUsers()) {
-                if (user1.getType().equals("user"))
+                if (user1.getType().equals("user")) {
                     user1.getFollowedPlaylists().remove(playlist);
+
+                }
             }
         }
     }

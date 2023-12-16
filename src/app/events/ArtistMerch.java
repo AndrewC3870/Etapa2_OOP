@@ -3,8 +3,6 @@ package app.events;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Objects;
-
 @Getter
 @Setter
 public class ArtistMerch {
@@ -18,7 +16,7 @@ public class ArtistMerch {
      * @param description
      * @param price
      */
-    public ArtistMerch(String name, String description, int price) {
+    public ArtistMerch(final String name, final String description, final int price) {
         this.name = name;
         this.description = description;
         this.price = price;

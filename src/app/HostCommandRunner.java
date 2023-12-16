@@ -18,7 +18,7 @@ import static app.utils.UtilMethods.ifDeletingForHost;
 @Getter
 @Setter
 public class HostCommandRunner {
-    static ObjectMapper objectMapper = new ObjectMapper();
+    private static ObjectMapper objectMapper = new ObjectMapper();
 
     /**
      * add podcast to a host if is not existing
@@ -26,7 +26,7 @@ public class HostCommandRunner {
      * @param commandInput command
      * @return message
      */
-    public static ObjectNode addPodcast(CommandInput commandInput) {
+    public static ObjectNode addPodcast(final CommandInput commandInput) {
         User user = Admin.getUser(commandInput.getUsername());
         String message;
 
@@ -35,7 +35,7 @@ public class HostCommandRunner {
         } else if (!user.getType().equals("host")) {
             message = commandInput.getUsername() + " is not a host.";
         } else {
-            UserHost host = (UserHost)user;
+            UserHost host = (UserHost) user;
             if (host.getPodcastByName(commandInput.getName()) != null) {
                 message = commandInput.getUsername() + " has another podcast with the same name.";
             } else if (sameEpisodes(commandInput.getEpisodes())) {
@@ -58,7 +58,7 @@ public class HostCommandRunner {
      * @param commandInput command
      * @return message
      */
-    public static ObjectNode removePodcast(CommandInput commandInput) {
+    public static ObjectNode removePodcast(final CommandInput commandInput) {
         User user = Admin.getUser(commandInput.getUsername());
         String message;
 
@@ -67,10 +67,10 @@ public class HostCommandRunner {
         } else if (!user.getType().equals("host")) {
             message = commandInput.getUsername() + " is not a host.";
         } else {
-            UserHost host = (UserHost)user;
+            UserHost host = (UserHost) user;
             if (host.getPodcastByName(commandInput.getName()) == null) {
-                message = commandInput.getUsername() +
-                        " doesn't have a podcast with the given name.";
+                message = commandInput.getUsername()
+                        + " doesn't have a podcast with the given name.";
             } else if (ifDeletingForHost(host)) {
                 message = commandInput.getUsername() + " can't delete this podcast.";
             } else {
@@ -91,13 +91,14 @@ public class HostCommandRunner {
      * @param episodeInputs list of episodes
      * @return boolean
      */
-    public static boolean sameEpisodes(ArrayList<EpisodeInput> episodeInputs) {
+    public static boolean sameEpisodes(final ArrayList<EpisodeInput> episodeInputs) {
         int count;
         for (EpisodeInput episode: episodeInputs) {
             count = 0;
             for (EpisodeInput auxEpisode: episodeInputs) {
-                if (auxEpisode.getName().equals(episode.getName()))
+                if (auxEpisode.getName().equals(episode.getName())) {
                     count++;
+                }
                 if (count > 1) {
                     return true;
                 }
@@ -111,21 +112,24 @@ public class HostCommandRunner {
      * @param commandInput
      * @return
      */
-    public static ObjectNode addAnnouncement(CommandInput commandInput) {
+    public static ObjectNode addAnnouncement(final CommandInput commandInput) {
         String message;
         User user = Admin.getUser(commandInput.getUsername());
-        if (user == null){
+        if (user == null) {
             message = "The username " + commandInput.getUsername() + " doesn't exist.";
         } else if (!Objects.equals(user.getType(), "host")) {
             message = user.getUsername() + " is not a host.";
         } else {
             UserHost host = (UserHost) user;
             if (host.containsAnnouncement(commandInput.getName()) != null) {
-                message = commandInput.getUsername() + " has already added an announcement with this name.";
+                message = commandInput.getUsername()
+                        + " has already added an announcement with this name.";
             } else {
-                Announcement announcement = new Announcement(commandInput.getName(), commandInput.getDescription());
+                Announcement announcement =
+                        new Announcement(commandInput.getName(), commandInput.getDescription());
                 host.getAnnouncements().add(announcement);
-                message = commandInput.getUsername() + " has successfully added new announcement.";
+                message = commandInput.getUsername()
+                        + " has successfully added new announcement.";
             }
         }
 
@@ -137,10 +141,15 @@ public class HostCommandRunner {
         return objectNode;
     }
 
-    public static ObjectNode removeAnnouncement(CommandInput commandInput) {
+    /**
+     * remove announcement if eisted in Host's Announcement list
+     * @param commandInput command
+     * @return output
+     */
+    public static ObjectNode removeAnnouncement(final CommandInput commandInput) {
         String message;
         User user = Admin.getUser(commandInput.getUsername());
-        if (user == null){
+        if (user == null) {
             message = "The username " + commandInput.getUsername() + " doesn't exist.";
         } else if (!Objects.equals(user.getType(), "host")) {
             message = user.getUsername() + " is not a host.";
@@ -150,7 +159,8 @@ public class HostCommandRunner {
                 message = commandInput.getUsername() + " has no announcement with the given name.";
             } else {
                 host.getAnnouncements().remove(host.containsAnnouncement(commandInput.getName()));
-                message = commandInput.getUsername() + " has successfully deleted the announcement.";
+                message = commandInput.getUsername()
+                        + " has successfully deleted the announcement.";
             }
         }
 
